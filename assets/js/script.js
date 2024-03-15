@@ -25,7 +25,7 @@ async function fetchApiData() {
 fetchApiData();
 
 // Fetch data from Ske Scrapper API.
-var url = 'https://sky-scrapper.p.rapidapi.com/api/v1/checkServer';
+var Flight_url = 'https://sky-scrapper.p.rapidapi.com/api/v1/checkServer';
 var options = {
     method: 'GET',
     headers: {
@@ -37,7 +37,7 @@ var options = {
 async function fetchApiData() {
     try {
         console.log('Fetching API data...');
-        var response = await fetch(url, options);
+        var response = await fetch(Flight_url, options);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
