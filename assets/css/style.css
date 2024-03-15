@@ -38,6 +38,16 @@ section {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.devDreamLogo {
+    display: inline-block;
+}
+
+.devDreamLogo img {
+    height: 28px;
+    width: 100%;
+    padding-top: 2px;
+}
+
 /* Homepage Section */
 #homepage h1 {
     color: #333;
