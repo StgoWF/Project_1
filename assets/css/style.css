@@ -37,7 +37,7 @@ section {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-
+/* Styling for logos that are attached to the end of the main sections */
 .devDreamLogo {
     display: inline-block;
 }
