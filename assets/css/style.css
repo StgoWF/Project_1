@@ -140,3 +140,13 @@ footer {
 #userAccount input[type=submit]:hover {
     background-color: #218838; /* Darker green on hover, like the search button */
 }
+
+/*for message at the bottom of login and make an account */
+.para-2{
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+}
+ .para-2 a{
+    color: blue;
+ }
