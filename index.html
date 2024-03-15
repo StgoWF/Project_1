@@ -4,11 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TailorMyTrip</title>
-    <!-- Add your CSS file link here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    
 </head>
 <body>
+    <!-- Section for user account creation -->
+    <section id="userAccount">
+        <h2>Create an Account</h2>
+        <form action="/create_account" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Create Account">
+        </form>
+    </section>
+
     <!-- Navigation Bar -->
     <nav>
         <a href="/">Home</a>
@@ -64,5 +78,6 @@
     </footer>
 
     <!-- Add your JavaScript file link here -->
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
