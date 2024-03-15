@@ -123,3 +123,51 @@ body {
         flex-direction: column;
     }
 }
+/* Account Creation Section */
+#userAccount {
+    background-color: #ffffff; /* Match other sections' background */
+    padding: 20px; /* Consistent padding with other sections */
+    margin: 20px 0; /* Consistent margin */
+    border-radius: 5px; /* Consistent border radius */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Consistent box shadow */
+    max-width: 400px; /* Set a max-width for the form */
+    margin-left: auto; /* Center the form section */
+    margin-right: auto;
+}
+
+#userAccount h2 {
+    color: #333; /* Heading color similar to homepage heading */
+    margin-bottom: 16px; /* Space below heading */
+}
+
+#userAccount form {
+    display: flex;
+    flex-direction: column;
+}
+
+#userAccount label {
+    font-weight: bold; /* Bold label text */
+    margin-bottom: 8px; /* Space below label */
+}
+
+#userAccount input[type=text],
+#userAccount input[type=password] {
+    padding: 10px;
+    margin-bottom: 16px; /* Space below inputs */
+    border: 1px solid #ccc; /* Border color consistent with light design */
+    border-radius: 4px; /* Slight rounding of corners on inputs */
+}
+
+#userAccount input[type=submit] {
+    padding: 10px;
+    background-color: #28a745; /* Button color consistent with search button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth background color transition for hover */
+}
+
+#userAccount input[type=submit]:hover {
+    background-color: #218838; /* Darker green on hover, like the search button */
+}
