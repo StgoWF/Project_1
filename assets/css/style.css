@@ -1,93 +1,90 @@
-/* Basic Reset */
-* {
-    box-sizing: border-box;
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+    background: #f4f4f4;
     color: #333;
-    background-color: #f4f4f4;
-    padding: 20px;
 }
 
 /* Navigation Bar */
 nav {
-    background: #007bff;
-    color: #ffffff;
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    margin-bottom: 20px;
+    background-color: #008cba;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
 }
 
 nav a {
-    color: #ffffff;
+    color: white;
+    padding: 14px 20px;
     text-decoration: none;
-    font-weight: bold;
+    display: inline-block;
 }
 
-/* Section Styling */
+nav a:hover {
+    background-color: #005f73;
+}
+
+/* Section Styles */
 section {
-    margin: 20px 0;
-    background: #ffffff;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 20px;
+}
+
+h1, h2 {
+    color: #005f73;
 }
 
 /* Homepage Section */
+#homepage {
+    background: url('your-image-url.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 60px;
+    text-align: center;
+}
+
 #homepage h1 {
-    color: #333;
-}
-
-#search-form input[type=text],
-#search-form input[type=date],
-#search-form button {
-    padding: 10px;
-    margin: 10px 0;
-    display: block;
-    width: 100%;
-}
-
-#search-form button {
-    background: #28a745;
     color: white;
-    border: 0;
-    cursor: pointer;
 }
 
-#search-form button:hover {
-    background: #218838;
+/* Google-like Search Bar */
+#search-form {
+    text-align: center;
+    padding: 20px;
 }
 
-/* Destination Suggestions & Detailed Destination */
-#destination-suggestions h2,
-#detailed-destination h2 {
-    color: #007bff;
+#search-form input[type=text] {
+    width: 50%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #d4d4d4;
+    border-radius: 24px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    font-size: 16px;
 }
 
-/* Customization & Booking Section */
-#customization-booking {
-    background-color: #e9ecef;
+#search-form input[type=text]:focus {
+    outline: none;
+    border-color: #4d90fe;
+    box-shadow: 0 0 8px rgba(77, 144, 254, 0.5);
 }
 
-/* My Plans Section */
-#my-plans {
-    background-color: #fff3cd;
-}
-
-/* Support/Help Section */
-#support {
-    background-color: #f8d7da;
+/* Icon Styles */
+.icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
 }
 
 /* Footer */
 footer {
+    background-color: #333;
+    color: white;
     text-align: center;
-    margin-top: 20px;
-    font-size: 0.8em;
-    color: #666;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
