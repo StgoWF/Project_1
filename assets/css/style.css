@@ -119,7 +119,8 @@ footer {
 }
 
 #userAccount input[type=text],
-#userAccount input[type=password] {
+#userAccount input[type=password],
+#userAccount input[type=email] {
     padding: 10px;
     margin-bottom: 16px; /* Space below inputs */
     border: 1px solid #ccc; /* Border color consistent with light design */
