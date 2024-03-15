@@ -10,10 +10,12 @@
 <body>
     <!-- Navigation Bar -->
     <nav>
-        <a href="/">Home</a>
-        <a href="/destinations">Destinations</a>
-        <a href="/myplans">My Plans</a>
-        <a href="/support">Support</a>
+        <div class="logo">Home</div>
+        <div class="nav-items">
+            <a href="/destination">Destination</a>
+            <a href="/myplans">My Plans</a>
+            <a href="/support">Support</a>
+        </div>
     </nav>
 
     <!-- Homepage Section -->
@@ -24,6 +26,19 @@
             <input type="date" name="start-date">
             <input type="date" name="end-date">
             <button type="submit">Search</button>
+        </form>
+    </section>
+    <!-- Make an account -->
+    <section id="userAccount">
+        <h2>Create an Account</h2>
+        <form action="/create_account" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Create Account">
         </form>
     </section>
 
