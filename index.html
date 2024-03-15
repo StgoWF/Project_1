@@ -4,19 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TailorMyTrip</title>
-    <!-- Add your CSS file link here -->
-    <link rel="stylesheet" href="./style1.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 <body>
+    <!-- Section for user account creation -->
+
+    <!-- <section id="userAccount">
+        <h2>Create an Account</h2>
+        <form action="/create_account" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Create Account">
+        </form>
+    </section> -->
+
     <!-- Navigation Bar -->
     <nav>
-        <div class="logo">logo</div>
-        <div class="nav-items">
-            <a href="/home">Home</a>
-            <a href="/destination">Destination</a>
-            <a href="/myplans">My Plans</a>
-            <a href="/support">Support</a>
-        </div>
+        <a href="/">Home</a>
+        <a href="/destinations">Destinations</a>
+        <a href="/myplans">My Plans</a>
+        <a href="/support">Support</a>
+        <a href="indexCA.html">Create Account</a>
     </nav>
 
     <!-- Homepage Section -->
@@ -24,6 +38,7 @@
         <h1>Welcome to TailorMyTrip</h1>
         <form id="search-form">
             <input type="text" placeholder="Destination" name="destination">
+            <input type="text" placeholder="Price Range" name="priceRange">
             <input type="date" name="start-date">
             <input type="date" name="end-date">
             <button type="submit">Search</button>
@@ -97,5 +112,6 @@
     </footer>
 
     <!-- Add your JavaScript file link here -->
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
