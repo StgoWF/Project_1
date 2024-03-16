@@ -214,6 +214,7 @@ footer {
 #userAccount h2 {
     color: #333; /* Heading color similar to homepage heading */
     margin-bottom: 16px; /* Space below heading */
+    text-align: center;
 }
 
 #userAccount form {
