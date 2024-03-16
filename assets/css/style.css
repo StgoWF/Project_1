@@ -3,13 +3,78 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    text-align: center;
+}
+html, body {
+    height: 100%; /* Ensures that the html and body take up the full viewport height */
+    margin: 0; /* Reset default margin */
+    display: flex;
+    flex-direction: column; /* Stacks children elements vertically */
+
 }
 
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    background: #fff;
+body > header {
+    /* Your existing styles for the header */
+    top: 0px;
+    left: 1px;
+    height: 95px;
+    background-color: #efea38;
+    border-bottom: 1px solid #f0f0f0;
+    box-sizing: border-box;
+    padding: 10px 20px; /* Padding for better spacing */
+    display: flex;
 }
+
+body > main {
+    flex: 1; /* Allows the main content to grow and take available space, pushing the footer down */
+}
+
+body > footer {
+    flex-shrink: 0; /* Prevents the footer from shrinking smaller than its content */
+    width: 100%; /* Makes the footer take full width of the page */
+    /* Your existing zstyles for the footer */
+    max-width: 600px;
+}
+body {
+    max-width: 1220px; /* or any other value you prefer */
+    margin: 0 auto; /* This will center your page if it's narrower than the max-width */
+}
+
+.container {
+    max-width: 1200px; /* This is an example; you can set it to the width you prefer */
+
+}
+
+
+
+  
+
+/* Align the navigation container to the right */
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-left: auto;
+}
+
+/* Add margin between navigation links */
+header nav a {
+    margin-right: 10px;
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Set link color */
+}
+
+
+  
+/* Footer container */
+footer {
+    display: flex; /* Use flexbox for positioning */
+    justify-content: center; 
+    align-items: center; /* Align items vertically */
+    padding: 20px; /* Add padding as needed */
+    background-color: rgb(255, 255, 255); /* Set the background color */
+    border-top: 1px solid rgb(240, 240, 240); /* Add a top border for visual separation */
+  }
 
 /* Google-style Search Bar */
 #search-form {
@@ -23,6 +88,7 @@ nav a {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
+    text-align: left;
 }
 
 /* Section Styling */
@@ -124,13 +190,16 @@ section {
     background-color: #f8d7da;
 }
 
-/* Footer */
+/* Footer styles */
 footer {
+    background-color: rgb(255, 255, 255);
+    border-top: 1px solid rgb(240, 240, 240);
+    padding: 20px;
     text-align: center;
-    margin-top: 20px;
-    font-size: 0.8em;
-    color: #666;
+    flex-shrink: 0; /* Don't shrink the footer */
+    
 }
+
 /* login box*/
 .login-box{
     /*width: 360px;
@@ -259,3 +328,172 @@ footer {
  .para-2 a{
     color: blue;
  }
+
+
+ /* Styling for the container holding the search form */
+#search-form-container {
+    
+    top: 95px;
+    left: 0;
+    bottom: 0; /* Make the box occupy the full height of the page */
+    width: 300px; /* Width of the box */
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    display: flex;
+    flex-direction: column; /* Display items stacked vertically */
+    border-radius: 46px;
+    flex: 1;
+}
+
+/* Styling for the content inside the box */
+#search-form {
+    display: flex;
+    flex-direction: column; /* Display items stacked vertically */
+    gap: 10px; /* Spacing between elements */
+}
+
+#search-form button {
+    width: 100%; /* Use full width of the box */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+}
+#search-form button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+#search-form button:hover {
+    background-color: #0056b3;
+}
+
+.search-container {
+    display: flex;
+}
+
+
+
+
+
+
+/* Logo styles, assuming the logo is inline with other elements and not absolutely positioned */
+.logo-and-icon {
+    display: flex; /* Enables flexbox layout */
+    align-items: center; /* Align logo text and icon vertically */
+    gap: 5px;
+}
+.logo-icon {
+  /* top: 29px; /* Adjust top position */
+  /* left: 24px; Adjust left position */ 
+  width: 24px;
+  height: 32px;
+}
+
+/* Logo text styles */
+.logo-text {
+    top: 29px; /* Adjust top position */
+    left: 54px; /* Adjust left position */
+    font-size: 18px; /* Font size */
+    font-weight: 700; /* Font weight */
+    line-height: 21px; /* Line height */
+  }
+/* Styling for text elements */
+.text {
+    color: #030303; /* Text color */
+    font-size: 16px; /* Font size */
+    font-weight: 400; /* Font weight */
+    line-height: 19px; /* Line height */
+  }
+
+.icon {
+    fill: #030303;
+    }
+
+
+/* New Flex Container */
+.flex-container {
+    display: flex;
+    justify-content: start; /* Align children to the start of the container */
+}
+/* Update your .card class */
+.card {
+    /* Remove absolute positioning if present */
+    width: calc(33.333% - 20px); /* This will fit three cards per row, accounting for the gap */
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Remove top, left properties if they were previously there */
+}
+
+/* You might want to adjust the width of the homepage section to fit the search form */
+#homepage {
+    flex: 1;
+    padding-right: 20px; /* If you want some space between search form and cards */
+}
+
+
+
+/* Container for the destination cards to align them in a column */
+#popular-destinations-section {
+    display: flex;
+    flex-direction: column; /* Stacks cards vertically */
+    align-items: center; /* Center cards horizontally */
+    padding: 20px;
+    flex: 1;
+    /* Remove max-width if you want the container to be full-width */
+}
+
+
+/* Container for cards */
+.destinations-container {
+    display: flex;
+    justify-content: space-around; /* Evenly distributes cards with space around them */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line */
+}
+
+.card {
+    width: 200px; /* Example width, adjust as necessary */
+    height: 200px; /* Example height, adjust as necessary */
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    margin-bottom: 20px; /* Margin at the bottom of each card */
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Add the following if you want the cards to have a max-width and be centered */
+    max-width: 300px;
+    align-self: center; /* This will center the cards if the container is wider */
+}
+/* Ensure the container of the cards uses flexbox to layout its children */
+.destinations-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+}
+/* Container for cards */
+.destinations-container {
+    display: flex;
+    justify-content: space-around; /* Evenly distributes cards with space around them */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .card {
+        /* Adjusts to 2 cards per row on smaller screens */
+        flex-basis: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        /* Adjusts to 1 card per row on the smallest screens */
+        flex-basis: 100%;
+    }
+}

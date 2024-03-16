@@ -4,108 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TailorMyTrip</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 <body>
-    <!-- Section for user account creation -->
+   
 
-    <!-- <section id="userAccount">
-        <h2>Create an Account</h2>
-        <form action="/create_account" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+    <!-- Header Section -->
+    <header>
+        <!-- TaylorMyTrip Logo and Icon -->
+        <div class="logo-and-icon">
+            <img src="./assets/images/icons/earth-americas.svg" alt="Logo Icon" class="icon logo-icon">
+            <span class="text logo-text">TaylorMyTrip</span>
+        </div>
+        <!-- Navigation Bar -->
+        <nav>
+            <a href="/">Home</a>
+            <a href="/destinations">Destinations</a>
+            <a href="/support">Support</a>
+            <a href="/my-plans">My Plans</a>
+            <a href="indexCA.html">Create Account</a>
+        </nav>
+    </header>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+    <!-- Main Content Section -->
+    <main class="flex-container"> <!-- Flex container to lay out main content -->
 
-            <input type="submit" value="Create Account">
-        </form>
-    </section> -->
+        <!-- Search Section -->
+        <div class="search-container"> <!-- Search section container -->
+            <!-- Search Form Container -->
+            <div id="search-form-container">
+                <!-- Search Form -->
+                <label for="flight-search">Search for a flight</label>
+                <form id="search-form">
+                    <input type="text" placeholder="Destination" name="destination" required>
+                    <input type="text" placeholder="Price Range" name="priceRange" required>
+                    <input type="date" name="start-date" required>
+                    <input type="date" name="end-date" required>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="/">Home</a>
-        <a href="/destinations">Destinations</a>
-        <a href="/myplans">My Plans</a>
-        <a href="/support">Support</a>
-        <a href="indexCA.html">Create Account</a>
-    </nav>
+        <!-- Popular Destinations Section -->
+        <section id="popular-destinations-section">
+            <h2>Popular Destinations</h2>
+            <div class="destinations-container"> <!-- Container for cards -->
+                <div class="card">
+                    <h3>London</h3>
+                    <p>The historic capital of the United Kingdom</p>
+                </div>
+                <div class="card">
+                    <h3>Paris</h3>
+                    <p>The romantic city of lights and love</p>
+                </div>
+                <div class="card">
+                    <h3>Tokyo</h3>
+                    <p>The bustling metropolis with a blend of the traditional and the ultra-modern</p>
+                </div>
+                <div class="card">
+                    <h3>New York</h3>
+                    <p>The city that never sleeps with its iconic skyline</p>
+                </div>
+                <div class="card">
+                    <h3>Rome</h3>
+                    <p>The eternal city with its ancient history and vibrant culture.</p>
+                </div>
+                <div class="card">
+                    <h3>Sydney</h3>
+                    <p>Home to the iconic Opera House and stunning harbor views.</p>
+                </div>
+                <div class="card">
+                    <h3>Cape Town</h3>
+                    <p>A city with a stunning coastline and majestic Table Mountain backdrop.</p>
+                </div>
+                <div class="card">
+                    <h3>Rio de Janeiro</h3>
+                    <p>Famous for its carnival, Christ the Redeemer statue, and Copacabana Beach.</p>
+                </div>
+                
+            </div>
+            
+                
+        </section>
 
-    <!-- Homepage Section -->
-    <section id="homepage">
-        <h1>Welcome to TailorMyTrip ✈️</h1>
-        <form id="search-form">
-            <input type="text" placeholder="Destination" name="destination">
-            <input type="text" placeholder="Price Range" name="priceRange">
-            <input type="date" name="start-date">
-            <input type="date" name="end-date">
-            <button type="submit">Search</button>
-        </form>
-    </section>
-    <!-- Make an account -->
-    <!--<section id="userAccount">
-        <h2>Create an Account</h2>
-        <form action="/create_account" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+    </main> <!-- Cerramos la etiqueta main aquí -->
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-
-            <input type="submit" value="Create Account">
-        </form>
-    </section> -->
-    <!-- login box-->
-    <div class="login-box">
-        <h2>Login</h2> 
-        <form>
-            <label>Email</label>
-            <input type="email" placeholder="">
-            <label>Password</label>
-            <input type="password" placeholder="">
-            <input type="button" value="Submit">
-        </form>
-        <p class="para-2">Don't have an account? <a href="indexCA.html">Sign Up Here</a></p>
-    </div> 
-
-    <!-- Destination Suggestions Section -->
-    <section id="destination-suggestions">
-        <h2>Destination Suggestions <div class="devDreamLogo"> <img src="./assets/images/TailorMyTrips Logo.png" alt="Blue circle with clouds"> </div></h2>
-        <!-- Dynamic list of destinations will go here -->
-    </section>
-
-    <!-- Detailed Destination Section -->
-    <section id="detailed-destination">
-        <h2>Detailed Destination Information <div class="devDreamLogo"> <img src="./assets/images/TailorMyTrips Logo.png" alt="Blue circle with clouds"> </div></h2>
-        <!-- Detailed information including accommodation, activities, flights, and map -->
-    </section>
-
-    <!-- Customization & Booking Section -->
-    <section id="customization-booking">
-        <h2>Customize and Book Your Trip <div class="devDreamLogo"> <img src="./assets/images/TailorMyTrips Logo.png" alt="Blue circle with clouds"> </div></h2>
-        <!-- Booking forms and price summary -->
-    </section>
-
-    <!-- My Plans Section -->
-    <section id="my-plans">
-        <h2>My Plans <div class="devDreamLogo"> <img src="./assets/images/TailorMyTrips Logo.png" alt="Blue circle with clouds"> </div></h2>
-        <!-- List of saved trips -->
-    </section>
-
-    <!-- Support/Help Section -->
-    <section id="support">
-        <h2>Need Help? ⚠️</h2>
-        <!-- FAQ and contact form -->
-    </section>
-
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer>
         <p>© 2024 TailorMyTrip. All rights reserved.</p>
     </footer>
 
-    <!-- Add your JavaScript file link here -->
+    <!-- JavaScript file link -->
     <script src="./assets/js/script.js"></script>
+
 </body>
 </html>
