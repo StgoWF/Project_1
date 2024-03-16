@@ -5,9 +5,12 @@ body {
   min-height: 100vh; /* This makes sure that the body is at least the height of the viewport */
 }
 
-/* Let the main content grow to fill the available space */
 main {
-  flex: 1;
+  flex: 1; /* This will allow the main content to grow and take up available space */
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
 }
 
 /* Header styles */
@@ -19,15 +22,15 @@ header {
   height: 91px; /* Adjust height as needed */
   background-color: #ffffff;
   border-bottom: 1px solid #f0f0f0;
+  flex-wrap: wrap; /* This will allow items to wrap to the next line on small screens */
+
 }
-
-
-
 
 /* Logo styles, assuming the logo is inline with other elements and not absolutely positioned */
 .logo-and-icon {
   display: flex; /* Enables flexbox layout */
   align-items: center; /* Align logo text and icon vertically */
+  gap: 5px;
 
 }
 
@@ -49,6 +52,7 @@ header {
   display: flex; /* Enables flexbox layout for child elements */
   align-items: center; /* Align child elements vertically */
   gap: 10px; /* Space between Log in, Sign in, and user icon */
+  margin-left:auto ;
 }
 
 
@@ -66,8 +70,11 @@ header {
 /* Options container */
 #options {
   display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content, if #options is the full height of the viewport */
+  flex-direction: row; /* Stack buttons vertically on smaller screens */
   gap: 20px; /* Spacing between the buttons */
-  justify-content: center; /* Center the buttons horizontally */
+  height: 100%; /* Full height for vertical centering */
 }
 
 /* Footer styles */
@@ -115,12 +122,6 @@ header {
   height: 24px; /* Ajusta la altura según sea necesario */
 }
 
-
-
-
-
-
-
 /* Styling for text elements */
 .text {
   color: #030303; /* Text color */
@@ -138,13 +139,18 @@ header {
   line-height: 21px; /* Line height */
 }
 
+.choose-your-option {
+  margin-bottom: 20px; /* Add space below the "Choose Your Option" text */
+}
+
+
 /* Main header text "Choose Your Option" styles */
 .choose-your-option .text {
   color: #030303; /* Text color */
   font-size: 24px; /* Font size */
   font-weight: 700; /* Font weight */
   line-height: 28px; /* Line height */
-  position: absolute; /* Set position to absolute */
+
   top: 252px;
   left: 715px;
   transform: translateX(-50%); /* Center the text horizontally */
@@ -167,23 +173,24 @@ header {
 /* Styling for buttons */
 .button {
   cursor: pointer;
-  position: absolute; /* Set position to absolute */
-  width: 107px; /* Button width */
-  height: 104px; /* Button height */
-  padding: 0px 8px; /* Padding */
-  border: none; /* Remove border */
+  /* position: absolute; Remove this line */
+  width: 107px;
+  height: 104px;
+  padding: 0px 8px;
+  border: none;
   box-sizing: border-box;
-  border-radius: 12px; /* Border radius */
-  background-color: #030303; /* Background color */
-  color: #ffffff; /* Text color */
-  font-size: 16px; /* Font size */
-  line-height: 19px; /* Line height */
-  outline: none; /* Remove outline */
-  display: flex; /* Use flexbox for layout */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  flex-direction: column; /* Stack icon and text vertically */
+  border-radius: 12px;
+  background-color: #030303;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 19px;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+
 
 /* Hotel button styles */
 .hotel-button {
@@ -202,4 +209,47 @@ header {
   fill: #ffffff; /* Fill color */
   width: 36px; /* Icon width */
   height: 40px; /* Icon height */
+}
+
+/* Media Queries */
+
+/* Responsive adjustments for the header and #options */
+@media (max-width: 768px) { /* Adjustments for tablet and down to mobile */
+  header {
+    flex-direction: column; /* Stack the header items vertically */
+    align-items: center; /* Center-align the items */
+    gap: 10px; /* Add space between the stacked items */
+  }
+
+  .logo-and-icon, .user-actions {
+    justify-content: center; /* Center these elements when they stack */
+    width: 100%; /* Full width to center content */
+  }
+
+  /* Ensure buttons are always centered and have appropriate size */
+  .button {
+    width: 90%; /* Adjust width to be responsive */
+    max-width: 300px; /* Maximum width to avoid overly large buttons */
+    /* Other button styles remain the same */
+  }
+
+  #options {
+    flex-direction: column; /* Stack buttons vertically */
+    height: auto; /* Let the content define the height */
+  }
+
+  /* Add other responsive styling as needed */
+}
+
+@media (max-width: 480px) { /* Adjustments for mobile */
+  /* You can copy the same styles from above or make further adjustments specific to mobile */
+  
+  header {
+    padding: 1rem; /* Decrease padding on smaller screens */
+  }
+  
+  /* Adjust text sizes or other elements as needed for mobile */
+  .text {
+    font-size: 14px; /* Example of reducing text size for mobile */
+  }
 }
