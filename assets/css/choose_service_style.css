@@ -1,0 +1,205 @@
+/* Use flexbox on the body to create a column layout */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* This makes sure that the body is at least the height of the viewport */
+}
+
+/* Let the main content grow to fill the available space */
+main {
+  flex: 1;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between; /* This spaces out the logo and the user actions */
+  align-items: center; /* This centers items vertically within the header */
+  padding: 0 2rem; /* This adds padding on the left and right */
+  height: 91px; /* Adjust height as needed */
+  background-color: #ffffff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+
+
+
+/* Logo styles, assuming the logo is inline with other elements and not absolutely positioned */
+.logo-and-icon {
+  display: flex; /* Enables flexbox layout */
+  align-items: center; /* Align logo text and icon vertically */
+
+}
+
+.logo-icon {
+  /* top: 29px; /* Adjust top position */
+  /* left: 24px; Adjust left position */ 
+  width: 24px;
+  height: 32px;
+}
+
+.user-icon {
+  /* If the user icon needs to be a specific size, specify it here */
+  width: 24px;
+  height: 32px;
+  margin-left: auto; /* This pushes the user icon to the right */
+}
+/* User Actions: Log in and Sign in, along with user icon */
+.user-actions {
+  display: flex; /* Enables flexbox layout for child elements */
+  align-items: center; /* Align child elements vertically */
+  gap: 10px; /* Space between Log in, Sign in, and user icon */
+}
+
+
+
+/* Log in and Sign in text styles */
+.login-text, .signin-text {
+  /* Add your text styling here, such as font size, color, etc. */
+  /* If you want them to look like links, you could add: */
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+
+/* Options container */
+#options {
+  display: flex;
+  gap: 20px; /* Spacing between the buttons */
+  justify-content: center; /* Center the buttons horizontally */
+}
+
+/* Footer styles */
+.footer {
+  position: relative;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border-top: 1px solid rgb(240, 240, 240);
+
+}
+
+/* Styling for logo and icons */
+.icon {
+  fill: #030303; /* Adjust icon color */
+}
+
+
+/* Separate containers for each social icon */
+.facebook-icon-container,
+.twitter-icon-container,
+.instagram-icon-container {
+  position: absolute;
+  bottom: 20px; /* Adjust vertical position */
+}
+/* Styles for the Facebook icon container */
+.facebook-icon-container {
+  left: 1326px; /* Adjust horizontal position */
+}
+
+/* Styles for the Twitter icon container */
+.twitter-icon-container {
+  left: 1362px; /* Adjust horizontal position */
+}
+
+/* Styles for the Instagram icon container */
+.instagram-icon-container {
+  left: 1398px; /* Adjust horizontal position */
+}
+/* Estilos para los íconos dentro de los contenedores */
+.facebook-icon-container img,
+.twitter-icon-container img,
+.instagram-icon-container img {
+  width: 24px; /* Ajusta el ancho según sea necesario */
+  height: 24px; /* Ajusta la altura según sea necesario */
+}
+
+
+
+
+
+
+
+/* Styling for text elements */
+.text {
+  color: #030303; /* Text color */
+  font-size: 16px; /* Font size */
+  font-weight: 400; /* Font weight */
+  line-height: 19px; /* Line height */
+}
+
+/* Logo text styles */
+.logo-text {
+  top: 29px; /* Adjust top position */
+  left: 54px; /* Adjust left position */
+  font-size: 18px; /* Font size */
+  font-weight: 700; /* Font weight */
+  line-height: 21px; /* Line height */
+}
+
+/* Main header text "Choose Your Option" styles */
+.choose-your-option .text {
+  color: #030303; /* Text color */
+  font-size: 24px; /* Font size */
+  font-weight: 700; /* Font weight */
+  line-height: 28px; /* Line height */
+  position: absolute; /* Set position to absolute */
+  top: 252px;
+  left: 715px;
+  transform: translateX(-50%); /* Center the text horizontally */
+}
+
+/* Footer text styles */
+.footer-text .text {
+  margin: 0 10px; /* Add horizontal spacing between footer items */
+  padding: 5px; /* Add padding to make it look nicer */
+}
+
+/* User action text styles */
+.user-actions .text {
+  
+  top: 29px; /* Adjust top position */
+  right: 100px; /* Adjust right position */
+  font-size: 16px; /* Font size */
+}
+
+/* Styling for buttons */
+.button {
+  cursor: pointer;
+  position: absolute; /* Set position to absolute */
+  width: 107px; /* Button width */
+  height: 104px; /* Button height */
+  padding: 0px 8px; /* Padding */
+  border: none; /* Remove border */
+  box-sizing: border-box;
+  border-radius: 12px; /* Border radius */
+  background-color: #030303; /* Background color */
+  color: #ffffff; /* Text color */
+  font-size: 16px; /* Font size */
+  line-height: 19px; /* Line height */
+  outline: none; /* Remove outline */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-direction: column; /* Stack icon and text vertically */
+}
+
+/* Hotel button styles */
+.hotel-button {
+  top: 308px; /* Adjust top position */
+  left: 588px; /* Adjust left position */
+}
+
+/* Flight button styles */
+.flight-button {
+  top: 308px; /* Adjust top position */
+  left: 743px; /* Adjust left position */
+}
+
+/* Adjust SVG icon styles */
+.button .icon {
+  fill: #ffffff; /* Fill color */
+  width: 36px; /* Icon width */
+  height: 40px; /* Icon height */
+}
