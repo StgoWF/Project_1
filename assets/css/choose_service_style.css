@@ -75,16 +75,17 @@ header {
   flex-direction: row; /* Stack buttons vertically on smaller screens */
   gap: 20px; /* Spacing between the buttons */
   height: 100%; /* Full height for vertical centering */
+  scale: 150%;
 }
 
-/* Footer styles */
+/* Footer container */
 .footer {
-  position: relative;
-  width: 100%;
-  background-color: rgb(255, 255, 255);
-  padding: 20px;
-  border-top: 1px solid rgb(240, 240, 240);
-
+  display: flex; /* Use flexbox for positioning */
+  justify-content: space-between; /* Space out the footer text and social icons */
+  align-items: center; /* Align items vertically */
+  padding: 20px; /* Add padding as needed */
+  background-color: rgb(255, 255, 255); /* Set the background color */
+  border-top: 1px solid rgb(240, 240, 240); /* Add a top border for visual separation */
 }
 
 /* Styling for logo and icons */
@@ -93,33 +94,39 @@ header {
 }
 
 
-/* Separate containers for each social icon */
-.facebook-icon-container,
-.twitter-icon-container,
-.instagram-icon-container {
-  position: absolute;
-  bottom: 20px; /* Adjust vertical position */
-}
-/* Styles for the Facebook icon container */
-.facebook-icon-container {
-  left: 1326px; /* Adjust horizontal position */
+
+/* Social icons container */
+.footer .facebook-icon-container,
+.footer .twitter-icon-container,
+.footer .instagram-icon-container {
+  /* As these are direct children of the .footer container now, 
+     we don't need to position them absolutely */
+  display: flex; /* Use flex to position the icons */
 }
 
-/* Styles for the Twitter icon container */
-.twitter-icon-container {
-  left: 1362px; /* Adjust horizontal position */
+/* Social icons grouping */
+.footer .facebook-icon-container,
+.footer .twitter-icon-container,
+.footer .instagram-icon-container {
+  margin-left: auto; /* This will push the social icons to the right */
 }
 
-/* Styles for the Instagram icon container */
-.instagram-icon-container {
-  left: 1398px; /* Adjust horizontal position */
+/* Styles for the social icons within the containers */
+.footer .facebook-icon-container img,
+.footer .twitter-icon-container img,
+.footer .instagram-icon-container img {
+  width: 24px; /* Set the width */
+  height: 24px; /* Set the height */
+  /* If you want some space between the icons add margin here */
+  margin-right: 10px; /* Example margin */
 }
-/* Estilos para los íconos dentro de los contenedores */
-.facebook-icon-container img,
-.twitter-icon-container img,
-.instagram-icon-container img {
-  width: 24px; /* Ajusta el ancho según sea necesario */
-  height: 24px; /* Ajusta la altura según sea necesario */
+
+/* Container for the social icons */
+.social-icons {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Push the container to the right */
+  gap: 10px; /* Adjust the gap between icons as needed, smaller value brings them closer */
 }
 
 /* Styling for text elements */
@@ -140,7 +147,8 @@ header {
 }
 
 .choose-your-option {
-  margin-bottom: 20px; /* Add space below the "Choose Your Option" text */
+  margin-bottom: 97px;
+  scale: 161%;
 }
 
 
@@ -157,9 +165,10 @@ header {
 }
 
 /* Footer text styles */
-.footer-text .text {
-  margin: 0 10px; /* Add horizontal spacing between footer items */
-  padding: 5px; /* Add padding to make it look nicer */
+.footer-text {
+  display: flex; /* Align footer text items in a row */
+  gap: 30px; /* Space between items */
+  /* Add any additional styles you might need for the text */
 }
 
 /* User action text styles */
