@@ -82,6 +82,7 @@ footer {
     justify-content: space-around;
     padding: 10px;
     margin-bottom: 20px;
+    
 }
 
 nav a {
@@ -175,14 +176,15 @@ section {
 
 /* Flight search input group */
 .flight-search-group {
-    display: flex;
-    align-items: center;
+    display: flex; 
     justify-content: space-between;
     padding: 10px;
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 999px;
     width: fit-content;
+
+
 }
 
 /* Support/Help Section */
@@ -197,24 +199,93 @@ footer {
     padding: 20px;
     text-align: center;
     flex-shrink: 0; /* Don't shrink the footer */
+}
     
+/* new login */
+
+.login-box {
+    width: 300px;
+    height: fit-content;
+    float: left;
+    margin: 60px auto 0;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    padding: 35px;
+    border: 3px solid #fff;
+    border-radius: 70px 0 70px 0;
+    
+
+}
+.login-box h2{
+    margin-bottom: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.login-box input[type=email],
+.login-box input[type=password]{
+    width: auto;
+    height: 40px;
+    border-radius: 15px 0 15px 0;
+    border: 2px solid #fff;
+    margin-bottom: 15px;
+    background: transparent;
+    color: #fff;
+    padding: 20px;
 }
 
-/* login box*/
+.login-box label{
+    text-align: left;
+    color: black;
+    padding: 40px;
+}
+.login-box p,
+.login-box a{
+    text-align: left;
+    color: #fff; /* change to white*/
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.login-box input[type=button]{
+    display: inline-block;/* original block*/
+    height: 40px;
+    width: 150px;
+    line-height: 40px;
+    text-align: center;
+    background: deeppink;
+    border-radius: 25px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 5px;
+}
+.para-2{
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff;
+
+}
+
+/* login box
 .login-box{
-    /*width: 360px;
+    width: 360px;
     height: auto;
     margin: auto;
     border-radius: 5 px;
     padding: 20px;
     background-color: pink;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     display: flex;
     flex-wrap: warp;
     width: 50%;
     padding-bottom: 15px;
 }
-/*might delete*/
+/*might delete
 .login-box label{
     width: 95%;
     color: black;
@@ -225,7 +296,7 @@ footer {
 
 }
 
-.login-box h2{
+#login-text{
     color: black;
     margin-bottom: 16px; 
     text-align: auto;
@@ -239,7 +310,7 @@ footer {
     border: 1px solid #ccc; 
     border-radius: 7px;
     display: flex;
-    flex-direction: column;
+    flex-direction: auto;
 
 }
 .login-box form {
@@ -248,7 +319,7 @@ footer {
 }
 .login-box input[type=button] {
     padding: 10px;
-    background-color: #28a745; /* Button color consistent with search button */
+    background-color: #28a745; /* Button color consistent with search button 
     color: white;
     border: none;
     background: rgba(63, 144, 76 ,0.7);
@@ -266,7 +337,16 @@ footer {
         min-width: 280px;
     
     }
+} 
+/*for message at the bottom of login and make an account 
+.para-2{
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
 }
+ .para-2 a{
+    color: blue;
+ }*/
 
 /* Account Creation Section */
 #userAccount {
@@ -318,17 +398,6 @@ footer {
 #userAccount input[type=submit]:hover {
     background-color: #218838; /* Darker green on hover, like the search button */
 }
-
-/*for message at the bottom of login and make an account */
-.para-2{
-    text-align: center;
-    font-size: 15px;
-    margin-top: 10px;
-}
- .para-2 a{
-    color: blue;
- }
-
 
  /* Styling for the container holding the search form */
 #search-form-container {
