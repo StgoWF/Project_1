@@ -4,21 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flight Search Engine</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Searchengine.css">
 </head>
 <body>
     <div class="wrapper">
         <!-- Side search panel -->
         <aside class="search-panel">
             <h2>Your Flight Search</h2>
-            <div class="input-group">
-                <label for="from">From</label>
-                <input type="text" id="from" placeholder="Enter departure city">
-            </div>
-            <div class="input-group">
-                <label for="to">To</label>
-                <input type="text" id="to" placeholder="Enter destination city">
-            </div>
             <div class="input-group">
                 <label for="trip-type">Trip Type</label>
                 <select id="trip-type">
@@ -28,8 +20,27 @@
                 </select>
             </div>
             <div class="input-group">
-                <label for="passengers">Passengers</label>
-                <div class="passenger-dropdown">
+                <label for="from">From</label>
+                <input type="text" id="from" placeholder="Enter departure city">
+            </div>
+            <div class="input-group">
+                <label for="to">To</label>
+                <input type="text" id="to" placeholder="Enter destination city">
+            </div>
+            <div class="input-group">
+                <label for="depart-date">Depart Date</label>
+                <input type="date" id="depart-date">
+            </div>
+            <div class="input-group" id="return-date-group">
+                <label for="return-date">Return Date</label>
+                <input type="date" id="return-date">
+            </div>
+            <div id="multi-city-container"></div>
+            <div class="input-group" id="passengerDropdownHolder">
+                <label for="passengerDropdown">Passengers</label>
+                <button id="passengerDropdown" class="passenger-btn">Select Passengers</button>
+            
+                <div class="passenger-dropdown-content" id="passengerDropdownContent" style="display:none;">
                     <div class="passenger-count">
                         <label for="adults">Adults</label>
                         <button type="button" class="quantity-btn decrease" onclick="modifyQuantity('adults', -1)">-</button>
@@ -67,6 +78,8 @@
             <!-- Content here -->
         </main>
     </div>
-    <script src="scriptpt.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <!-- jQuery UI <script> tag -->
+    <script src="Searchengine.js"></script>
 </body>
 </html>
