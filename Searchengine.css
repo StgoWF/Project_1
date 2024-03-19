@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, input, select, button {
+    font-family: 'Arial', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.search-panel {
+    width: 300px; /* adjust as needed */
+    background: #fff;
+    padding: 20px;
+    height: 100vh; /* full height */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.search-panel h2 {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input[type=text], .input-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.passenger-btn, .search-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.passenger-btn:after {
+    content: '▼';
+    float: right;
+}
+
+/* ... [previous CSS] ... */
+
+.passenger-dropdown {
+    display: block; /* Change this to 'none' and toggle to 'block' when the passenger button is clicked */
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.passenger-count {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.passenger-count label {
+    flex-grow: 1;
+}
+
+.quantity-btn {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.quantity-btn:hover {
+    background-color: #e2e2e2;
+}
+
+.passenger-count input[type=number] {
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+/* ... [additional CSS] ... */
+
+
+.content-panel {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* Add responsive and interactive styles as needed */
