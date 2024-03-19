@@ -76,6 +76,10 @@ footer {
     border-top: 1px solid rgb(240, 240, 240); /* Add a top border for visual separation */
   }
 
+  footer a {
+    text-decoration: none;
+  }
+
 /* Google-style Search Bar */
 #search-form {
     display: flex;
@@ -378,7 +382,9 @@ footer {
 
 #userAccount input[type=text],
 #userAccount input[type=password],
-#userAccount input[type=email] {
+#userAccount input[type=email]
+#userAccount input[type=issue],
+#userAccount input[type=description], {
     padding: 10px;
     margin-bottom: 16px; /* Space below inputs */
     border: 1px solid #ccc; /* Border color consistent with light design */
@@ -565,4 +571,9 @@ footer {
         /* Adjusts to 1 card per row on the smallest screens */
         flex-basis: 100%;
     }
+}
+/* Styling on need help submit button */
+
+.helpSubmit {
+    margin-top: 5px;
 }
