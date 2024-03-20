@@ -129,9 +129,12 @@ async function searchHotels(destId) {
                 <img class="card-image" src="${hotel.max_photo_url || 'default-image.jpg'}" alt="${hotel.hotel_name}">
               <div class="card-info">
                 <h3 class="hotel-name">${hotel.hotel_name || 'Name not available'}</h3>
-                <p class="hotel-address">${hotel.address || 'Address not available'}</p>
+                <p class="hotel-score">${hotel.review_score_word || 'Score not available'} ${hotel.review_score || ''}</p>
+                <p class="hotel-address">${hotel.distance_to_cc_formatted || 'Address not available'} from city center</p>
                 <p class="hotel-nights">${nights} ${nightText}</p>
-                <p class="hotel-price">Price: ${hotel.price_breakdown.all_inclusive_price || 'Price not available'} ${hotel.price_breakdown.currency || ''}</p>
+                <p class="hotel-price">${hotel.price_breakdown.all_inclusive_price || 'Price not available'} ${hotel.price_breakdown.currency || ''}</p>
+                <button onclick="saveToMyPlans('${hotel.hotel_id}');">Save to My Plans</button>
+                <a href="${hotel.url}" target="_blank"><button>Book on Booking.com</button></a>
             `; 
 
             
