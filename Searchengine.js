@@ -246,16 +246,26 @@ const searchData = {
     class: document.getElementById('class').value
 };
 console.log(searchData)
+GetAirportIDfromcity(searchData.to).then(function(ToID){
+    GetAirportIDfromcity(searchData.from).then(function(fromID){
+        console.log (ToID)
+        console.log (fromID)
 
-const url = 'https://booking-com15.p.rapidapi.com/api/v1/meta/getLanguages'; 
-
-fetch(url, {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(searchData)
+    })
 })
+}
+
+function GetAirportIDfromcity(city){
+const url = 'https://booking-com15.p.rapidapi.com/api/v1/flights/searchDestination?query='+city;
+var options = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': '8d3728dcaemsh32efdac6013419ap12f34bjsned7b35d9a858',
+        'X-RapidAPI-Host': 'booking-com15.p.rapidapi.com'
+    }
+};
+
+return fetch(url, options)
 .then(response => {
     if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -265,20 +275,15 @@ fetch(url, {
 .then(data => {
     // Process the response data from your API
     console.log(data);
+    var id= data.data[0].id
+
+return id
 })
 .catch(error => {
     console.error('There was a problem with the fetch operation:', error);
 });
-
-// Fetch data from Booking.com API.
-var options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': '8d3728dcaemsh32efdac6013419ap12f34bjsned7b35d9a858',
-        'X-RapidAPI-Host': 'booking-com15.p.rapidapi.com'
-    }
-};
 }
+
 async function fetchApiData() {
     try {
         console.log('Fetching API data...');
