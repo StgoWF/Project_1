@@ -47,7 +47,7 @@ main {
 }
 
 /* Cards inside Popular Destinations Section */
-.card {
+.card  {
     width: calc(100% - 40px); 
     margin: 10px 0;
     
@@ -57,6 +57,12 @@ main {
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     text-align: center; /* Center text inside cards */
+}
+/* change image size */
+
+.picture {    
+display: flex;
+align-items: center;
 }
 
 /* Account Creation Section */
@@ -89,7 +95,6 @@ font-family: 'TimesBold', 'Times New Roman', Times, serif; /* Add fallbacks for 
     font-weight: bold; /* Times-Bold is already a bold font, so ensure the weight is set accordingly */
     line-height: 21px;
     }
-
 /* Styling for the content inside the box */
 #search-form {
     display: flex;
@@ -161,3 +166,6 @@ footer {
         width: 90%; /* Increase width on small screens */
     }
 }
+
+/* Log In */
+

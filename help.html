@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a help ticket</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="content">
+        <section id="userAccount">
+            <h2>Submit a help ticket</h2>
+            <form action="/Submit_Ticket" method="post">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="issue">Issue:</label>
+                <input type="issue" id="issue" name="issue" required>
+
+                <label for="description">Description of Issue:</label>
+                <input type="description" id="description" name="description" required>
+                
+                <input class="helpSubmit" type="submit" value="Submit">
+            </form>
+        </section>
+    </div>
+</body>
