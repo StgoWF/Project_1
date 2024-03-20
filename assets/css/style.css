@@ -13,7 +13,6 @@ button {
 
 html, body {
     height: 100%; /* Ensures that the html and body take up the full viewport height */
-
     display: flex;
     flex-direction: column; /* Stacks children elements vertically */
 
