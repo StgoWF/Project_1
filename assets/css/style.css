@@ -40,10 +40,7 @@ body > footer {
     width: 100%; /* Makes the footer take full width of the page */
     /* Your existing zstyles for the footer */
 }
-body {
-    max-width: 1220px; /* or any other value you prefer */
 
-}
 
 .container {
     max-width: 1200px; /* This is an example; you can set it to the width you prefer */
@@ -69,14 +66,7 @@ header nav a {
     color: #333; /* Set link color */
 }
 
-/* Google-style Search Bar */
-#search-form {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    margin-bottom: 20px;
-    
-}
+
 
 nav a {
     color: #ffffff;
@@ -118,6 +108,8 @@ section {
     border-radius: 999px; /* Highly rounded corners */
     cursor: pointer;
     outline: none;
+    position: relative;
+    top: 26px;
 }
 
 #search-form button:hover {
@@ -403,7 +395,9 @@ section {
 #search-form {
     display: flex;
     flex-direction: column; /* Display items stacked vertically */
-    gap: 10px; /* Spacing between elements */
+    gap: 24px; /* Spacing between elements */
+    padding: 10px;
+
 }
 
 #search-form button {
@@ -519,7 +513,7 @@ section {
 }
 
 .card, #search-results .card  {
-    width: 100%; /* Example width, adjust as necessary */
+    width: 996px; /* Example width, adjust as necessary */
     height: auto; /* Example height, adjust as necessary */
     background-color: #f0f0f0;
     border-radius: 12px;
@@ -527,7 +521,7 @@ section {
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     /* Add the following if you want the cards to have a max-width and be centered */
-    max-width: 300px;
+    
     align-self: center; /* This will center the cards if the container is wider */
 }
 /* Ensure the container of the cards uses flexbox to layout its children */
@@ -544,15 +538,30 @@ section {
     flex-wrap: wrap; /* Allows cards to wrap to the next line */
 }
 
+.card-image {
+    width: 150px;
+    height: 155px;
+    /* border-radius: 12px; */
+    margin-right: 688px;
+    margin-top: 7px;
+  }
+  .card-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: -56px;
+    position: relative;
+    top: -70px;
+  }
+
 /* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .card {
         /* Adjusts to 2 cards per row on smaller screens */
         flex-basis: calc(50% - 20px);
     }
-}
+} */
 
-@media (max-width: 480px) {
+@media (max-width: 1480px) {
     .card {
         /* Adjusts to 1 card per row on the smallest screens */
         flex-basis: 100%;
