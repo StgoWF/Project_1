@@ -5,6 +5,12 @@
     padding: 0;
     text-align: center;
 }
+
+button {
+    background: none;
+    border: none;
+}
+
 html, body {
     height: 100%; /* Ensures that the html and body take up the full viewport height */
     margin: 0; /* Reset default margin */
@@ -86,16 +92,6 @@ section {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-/* Styling for logos that are attached to the end of the main sections */
-.devDreamLogo {
-    display: inline-block;
-}
-
-.devDreamLogo img {
-    height: 28px;
-    width: 100%;
-    padding-top: 2px;
 }
 
 /* Homepage Section */
