@@ -39,14 +39,13 @@ body > footer {
     width: 100%; /* Makes the footer take full width of the page */
     /* Your existing zstyles for the footer */
 }
-body {
-    max-width: 1220px; /* or any other value you prefer */
+/* body {
+    max-width: 1220px; or any other value you prefer
 
-}
+} */
 
 .container {
     max-width: 1200px; /* This is an example; you can set it to the width you prefer */
-
 }
 
 
