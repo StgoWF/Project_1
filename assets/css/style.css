@@ -584,3 +584,13 @@ footer {
 .helpSubmit {
     margin-top: 5px;
 }
+
+/* Footer Styling */
+
+footer {
+    background-color: #b8ef38;
+}
+
+p {
+    float: right;
+}
