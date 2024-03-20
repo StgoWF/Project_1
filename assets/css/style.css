@@ -364,10 +364,9 @@ section {
 
 #userAccount input[type=text],
 #userAccount input[type=password],
-#userAccount input[type=email]
+#userAccount input[type=email],
 #userAccount input[type=issue],
 #userAccount input[type=description] {
-    padding: 10px;
     margin-bottom: 16px; /* Space below inputs */
     border: 1px solid #ccc; /* Border color consistent with light design */
     border-radius: 4px; /* Slight rounding of corners on inputs */
