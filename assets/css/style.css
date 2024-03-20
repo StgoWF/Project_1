@@ -13,7 +13,7 @@ button {
 
 html, body {
     height: 100%; /* Ensures that the html and body take up the full viewport height */
-    margin: 0; /* Reset default margin */
+
     display: flex;
     flex-direction: column; /* Stacks children elements vertically */
 
@@ -42,7 +42,7 @@ body > footer {
 }
 body {
     max-width: 1220px; /* or any other value you prefer */
-    margin: 0 auto; /* This will center your page if it's narrower than the max-width */
+
 }
 
 .container {
