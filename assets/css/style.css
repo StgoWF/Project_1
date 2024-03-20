@@ -375,8 +375,18 @@ footer {
     display: flex;
 }
 
-
-
+.destination{
+    
+    
+    border-radius: 90px;
+    height: 200px;
+    width: 180px;
+}
+#london{
+    position: absolute;
+    top: 160px;
+    left: 354px;
+}
 
 
 
@@ -423,7 +433,7 @@ footer {
 .card {
     /* Remove absolute positioning if present */
     width: calc(33.333% - 20px); /* This will fit three cards per row, accounting for the gap */
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; 
     border-radius: 12px;
     margin-bottom: 20px;
     padding: 20px;
