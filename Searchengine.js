@@ -250,7 +250,7 @@ GetAirportIDfromcity(searchData.to).then(function(ToID){
     GetAirportIDfromcity(searchData.from).then(function(fromID){
         console.log (ToID)
         console.log (fromID)
-
+SearchflightAPI(fromID, ToID, searchData.departDate)
     })
 })
 }
@@ -299,3 +299,23 @@ async function fetchApiData() {
 }
 
 fetchApiData();
+
+async function SearchflightAPI (toID, fromID, departDate){
+    const url = `https://booking-com15.p.rapidapi.com/api/v1/flights/searchFlights?fromId=${fromID}&toId=${toID}&departDate=${departDate}`//&pageNo=1&adults=1&children=0%2C17&currency_code=AED`;
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '8d3728dcaemsh32efdac6013419ap12f34bjsned7b35d9a858',
+            'X-RapidAPI-Host': 'booking-com15.p.rapidapi.com'
+        }
+    };
+    
+    try {
+        const response = await fetch(url, options);
+        const result = await response.json();
+        console.log(result);
+        
+    } catch (error) {
+        console.error(error);
+    }
+}
