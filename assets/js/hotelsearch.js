@@ -10,11 +10,22 @@ const searchResultsSection = document.getElementById('search-results');
 // Function to hide popular destinations and show search results container
 function displaySearchResults() {
   console.log("Displaying search results...");
-  popularDestinationsSection.style.display = 'none'; // Hide popular destinations
-  searchResultsSection.style.display = 'flex'; // Show search results
-  searchResultsSection.style.flexDirection = 'column'; // Ensure results are displayed in a column
-  searchResultsSection.style.alignItems = 'center'; // Center align the results
+
+  // Hide the <h2> tag for popular destinations
+  const popularDestinationsTitle = document.getElementById('popular-destinations-title');
+  if (popularDestinationsTitle) {
+    popularDestinationsTitle.style.display = 'none';
+  }
+
+  // Hide the container of popular destinations
+  popularDestinationsSection.style.display = 'none';
+  
+  // Show the search results container
+  searchResultsSection.style.display = 'flex';
+  searchResultsSection.style.flexDirection = 'column';
+  searchResultsSection.style.alignItems = 'center';
 }
+
 
 // Event listener for the search form submission
 searchForm.addEventListener('submit', async function(event) {
@@ -63,17 +74,21 @@ async function fetchLocationId(destination) {
   }
 }
 
-  
+// Function to calculate the number of nights between two dates
+function calculateNights(checkInDate, checkOutDate) {
+  const checkIn = new Date(checkInDate);
+  const checkOut = new Date(checkOutDate);
+  const millisecondsPerDay = 1000 * 60 * 60 * 24;
+  return Math.round((checkOut - checkIn) / millisecondsPerDay);
+}  
 
   
 
-// Add your existing searchHotels function here, with console logs added
-// to indicate start, success, and error states.
 // Function to search hotels based on the destination ID
 async function searchHotels(destId) {
     // Formato de fechas y otros datos necesarios para la búsqueda, ajusta según tu formulario
-    const checkInDate = '2024-04-01';
-    const checkOutDate = '2024-04-10';
+    const checkInDate = document.getElementById('start-date').value;
+    const checkOutDate = document.getElementById('end-date').value;
     const adultsNumber = document.getElementById('guests').value || 1; // Default to 1 adult if not specified
     const roomNumber = 1; // Example: assuming one room
   
@@ -104,16 +119,22 @@ async function searchHotels(destId) {
       searchResultsSection.innerHTML = '';
   
       if (hotels && hotels.result) {
-        hotels.result.forEach(hotel => {
+        const nights = calculateNights(checkInDate, checkOutDate);
+          hotels.result.forEach(hotel => {
+            const nightText = nights === 1 ? 'night' : 'nights'; // Handles singular or plural nights
             const hotelElement = document.createElement('div');
-            hotelElement.className = 'card'; // Asegúrate de tener esta clase en tu CSS
+            hotelElement.className = 'card'; 
             hotelElement.innerHTML = `
-                <h3>${hotel.hotel_name || 'Nombre no disponible'}</h3>
-                <p>${hotel.address || 'Dirección no disponible'}</p>
-                <img src="${hotel.main_photo_url || ''}" alt="${hotel.hotel_name}" style="width:100px;height:auto;">
-            `; // Ajusta según los datos disponibles en tu objeto de hotel
+              <div class="card-images">   
+                <img class="card-image" src="${hotel.max_photo_url || 'default-image.jpg'}" alt="${hotel.hotel_name}">
+              <div class="card-info">
+                <h3 class="hotel-name">${hotel.hotel_name || 'Name not available'}</h3>
+                <p class="hotel-address">${hotel.address || 'Address not available'}</p>
+                <p class="hotel-nights">${nights} ${nightText}</p>
+                <p class="hotel-price">Price: ${hotel.price_breakdown.all_inclusive_price || 'Price not available'} ${hotel.price_breakdown.currency || ''}</p>
+            `; 
 
-            // Añade el elemento del hotel al contenedor de resultados de búsqueda
+            
             searchResultsSection.appendChild(hotelElement);
         });
     } else {
