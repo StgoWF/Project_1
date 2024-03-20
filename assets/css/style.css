@@ -206,6 +206,13 @@ footer {
 }
     
 /* new login */
+.search-container,
+.login-box{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
 
 .login-box {
     width: 300px;
@@ -384,7 +391,7 @@ footer {
 #userAccount input[type=password],
 #userAccount input[type=email]
 #userAccount input[type=issue],
-#userAccount input[type=description], {
+#userAccount input[type=description] {
     padding: 10px;
     margin-bottom: 16px; /* Space below inputs */
     border: 1px solid #ccc; /* Border color consistent with light design */
