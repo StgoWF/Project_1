@@ -512,15 +512,15 @@ section {
 
 
 /* Container for cards */
-.destinations-container {
+.destinations-container,search-results {
     display: flex;
     justify-content: space-around; /* Evenly distributes cards with space around them */
     flex-wrap: wrap; /* Allows cards to wrap to the next line */
 }
 
-.card {
-    width: 200px; /* Example width, adjust as necessary */
-    height: 200px; /* Example height, adjust as necessary */
+.card, #search-results .card  {
+    width: 100%; /* Example width, adjust as necessary */
+    height: auto; /* Example height, adjust as necessary */
     background-color: #f0f0f0;
     border-radius: 12px;
     margin-bottom: 20px; /* Margin at the bottom of each card */
