@@ -64,22 +64,6 @@ header nav a {
     color: #333; /* Set link color */
 }
 
-
-  
-/* Footer container */
-footer {
-    display: flex; /* Use flexbox for positioning */
-    justify-content: center; 
-    align-items: center; /* Align items vertically */
-    padding: 20px; /* Add padding as needed */
-    background-color: rgb(255, 255, 255); /* Set the background color */
-    border-top: 1px solid rgb(240, 240, 240); /* Add a top border for visual separation */
-  }
-
-  footer a {
-    text-decoration: none;
-  }
-
 /* Google-style Search Bar */
 #search-form {
     display: flex;
@@ -194,15 +178,6 @@ section {
 /* Support/Help Section */
 #support {
     background-color: #f8d7da;
-}
-
-/* Footer styles */
-footer {
-    background-color: rgb(255, 255, 255);
-    border-top: 1px solid rgb(240, 240, 240);
-    padding: 20px;
-    text-align: center;
-    flex-shrink: 0; /* Don't shrink the footer */
 }
     
 /* new login */
@@ -450,11 +425,6 @@ footer {
     display: flex;
 }
 
-
-
-
-
-
 /* Logo styles, assuming the logo is inline with other elements and not absolutely positioned */
 .logo-and-icon {
     display: flex; /* Enables flexbox layout */
@@ -578,12 +548,69 @@ footer {
     margin-top: 5px;
 }
 
-/* Footer Styling */
+/* Footer container */
+/* footer { */
+    /* display: flex; /* Use flexbox for positioning */
+    /* justify-content: center;  */
+    /* align-items: center; Align items vertically */
+    /* padding: 20px; Add padding as needed */
+    /* background-color: rgb(255, 255, 255); Set the background color  */
+    /* border-top: 1px solid rgb(240, 240, 240); Add a top border for visual separation */
+  /* }
 
-footer {
+  footer a {
+    text-decoration: none;
+  } */
+
+  footer > * {
     background-color: #b8ef38;
+  }
+
+  .footerContainer {
+    width: 100%;
+    padding: 70px 30px 20px;
+  }
+
+.socialMedia {
+    display: flex;
+    justify-content: center;
 }
 
-p {
-    float: right;
+.socialMedia a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.socialMedia a i {
+    font-size: 2em;
+    color: #b8ef38;
+    opacity: 0.9;
+}
+
+.socialMedia a:hover {
+    background-color: black;
+    transition: 1s;
+}
+
+.footerNav {
+    margin: 25px 0;
+
+}
+
+.footerNav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.footerNav ul li {
+    margin: 15px;
+    font-size: 1em;
+    opacity: 0.5;
+}
+
+.footerNav ul li a {
+    text-decoration: none;
 }
