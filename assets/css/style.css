@@ -584,7 +584,7 @@ section {
   .hotel-nights {
     position: relative;
     text-align: right;
-    top: -62px;
+    top: -85px;
 }
 
 .hotel-price {
@@ -593,10 +593,10 @@ section {
     font-size: 20px;
     font-weight: 600;
     line-height: 30px;
-    top: -62px;
+    top: -85px;
 }
 .hotel-score{
-    top: -90px;
+    top: -102px;
     position: relative;
     text-align: right;
     font-size: 20px;
@@ -616,7 +616,7 @@ section {
     text-decoration: none;
     position: relative;
     left: 816px;
-    top: -62px;
+    top: -87px;
 }
 
 .card a button { /* Style both buttons similarly */
@@ -631,7 +631,7 @@ section {
     text-decoration: none;
     position: relative;
     left:  410px;
-    top: -55px;
+    top: -80px;
 }
 
 
