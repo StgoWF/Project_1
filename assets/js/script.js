@@ -49,3 +49,5 @@ async function fetchApiData() {
 }
 
 fetchApiData();
+
+
