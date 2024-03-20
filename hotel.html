@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TailorMyTrip</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <!-- TaylorMyTrip Logo and Icon -->
+        <div class="logo-and-icon">
+            <img src="./assets/images/icons/earth-americas.svg" alt="Logo Icon" class="icon logo-icon">
+            <span class="text logo-text">TaylorMyTrip</span>
+        </div>
+        <!-- Navigation Bar -->
+        <nav>
+            <a href="/">Home</a>
+            <a href="/destinations">Destinations</a>
+            <a href="/support">Support</a>
+            <a href="/my-plans">My Plans</a>
+            <a href="signup.html">Create Account</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="flex-container">
+
+        <!-- Search Section -->
+        <div class="search-container">
+            <!-- Search Form Container -->
+            <div id="search-form-container">
+                <form id="search-form">
+                    <h3>Search for Hotels</h3>
+                    <!-- Destination Input -->
+                    <label for="destination">City:</label>
+                    <input type="text" id="destination" name="destination" placeholder="Enter city" required>
+                    <!-- Number of Guests Input (optional) -->
+                    <label for="guests">Number of Guests:</label>
+                    <input type="number" id="guests" name="guests" placeholder="1" min="1">
+                    <!-- Dates Input (optional) -->
+                    <label for="start-date">Start Date:</label>
+                    <input type="date" id="start-date" name="start-date">
+                    <label for="end-date">End Date:</label>
+                    <input type="date" id="end-date" name="end-date">
+                    <!-- Search Button -->
+                    <button type="submit">Search</button>
+                </form>
+                
+            </div>
+        </div>
+
+
+
+
+       <!-- Popular Destinations Section -->
+       <section id="popular-destinations-section">
+           <h2>Popular Destinations</h2>
+           <div class="destinations-container"> <!-- Container for cards -->
+               <div class="card">
+                   <h3>London</h3>
+                   <p>The historic capital of the United Kingdom</p>
+               </div>
+               <div class="card">
+                   <h3>Paris</h3>
+                   <p>The romantic city of lights and love</p>
+               </div>
+               <div class="card">
+                   <h3>Tokyo</h3>
+                   <p>The bustling metropolis with a blend of the traditional and the ultra-modern</p>
+               </div>
+               <div class="card">
+                   <h3>New York</h3>
+                   <p>The city that never sleeps with its iconic skyline</p>
+               </div>
+               <div class="card">
+                   <h3>Rome</h3>
+                   <p>The eternal city with its ancient history and vibrant culture.</p>
+               </div>
+               <div class="card">
+                   <h3>Sydney</h3>
+                   <p>Home to the iconic Opera House and stunning harbor views.</p>
+               </div>
+               <div class="card">
+                   <h3>Cape Town</h3>
+                   <p>A city with a stunning coastline and majestic Table Mountain backdrop.</p>
+               </div>
+               <div class="card">
+                   <h3>Rio de Janeiro</h3>
+                   <p>Famous for its carnival, Christ the Redeemer statue, and Copacabana Beach.</p>
+               </div>
+               
+           </div>
+           <div id="search-results" style="display: none;">
+            <!-- Search results will be displayed here -->
+          </div>
+           
+               
+       </section>
+
+   </main> 
+   <!-- Footer Section -->
+   <!-- <footer>
+       <a href="help.html">Need Help?</a>
+       <p>© 2024 TailorMyTrip. All rights reserved.</p>
+   </footer> -->
+
+   <!-- JavaScript file link -->
+   <script src="./assets/js/hotelsearch.js"></script>
+
+</body>
+</html>

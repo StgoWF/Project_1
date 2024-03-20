@@ -121,7 +121,8 @@ section {
 }
 
 #search-form input[type="text"],
-#search-form input[type="date"] {
+#search-form input[type="date"],
+#search-form input[type="number"]  {
     font-size: 16px;
     padding: 10px;
     margin: 0 5px;
@@ -418,7 +419,7 @@ footer {
     overflow-y: auto; /* Enable vertical scrolling if content overflows */
     display: flex;
     flex-direction: column; /* Display items stacked vertically */
-    border-radius: 46px;
+    
     flex: 1;
 }
 
