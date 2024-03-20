@@ -184,7 +184,7 @@ section {
 .search-container,
 .login-box{
     display: flex;
-    align-items: center;
+    
     height: 100%;
 }
 
@@ -430,6 +430,7 @@ section {
 .search-container {
     display: flex;
 }
+
 
 /* Logo styles, assuming the logo is inline with other elements and not absolutely positioned */
 .logo-and-icon {
