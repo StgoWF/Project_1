@@ -5,6 +5,12 @@
     padding: 0;
     text-align: center;
 }
+
+button {
+    background: none;
+    border: none;
+}
+
 html, body {
     height: 100%; /* Ensures that the html and body take up the full viewport height */
     margin: 0; /* Reset default margin */
@@ -86,16 +92,6 @@ section {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-/* Styling for logos that are attached to the end of the main sections */
-.devDreamLogo {
-    display: inline-block;
-}
-
-.devDreamLogo img {
-    height: 28px;
-    width: 100%;
-    padding-top: 2px;
 }
 
 /* Homepage Section */
@@ -430,6 +426,19 @@ section {
 .search-container {
     display: flex;
 }
+.destination{
+    
+    
+    border-radius: 90px;
+    height: 200px;
+    width: 180px;
+}
+#london{
+    position: absolute;
+    top: 160px;
+    left: 354px;
+}
+
 
 
 /* Logo styles, assuming the logo is inline with other elements and not absolutely positioned */
@@ -475,7 +484,7 @@ section {
 .card {
     /* Remove absolute positioning if present */
     width: calc(33.333% - 20px); /* This will fit three cards per row, accounting for the gap */
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; 
     border-radius: 12px;
     margin-bottom: 20px;
     padding: 20px;

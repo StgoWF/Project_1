@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TailorMyTrip</title>
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 <body>
    
@@ -14,7 +15,9 @@
     <header>
         <!-- TaylorMyTrip Logo and Icon -->
         <div class="logo-and-icon">
-            <img src="./assets/images/icons/earth-americas.svg" alt="Logo Icon" class="icon logo-icon">
+            <button type="click" id="hawaiiPopUp">
+                <img src="./assets/images/icons/earth-americas.svg" alt="Logo Icon" class="icon logo-icon">
+            </button>
             <span class="text logo-text">TaylorMyTrip</span>
         </div>
         <!-- Navigation Bar -->
@@ -68,35 +71,43 @@
             <div class="destinations-container"> <!-- Container for cards -->
                 <div class="card">
                     <h3>London</h3>
-                    <p>The historic capital of the United Kingdom</p>
+                    <!-- <p>The historic capital of the United Kingdom</p> -->
+                    <a href="london.html"><img src="./assets/images/download.jpeg" alt="london" class="destination" ></a>
                 </div>
                 <div class="card">
                     <h3>Paris</h3>
-                    <p>The romantic city of lights and love</p>
+                    <a href="paris.html"><img src="./assets/images/paris.jpeg" class="destination" id="Paris"></a>
+                    <!--<p>The romantic city of lights and love</p>-->
                 </div>
                 <div class="card">
                     <h3>Tokyo</h3>
-                    <p>The bustling metropolis with a blend of the traditional and the ultra-modern</p>
+                    <a href="tokyo.html"><img src="./assets/images/tokyo.jpeg" class="destination"></a>
+                   <!-- <p>The bustling metropolis with a blend of the traditional and the ultra-modern</p> -->
                 </div>
                 <div class="card">
                     <h3>New York</h3>
-                    <p>The city that never sleeps with its iconic skyline</p>
+                    <a href="newyork.html"><img src="./assets/images/newyork.jpeg" class="destination"></a>
+                   <!-- <p>The city that never sleeps with its iconic skyline</p> -->
                 </div>
                 <div class="card">
                     <h3>Rome</h3>
-                    <p>The eternal city with its ancient history and vibrant culture.</p>
+                    <a href="rome.html"><img src="./assets/images/rome.jpeg" class="destination"></a>
+                   <!-- <p>The eternal city with its ancient history and vibrant culture.</p>-->
                 </div>
                 <div class="card">
                     <h3>Sydney</h3>
-                    <p>Home to the iconic Opera House and stunning harbor views.</p>
+                    <a href="sydney.html"><img src="./assets/images/sydney.jpeg" class="destination"></a>
+                    <!-- <p>Home to the iconic Opera House and stunning harbor views.</p> -->
                 </div>
                 <div class="card">
                     <h3>Cape Town</h3>
-                    <p>A city with a stunning coastline and majestic Table Mountain backdrop.</p>
+                    <a href="cape.html"><img src="./assets/images/cape town.jpeg" class="destination"></a>
+                   <!-- <p>A city with a stunning coastline and majestic Table Mountain backdrop.</p>-->
                 </div>
                 <div class="card">
                     <h3>Rio de Janeiro</h3>
-                    <p>Famous for its carnival, Christ the Redeemer statue, and Copacabana Beach.</p>
+                    <a href="rio.html"><img src="./assets/images/rio de janeiro.jpeg" class="destination"></a>
+                   <!--<p>Famous for its carnival, Christ the Redeemer statue, and Copacabana Beach.</p>--> 
                 </div>
                 
             </div>
@@ -129,8 +140,18 @@
         </section>
     </footer>
 
+    <!-- Modal -->
+
+    <div class="modal">
+        <div class="modal-background"></div>
+            <div class="modal-content has-background-white py-5 px-5">
+                <h3 class="title mb-6">You won a free ticket to Hawaii!</h3>
+            </div>
+    </div>
+
     <!-- JavaScript file link -->
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/modal.js"></script>
 
 </body>
 </html>
