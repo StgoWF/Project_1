@@ -10,7 +10,7 @@
     <div class="wrapper">
         <!-- Side search panel -->
         <aside class="search-panel">
-            <h2>Your Flight Search</h2>
+            <h2>Book a Flight</h2>
             <div class="input-group">
                 <label for="trip-type">Trip Type</label>
                 <select id="trip-type">
@@ -43,21 +43,21 @@
                 <div class="passenger-dropdown-content" id="passengerDropdownContent" style="display:none;">
                     <div class="passenger-count">
                         <label for="adults">Adults</label>
-                        <button type="button" class="quantity-btn decrease" onclick="modifyQuantity('adults', -1)">-</button>
+                        <button type="button" class="quantity-btn decrease" >-</button>
                         <input type="number" id="adults" value="1" min="1" readonly>
-                        <button type="button" class="quantity-btn increase" onclick="modifyQuantity('adults', 1)">+</button>
+                        <button type="button" class="quantity-btn increase" >+</button>
                     </div>
                     <div class="passenger-count">
                         <label for="children">Children</label>
-                        <button type="button" class="quantity-btn decrease" onclick="modifyQuantity('children', -1)">-</button>
+                        <button type="button" class="quantity-btn decrease" >-</button>
                         <input type="number" id="children" value="0" min="0" readonly>
-                        <button type="button" class="quantity-btn increase" onclick="modifyQuantity('children', 1)">+</button>
+                        <button type="button" class="quantity-btn increase" >+</button>
                     </div>
                     <div class="passenger-count">
                         <label for="infants">Infants</label>
-                        <button type="button" class="quantity-btn decrease" onclick="modifyQuantity('infants', -1)">-</button>
+                        <button type="button" class="quantity-btn decrease" >-</button>
                         <input type="number" id="infants" value="0" min="0" readonly>
-                        <button type="button" class="quantity-btn increase" onclick="modifyQuantity('infants', 1)">+</button>
+                        <button type="button" class="quantity-btn increase" >+</button>
                     </div>
                 </div>
             </div>
@@ -79,7 +79,6 @@
         </main>
     </div>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <!-- jQuery UI <script> tag -->
     <script src="Searchengine.js"></script>
 </body>
 </html>

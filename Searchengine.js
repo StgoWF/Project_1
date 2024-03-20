@@ -13,7 +13,7 @@ function modifyQuantity(passengerType, delta) {
 
 // Toggle Dropdown Display
 function toggleDropdown() {
-    var dropdown = document.getElementById("passengerDropdownContent"); // Make sure the ID matches your HTML
+    var dropdown = document.getElementById("passengerDropdownContent"); 
     dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
 }
 
@@ -160,13 +160,15 @@ function addCityInputs() {
     const deleteButton = document.createElement('button');
     deleteButton.type = 'button';
     deleteButton.className = 'delete-city-set';
-    deleteButton.textContent = 'Delete';
+    deleteButton.textContent = '-';
     deleteButton.onclick = function() { deleteCitySet(citySetCount); };
     newCitySet.appendChild(deleteButton);
 
     container.insertBefore(newCitySet, container.lastChild);
 
     updateAddButton(container);
+    let addButton = document.getElementById('add-city-button');
+    addButton.classList.remove("Forced-Relative")
 }
 
 function updateAddButton(container) {
@@ -175,7 +177,7 @@ function updateAddButton(container) {
         addButton = document.createElement('button');
         addButton.type = 'button';
         addButton.id = 'add-city-button';
-        addButton.textContent = '+ Add Another City';
+        addButton.textContent = '+';
         addButton.addEventListener('click', addCityInputs);
         container.appendChild(addButton);
     }
@@ -187,7 +189,11 @@ function deleteCitySet(citySetId) {
         citySet.parentNode.removeChild(citySet);
         citySetCount--;
     }
-    // No need to remove the add button anymore
+    console.log(citySetCount)
+if(citySetCount ===1) {
+    let addButton = document.getElementById('add-city-button');
+    addButton.classList.add("Forced-Relative")
+}
 }
 
 // Function to handle Trip Type change
@@ -222,3 +228,69 @@ document.addEventListener('DOMContentLoaded', function() {
     // Call handleTripTypeChange on page load to set the correct display state
     handleTripTypeChange();
 });
+
+document.querySelector(".search-btn").addEventListener("click", Searchengine)
+function Searchengine (){
+
+const searchData = {
+    tripType: document.getElementById('trip-type').value,
+    from: document.getElementById('from').value,
+    to: document.getElementById('to').value,
+    departDate: document.getElementById('depart-date').value,
+    returnDate: document.getElementById('return-date').value,
+    passengers: {
+        adults: parseInt(document.getElementById('adults').value),
+        children: parseInt(document.getElementById('children').value),
+        infants: parseInt(document.getElementById('infants').value)
+    },
+    class: document.getElementById('class').value
+};
+console.log(searchData)
+
+const url = 'https://booking-com15.p.rapidapi.com/api/v1/meta/getLanguages'; 
+
+fetch(url, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(searchData)
+})
+.then(response => {
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    return response.json();
+})
+.then(data => {
+    // Process the response data from your API
+    console.log(data);
+})
+.catch(error => {
+    console.error('There was a problem with the fetch operation:', error);
+});
+
+// Fetch data from Booking.com API.
+var options = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': '8d3728dcaemsh32efdac6013419ap12f34bjsned7b35d9a858',
+        'X-RapidAPI-Host': 'booking-com15.p.rapidapi.com'
+    }
+};
+}
+async function fetchApiData() {
+    try {
+        console.log('Fetching API data...');
+        var response = await fetch(url, options);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        var result = await response.json();
+        console.log('API response:', result);
+    } catch (error) {
+        console.error('Fetch error:', error);
+    }
+}
+
+fetchApiData();

@@ -18,7 +18,8 @@ body, input, select, button {
     width: 300px;
     background: #fff;
     padding: 20px;
-    height: 100vh;
+    height: 100%; /* Set initial height to fill the page */
+    min-height: 100vh; /* Ensure minimum height of viewport height */
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
 }
 
@@ -178,7 +179,7 @@ body, input, select, button {
 }
 /* Style the date picker input field */
 .input-group input[type=date] {
-    background-color: #white; /* Light grey background */
+    background-color: white; /* Light grey background */
     border: 1px solid #d4d4d4; /* Light grey border */
     padding: 10px; /* Padding inside the input field */
     border-radius: 4px; /* Rounded corners */
@@ -194,3 +195,26 @@ body, input, select, button {
     outline: none; /* Removes the default outline */
 }
 
+#add-city-button {
+    display: inline-block !important;
+    margin-right: 10px !important; /* Adjust margin as needed */
+    padding: 12px 20px; /* Adjust padding as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    margin-bottom: 20px !important;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.delete-city-set {
+    display: inline-block !important;
+    margin-right: 10px !important; /* Adjust margin as needed */
+    padding: 12px 20px; /* Adjust padding as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    margin-bottom: 20px !important;
+}
+#multi-city-container {
+    position:relative
+}
+.Forced-Relative {
+    position: relative !important;
+}
