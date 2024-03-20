@@ -33,7 +33,6 @@ body > footer {
     flex-shrink: 0; /* Prevents the footer from shrinking smaller than its content */
     width: 100%; /* Makes the footer take full width of the page */
     /* Your existing zstyles for the footer */
-    max-width: 600px;
 }
 body {
     max-width: 1220px; /* or any other value you prefer */
