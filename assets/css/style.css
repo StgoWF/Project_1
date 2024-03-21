@@ -424,9 +424,12 @@ section {
 .destination{
     
     
-    border-radius: 90px;
+    border-radius: 9px;
     height: 200px;
     width: 180px;
+    position: relative;
+    right: 1176px;
+    top: 62px;
 }
 #london{
     position: absolute;
@@ -647,11 +650,24 @@ section {
 }
 
 
+#pagination-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    scale: 250%;
+    position: relative;
+    top: 681px;
+    left: -800px;
+}
+
+
+
+
 /* Responsive adjustments for smaller screens */
 /* @media (max-width: 768px) {
     .card {
         /* Adjusts to 2 cards per row on smaller screens */
-        flex-basis: calc(50% - 20px);
+        /* flex-basis: calc(50% - 20px); */
     /* }
 } */ */
 
