@@ -5,6 +5,18 @@
     padding: 0;
     text-align: center;
 }
+@font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/Poppins-Regular.ttf') format('truetype'),
+         url('/assets/fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
 
 button {
     background: none;
@@ -478,17 +490,6 @@ section {
     display: flex;
     justify-content: start; /* Align children to the start of the container */
 }
-/* Update your .card class */
-.card {
-    /* Remove absolute positioning if present */
-    width: calc(33.333% - 20px); /* This will fit three cards per row, accounting for the gap */
-    background-color: #f0f0f0; 
-    border-radius: 12px;
-    margin-bottom: 20px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    /* Remove top, left properties if they were previously there */
-}
 
 /* You might want to adjust the width of the homepage section to fit the search form */
 #homepage {
@@ -543,7 +544,7 @@ section {
 /* Container for cards */
 .destinations-container {
     display: flex;
-    justify-content: space-around; /* Evenly distributes cards with space around them */
+    justify-content: space-around;
     flex-wrap: wrap; /* Allows cards to wrap to the next line */
 }
 
