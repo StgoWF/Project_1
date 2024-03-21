@@ -61,7 +61,8 @@ header nav {
 }
 
 /* Add margin between navigation links */
-header nav a {
+header nav a,
+header nav button {
     margin-right: 10px;
     text-decoration: none; /* Remove underline from links */
     color: #333; /* Set link color */
@@ -69,10 +70,12 @@ header nav a {
 
 
 
-nav a {
+nav a,
+nav button {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
+    font-size: 16px;
     text-align: left;
 }
 
