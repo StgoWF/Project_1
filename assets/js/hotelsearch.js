@@ -12,6 +12,8 @@ function getTotalPages() {
 // Function to display the current page of results
 function displayPage() {
   console.log(`Displaying page: ${currentPage}`);
+  const checkInDate = document.getElementById('start-date').value;
+  const checkOutDate = document.getElementById('end-date').value;
   const startIndex = (currentPage - 1) * resultsPerPage;
   const endIndex = Math.min(startIndex + resultsPerPage, allResults.length); // Ensure not to exceed array bounds
   const resultsToShow = allResults.slice(startIndex, endIndex);
@@ -21,7 +23,7 @@ function displayPage() {
 
   resultsToShow.forEach(hotel => {
     // Now directly using the structure you provided for creating cards
-    const nights = calculateNights(hotel.checkin, hotel.checkout); // This line assumes you have checkin and checkout dates in hotel object
+    const nights = calculateNights(checkInDate, checkOutDate);// This line assumes you have checkin and checkout dates in hotel object
     const nightText = nights === 1 ? 'night' : 'nights';
     const hotelElement = document.createElement('div');
     hotelElement.className = 'card';

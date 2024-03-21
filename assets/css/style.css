@@ -523,7 +523,7 @@ section {
 
 .card, #search-results .card  {
     width: 996px; /* Example width, adjust as necessary */
-    height: auto; /* Example height, adjust as necessary */
+    height: 246px; /* Example height, adjust as necessary */
     background-color: #f0f0f0;
     border-radius: 12px;
     margin-bottom: 20px; /* Margin at the bottom of each card */
@@ -653,11 +653,11 @@ section {
 #pagination-container {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 19px;
     scale: 250%;
     position: relative;
-    top: 681px;
-    left: -800px;
+    top: 536px;
+    left: -700px;
 }
 
 
@@ -671,12 +671,132 @@ section {
     /* }
 } */ */
 
-@media (max-width: 1480px) {
+
+
+@media (max-width: 480px) {
     .card {
-        /* Adjusts to 1 card per row on the smallest screens */
-        flex-basis: 100%;
+        width: calc(100% - 20px); /* Mostrar una tarjeta por fila en dispositivos muy pequeños */
     }
 }
+/* Media query to adjust styles on devices with smaller widths */
+@media (max-width: 768px) {
+    body {
+        /* Here you can adjust the maximum width of the body or font size, for example */
+        max-width: 768px; /* Example of adjusting maximum width */
+        font-size: 14px; /* Example of adjusting font size */
+    }
+    .card{
+        width: 628px;
+        height: 246px;
+        background-color: #f0f0f0;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        align-self: center;
+        margin-left: -192px;
+    }
+    .destination {
+        border-radius: 9px;
+        height: 200px;
+        width: 180px;
+        position: relative;
+        right: 1030px;
+        top: 62px;
+    }
+    #popular-destinations-section {
+        margin: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        flex: 1;
+        max-width: 3px;
+        position: relative;
+        left: 440px;
+        /* scale: 90%; */
+    }
+    .card button {
+        padding: 10px 15px;
+        /* margin-top: 10px; */
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        max-width: 160px;
+        text-decoration: none;
+        position: relative;
+        left: 738px;
+        top: -87px;
+    }
+    
+    .card a {
+        display: inline-block;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: none;
+        position: relative;
+        left: 746px;
+        max-width: 160px;
+        top: -65px;
+    }
+    #pagination-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        scale: 280%;
+        position: relative;
+        top: 538px;
+        left: 305px;
+    }
+        
+    #popular-destinations-section h2 {
+        font-size: 2em;
+        margin: 5px;
+        left: 0px;
+        position: relative;
+    }
+    body > header {
+        top: 0px;
+        left: 1px;
+        height: 95px;
+        background-color: #b8ef38;
+        border-bottom: 1px solid #f0f0f0;
+        box-sizing: border-box;
+        padding: 10px 20px;
+        width: 1252px;
+        display: flex;
+    }
+    .card, #search-results .card {
+        width: 914px;
+        height: 246px;
+        background-color: #f0f0f0;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        align-self: center;
+        margin-left: -192px;
+        position: relative;
+        left: 111px;
+    }
+    
+    
+}
+
+/* Another media query for devices with even smaller widths if necessary */
+@media (max-width: 480px) {
+    body {
+        /* Here you can apply additional adjustments for even smaller devices */
+        max-width: 400px; 
+        font-size: 12px; 
+    }
+}
+
+
 /* Styling on need help submit button */
 
 .helpSubmit {
