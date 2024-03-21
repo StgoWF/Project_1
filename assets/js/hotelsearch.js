@@ -1,3 +1,96 @@
+// Variables to maintain the state of pagination
+let currentPage = 1;
+const resultsPerPage = 4;
+let allResults = []; // Store all results fetched from the API here
+
+// Function to calculate the total number of pages
+function getTotalPages() {
+  console.log("Calculating total pages...");
+  return Math.ceil(allResults.length / resultsPerPage);
+}
+
+// Function to display the current page of results
+function displayPage() {
+  console.log(`Displaying page: ${currentPage}`);
+  const checkInDate = document.getElementById('start-date').value;
+  const checkOutDate = document.getElementById('end-date').value;
+  const startIndex = (currentPage - 1) * resultsPerPage;
+  const endIndex = Math.min(startIndex + resultsPerPage, allResults.length); // Ensure not to exceed array bounds
+  const resultsToShow = allResults.slice(startIndex, endIndex);
+
+  searchResultsSection.innerHTML = ''; // Clear the section before displaying new results
+  console.log(`Showing results from ${startIndex} to ${endIndex}`);
+
+  resultsToShow.forEach(hotel => {
+    // Now directly using the structure you provided for creating cards
+    const nights = calculateNights(checkInDate, checkOutDate);// This line assumes you have checkin and checkout dates in hotel object
+    const nightText = nights === 1 ? 'night' : 'nights';
+    const hotelElement = document.createElement('div');
+    hotelElement.className = 'card';
+    hotelElement.innerHTML = `
+      <div class="card-image-container">   
+        <img class="card-image" src="${hotel.max_photo_url || 'default-image.jpg'}" alt="${hotel.hotel_name}">
+      </div>
+      <div class="card-info">
+        <h3 class="hotel-name">${hotel.hotel_name || 'Name not available'}</h3>
+        <p class="hotel-score">${hotel.review_score_word || 'Score not available'} ${hotel.review_score || ''}</p>
+        <p class="hotel-address">${hotel.distance_to_cc_formatted || 'Address not available'} from city center</p>
+        <p class="hotel-nights">${nights} ${nightText}</p>
+        <p class="hotel-price">${hotel.price_breakdown.all_inclusive_price || 'Price not available'} ${hotel.price_breakdown.currency || ''}</p>
+        <button class="my-plans-btn" onclick="saveToMyPlans('${hotel.hotel_id}');">Save to My Plans</button>
+        <a href="${hotel.url}" target="_blank" class="booking-btn">Book on Booking.com</a>
+      </div>`;
+    searchResultsSection.appendChild(hotelElement);
+  });
+
+  updatePaginationButtons(); // Update pagination buttons based on the total number of pages and the current page
+} 
+
+
+// Function to change to a specific page number
+function goToPage(pageNumber) {
+  console.log(`Going to page: ${pageNumber}`);
+  currentPage = pageNumber;
+  displayPage();
+}
+
+// Function to update the pagination buttons display
+function updatePaginationButtons() {
+  const totalPages = getTotalPages(); // Calculate total pages using the function
+  const paginationContainer = document.getElementById('pagination-container');
+  paginationContainer.innerHTML = '';
+
+  // Create Prev button if not on the first page
+  if (currentPage > 1) {
+      const prevButton = document.createElement('button');
+      prevButton.innerText = 'Prev';
+      prevButton.onclick = () => goToPage(currentPage - 1);
+      paginationContainer.appendChild(prevButton);
+  }
+
+  // Create page buttons
+  for (let i = 1; i <= totalPages; i++) {
+      const pageButton = document.createElement('button');
+      pageButton.innerText = i;
+      pageButton.className = currentPage === i ? 'active' : '';
+      pageButton.onclick = () => goToPage(i);
+      paginationContainer.appendChild(pageButton);
+  }
+
+  // Create Next button if not on the last page
+  if (currentPage < totalPages) {
+      const nextButton = document.createElement('button');
+      nextButton.innerText = 'Next';
+      nextButton.onclick = () => goToPage(currentPage + 1);
+      paginationContainer.appendChild(nextButton);
+  }
+}
+
+
+
+
+
+
 // Reference to the search form
 const searchForm = document.getElementById('search-form');
 
@@ -6,6 +99,7 @@ const popularDestinationsSection = document.getElementsByClassName('destinations
 
 // Reference to the container where search results will be displayed
 const searchResultsSection = document.getElementById('search-results');
+
 
 // Function to hide popular destinations and show search results container
 function displaySearchResults() {
@@ -114,39 +208,54 @@ async function searchHotels(destId) {
   
       const hotels = await response.json();
       console.log("Hotels fetched:", hotels);
-  
+      
+      allResults = hotels.result || [];
+      displaySearchResults();
+      initPaginationAndDisplay(); // Prepare pagination and display the first page
       // Clear previous search results
-      searchResultsSection.innerHTML = '';
+      // searchResultsSection.innerHTML = '';
   
-      if (hotels && hotels.result) {
-        const nights = calculateNights(checkInDate, checkOutDate);
-          hotels.result.forEach(hotel => {
-            const nightText = nights === 1 ? 'night' : 'nights'; // Handles singular or plural nights
-            const hotelElement = document.createElement('div');
-            hotelElement.className = 'card'; 
-            hotelElement.innerHTML = `
-              <div class="card-images">   
-                <img class="card-image" src="${hotel.max_photo_url || 'default-image.jpg'}" alt="${hotel.hotel_name}">
-              <div class="card-info">
-                <h3 class="hotel-name">${hotel.hotel_name || 'Name not available'}</h3>
-                <p class="hotel-address">${hotel.address || 'Address not available'}</p>
-                <p class="hotel-nights">${nights} ${nightText}</p>
-                <p class="hotel-price">Price: ${hotel.price_breakdown.all_inclusive_price || 'Price not available'} ${hotel.price_breakdown.currency || ''}</p>
-            `; 
+    //   if (hotels && hotels.result) {
+    //     const nights = calculateNights(checkInDate, checkOutDate);
+    //       hotels.result.forEach(hotel => {
+    //         const nightText = nights === 1 ? 'night' : 'nights'; // Handles singular or plural nights
+    //         const hotelElement = document.createElement('div');
+    //         hotelElement.className = 'card'; 
+    //         hotelElement.innerHTML = `
+    //           <div class="card-images">   
+    //             <img class="card-image" src="${hotel.max_photo_url || 'default-image.jpg'}" alt="${hotel.hotel_name}">
+    //           <div class="card-info">
+    //             <h3 class="hotel-name">${hotel.hotel_name || 'Name not available'}</h3>
+    //             <p class="hotel-score">${hotel.review_score_word || 'Score not available'} ${hotel.review_score || ''}</p>
+    //             <p class="hotel-address">${hotel.distance_to_cc_formatted || 'Address not available'} from city center</p>
+    //             <p class="hotel-nights">${nights} ${nightText}</p>
+    //             <p class="hotel-price">${hotel.price_breakdown.all_inclusive_price || 'Price not available'} ${hotel.price_breakdown.currency || ''}</p>
+    //             <button onclick="saveToMyPlans('${hotel.hotel_id}');">Save to My Plans</button>
+    //             <a href="${hotel.url}" target="_blank"><button>Book on Booking.com</button></a>
+    //         `; 
 
             
-            searchResultsSection.appendChild(hotelElement);
-        });
-    } else {
-        searchResultsSection.innerHTML = '<p>No se encontraron hoteles.</p>';
-    }
-  
-      // Make sure to call displaySearchResults() if not called previously
-      displaySearchResults();
+    //         searchResultsSection.appendChild(hotelElement);
+    //     });
+    // } else {
+    //     searchResultsSection.innerHTML = '<p>No hotels found</p>';
+    // }
+
   
     } catch (error) {
       console.error("Error fetching hotels:", error);
       searchResultsSection.innerHTML = `<p>Error fetching hotels: ${error.message}</p>`;
+
+      
     }
   }
+  function initPaginationAndDisplay(hotels) {
+    console.log("Initializing pagination and displaying results...");
+    console.log(`Total results fetched: ${allResults.length}`);
+    currentPage = 1; // Reset to the first page
+    displayPage(); // Display the first page of results
+    updatePaginationButtons(); // Create pagination buttons
+  }
+  
+
   

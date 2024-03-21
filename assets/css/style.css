@@ -5,6 +5,18 @@
     padding: 0;
     text-align: center;
 }
+@font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/Poppins-Regular.ttf') format('truetype'),
+         url('/assets/fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
 
 button {
     background: none;
@@ -427,9 +439,12 @@ section {
 .destination{
     
     
-    border-radius: 90px;
+    border-radius: 9px;
     height: 200px;
     width: 180px;
+    position: relative;
+    right: 1176px;
+    top: 62px;
 }
 #london{
     position: absolute;
@@ -478,17 +493,6 @@ section {
     display: flex;
     justify-content: start; /* Align children to the start of the container */
 }
-/* Update your .card class */
-.card {
-    /* Remove absolute positioning if present */
-    width: calc(33.333% - 20px); /* This will fit three cards per row, accounting for the gap */
-    background-color: #f0f0f0; 
-    border-radius: 12px;
-    margin-bottom: 20px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    /* Remove top, left properties if they were previously there */
-}
 
 /* You might want to adjust the width of the homepage section to fit the search form */
 #homepage {
@@ -523,7 +527,7 @@ section {
 
 .card, #search-results .card  {
     width: 996px; /* Example width, adjust as necessary */
-    height: auto; /* Example height, adjust as necessary */
+    height: 246px; /* Example height, adjust as necessary */
     background-color: #f0f0f0;
     border-radius: 12px;
     margin-bottom: 20px; /* Margin at the bottom of each card */
@@ -543,39 +547,260 @@ section {
 /* Container for cards */
 .destinations-container {
     display: flex;
-    justify-content: space-around; /* Evenly distributes cards with space around them */
+    justify-content: space-around;
     flex-wrap: wrap; /* Allows cards to wrap to the next line */
 }
 
+.card-images {
+    height: 210px;
+}
+
 .card-image {
-    width: 150px;
-    height: 155px;
+    width: 200px;
+    height: 200px;
     /* border-radius: 12px; */
-    margin-right: 688px;
+    margin-right: 735px;
     margin-top: 7px;
+    scale: 108%;
+    margin-bottom: -30px;
   }
   .card-info {
     display: flex;
     flex-direction: column;
     margin-top: -56px;
     position: relative;
-    top: -70px;
+    top: -47px;
   }
+
+  .hotel-name {
+    left: 257px;
+    position: relative;
+    text-align: left;
+    font-size: 20px;
+    top: -70px;
+    max-width: 545px;
+
+  }
+  .hotel-address {
+    left: 257px;
+    position: relative;
+    text-align: left;
+    top: -76px;
+  }
+  
+  .hotel-nights {
+    position: relative;
+    text-align: right;
+    top: -101px;
+}
+
+.hotel-price {
+    position: relative;
+    text-align: right;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    top: -97px;
+}
+.hotel-score{
+    top: -102px;
+    position: relative;
+    text-align: right;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.card button { /* Style both buttons similarly */
+    padding: 10px 15px;
+    /* margin-top: 10px; */
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    max-width: 160px;
+    text-decoration: none;
+    position: relative;
+    left: 816px;
+    top: -87px;
+}
+
+.card a {
+    display: inline-block;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    position: relative;
+    left: 814px;
+    max-width: 160px;
+    top: -65px;
+}
+.card a button { /* Style both buttons similarly */
+    padding: 10px 15px;
+    /* margin-top: 10px; */
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    max-width: 200px;
+    text-decoration: none;
+    position: relative;
+    left: 3px;
+    top: -12px;
+}
+
+
+#pagination-container {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+    scale: 250%;
+    position: relative;
+    top: 536px;
+    left: -700px;
+}
+
+
+
 
 /* Responsive adjustments for smaller screens */
 /* @media (max-width: 768px) {
     .card {
         /* Adjusts to 2 cards per row on smaller screens */
-        flex-basis: calc(50% - 20px);
-    }
-} */
+        /* flex-basis: calc(50% - 20px); */
+    /* }
+} */ */
 
-@media (max-width: 1480px) {
+
+
+@media (max-width: 480px) {
     .card {
-        /* Adjusts to 1 card per row on the smallest screens */
-        flex-basis: 100%;
+        width: calc(100% - 20px); /* Mostrar una tarjeta por fila en dispositivos muy pequeños */
     }
 }
+/* Media query to adjust styles on devices with smaller widths */
+@media (max-width: 768px) {
+    body {
+        /* Here you can adjust the maximum width of the body or font size, for example */
+        max-width: 768px; /* Example of adjusting maximum width */
+        font-size: 14px; /* Example of adjusting font size */
+    }
+    .card{
+        width: 628px;
+        height: 246px;
+        background-color: #f0f0f0;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        align-self: center;
+        margin-left: -192px;
+    }
+    .destination {
+        border-radius: 9px;
+        height: 200px;
+        width: 180px;
+        position: relative;
+        right: 1030px;
+        top: 62px;
+    }
+    #popular-destinations-section {
+        margin: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        flex: 1;
+        max-width: 3px;
+        position: relative;
+        left: 440px;
+        /* scale: 90%; */
+    }
+    .card button {
+        padding: 10px 15px;
+        /* margin-top: 10px; */
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        max-width: 160px;
+        text-decoration: none;
+        position: relative;
+        left: 738px;
+        top: -87px;
+    }
+    
+    .card a {
+        display: inline-block;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: none;
+        position: relative;
+        left: 746px;
+        max-width: 160px;
+        top: -65px;
+    }
+    #pagination-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        scale: 280%;
+        position: relative;
+        top: 538px;
+        left: 305px;
+    }
+        
+    #popular-destinations-section h2 {
+        font-size: 2em;
+        margin: 5px;
+        left: 0px;
+        position: relative;
+    }
+    body > header {
+        top: 0px;
+        left: 1px;
+        height: 95px;
+        background-color: #b8ef38;
+        border-bottom: 1px solid #f0f0f0;
+        box-sizing: border-box;
+        padding: 10px 20px;
+        width: 1252px;
+        display: flex;
+    }
+    .card, #search-results .card {
+        width: 914px;
+        height: 246px;
+        background-color: #f0f0f0;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        align-self: center;
+        margin-left: -192px;
+        position: relative;
+        left: 111px;
+    }
+    
+    
+}
+
+/* Another media query for devices with even smaller widths if necessary */
+@media (max-width: 480px) {
+    body {
+        /* Here you can apply additional adjustments for even smaller devices */
+        max-width: 400px; 
+        font-size: 12px; 
+    }
+}
+
+
 /* Styling on need help submit button */
 
 .helpSubmit {
