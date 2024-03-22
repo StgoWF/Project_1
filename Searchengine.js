@@ -1,3 +1,5 @@
+var imageArray = ['./assets/images/Ui MockUps/group.jpeg','./assets/images/Ui MockUps/Hotel Search.jpeg'];
+var currentImageIndex = 0
 // Function to modify the quantity of passengers
 function modifyQuantity(passengerType, delta) {
     var input = document.getElementById(passengerType);
@@ -314,6 +316,9 @@ contentPanel.innerHTML = '';
 
 // Iterate over the data and create HTML elements to display each piece of information
 data.data.flightOffers.forEach(item => {
+    if (currentImageIndex === imageArray.length){
+        currentImageIndex = 0; 
+    }
     // Create a container element for each item
   
     const card = document.createElement('section');
@@ -323,12 +328,12 @@ data.data.flightOffers.forEach(item => {
     const airlineCodeContainer = document.createElement('div')
     airlineCodeContainer.classList.add('airlineCodeContainer')
     const imageContainer = document.createElement('div')
-    imageContainer.classList.add('Imagecontainer')
+    imageContainer.classList.add('imageContainer')
 
     const Airfare = item.priceBreakdown.total.units 
     const AirefareElement = document.createElement('div');
     AirefareElement.classList.add("airfairprice")
-    AirefareElement.textContent = "Price: " + Airfare
+    AirefareElement.textContent = "$ " + Airfare
     airfaireContainer.appendChild(AirefareElement)
 
     const airlineCode = item.segments[0].legs[0].carriersData[0].name; // Adjust if the path is different
@@ -336,6 +341,14 @@ data.data.flightOffers.forEach(item => {
     airlineCodeElement.classList.add("airlineCode");
     airlineCodeElement.textContent = ` ${airlineCode}`;
     airlineCodeContainer.appendChild(airlineCodeElement);
+
+    // const airlineLogo = item.segments[0].legs[0].carriersData[0].logo; // Adjust if the path is different
+    const airlineLogo = imageArray[currentImageIndex]
+    const airlineLogoElement = document.createElement('img');
+    airlineLogoElement.classList.add("airlineLogo");
+    airlineLogoElement.src = ` ${airlineLogo}`;
+    imageContainer.appendChild(airlineLogoElement);
+    
     card.appendChild(imageContainer);
     card.appendChild(airlineCodeContainer);
     card.appendChild(airfaireContainer);
@@ -346,6 +359,7 @@ data.data.flightOffers.forEach(item => {
 // ----------------------------------------------------------------
     // Append the item container to the content panel
     contentPanel.appendChild(card);
+    currentImageIndex++;
 });
     } catch (error) {
         console.error(error);

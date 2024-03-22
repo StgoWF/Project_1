@@ -226,6 +226,7 @@ body, input, select, button {
     font-weight: 600;
     line-height: 30px;
     text-align: right;
+    padding-top: 110px;
   }
   .cardsection {
     top: 216px;
@@ -246,6 +247,7 @@ body, input, select, button {
     font-family: "Poppins";
     font-weight: 500;
     line-height: 30px;
+    padding-bottom: 390px;
   }
 
   .airFaireSection{
@@ -254,13 +256,14 @@ display: flex;
   }
 
   .airlineCodeContainer{
-display: flex;
-align-items: flex-end;
-padding-bottom: 84px;
+    align-items: flex-end;
+    padding-bottom: 170px;
+    padding-right: 390px;
+    padding-top: 130px;
 
   }
 
-  .Imagecontainer {
+  .imageContainer {
     top: 228px;
     left: 487px;
     width: 200px;
@@ -270,4 +273,17 @@ padding-bottom: 84px;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+  }
+
+  .airlineLogo{
+    top: 228px;
+    left: 487px;
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    background-image: url(./image.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
   }
