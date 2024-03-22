@@ -46,7 +46,7 @@
             <a href="/support">Support</a>
             <a href="/my-plans">My Plans</a>
             <a href="signup.html" target="_blank">Create Account</a>
-            <button type="click" id="loginButton"><span class="loginPopUp">Log In</span></button>
+            <button type="show" id="show-login">Log In</button>
         </nav>
     </header>
 
@@ -71,26 +71,31 @@
 
          <!-- popup log in --> 
         <div class="popup"> 
-            **login input**
-        <div class="close-btn">&times;</div>
-        <div class="form">
-            <h2>Log In</h2>
-            <div class="form-element">
-                <label>Email</label>
-                <input type="text" id=email placeholder="Enter Email">
-                <label>Password</label>
-                <input type="text" id=password placeholder="Enter Password">
-                <input type="button" value="Submit">
+            <div class="close-btn">&times;</div>
+            <div class="form">
+                <h2>Log In</h2>
+                <div class="form-element">
+                    <label>Email</label>
+                    <input type="text" id=email placeholder="Enter Email">
+                    <label>Password</label>
+                    <input type="text" id=password placeholder="Enter Password">
+                    <input type="button" value="Sign in">
+                </div>
+                <div class="form-element">
+                    <input type="checkbox" id="remember-me">
+                    <label type="remember-me">Remember me</label>
+                </div>
+                <div class="form-element">
+                    <input type="button" value="Sign in"> 
+                <!-- <button type="submit">Sign In</button>-->
+                </div>
+                <div class="form-element">
+                    <p class="para-2">Don't have an account? <a href="signup.html">Create an Account</a></p>
+                </div>
             </div>
-            <div class="form-element">
-                <input type="checkbox" id="remember-me">
-                <label type="remember-me">Remember me</label>
-            </div>
-            <div class="form-element">
-                <button>Sign In</button>
-            </div>
-            <p class="para-2">Don't have an account? <a href="signup.html">Create an Account</a></p>
-            </div>  
+        </div>
+        
+    
 
         <!-- Popular Destinations Section -->
         <section id="popular-destinations-section">
