@@ -218,3 +218,56 @@ body, input, select, button {
 .Forced-Relative {
     position: relative !important;
 }
+
+.airfairprice {
+    color: #030303;
+    font-size: 20px;
+    font-family: "Poppins";
+    font-weight: 600;
+    line-height: 30px;
+    text-align: right;
+  }
+  .cardsection {
+    top: 216px;
+    left: 471px;
+    width: 905px;
+    height: 232px;
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+
+  }
+  .airlineCode {
+    color: #030303;
+    font-size: 20px;
+    font-family: "Poppins";
+    font-weight: 500;
+    line-height: 30px;
+  }
+
+  .airFaireSection{
+
+display: flex;
+  }
+
+  .airlineCodeContainer{
+display: flex;
+align-items: flex-end;
+padding-bottom: 84px;
+
+  }
+
+  .Imagecontainer {
+    top: 228px;
+    left: 487px;
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    background-image: url(./image.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }

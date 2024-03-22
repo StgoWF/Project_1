@@ -1,3 +1,18 @@
+// -------------------------
+// DOMContentLoaded Event Listeners
+// -------------------------
+document.addEventListener('DOMContentLoaded', function() {
+    initializePassengerQuantityButtons();
+    initializeDropdownToggle();
+    initializeTripTypeChangeListener();
+    initializeDateInputListeners();
+    initializeDropdownHolderClick();
+    initializeFlightSearch();
+});
+
+// -------------------------
+// Passenger Quantity Modification Functions
+// -------------------------
 // Function to modify the quantity of passengers
 function modifyQuantity(passengerType, delta) {
     var input = document.getElementById(passengerType);
@@ -11,15 +26,7 @@ function modifyQuantity(passengerType, delta) {
     input.value = currentValue;
 }
 
-// Toggle Dropdown Display
-function toggleDropdown() {
-    var dropdown = document.getElementById("passengerDropdownContent"); 
-    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-}
-
-// Initialize event listeners when the document is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Event listeners for Decrease and Increase Buttons
+function initializePassengerQuantityButtons() {
     var decreaseButtons = document.querySelectorAll('.decrease');
     var increaseButtons = document.querySelectorAll('.increase');
 
@@ -36,17 +43,29 @@ document.addEventListener('DOMContentLoaded', function() {
             modifyQuantity(type, 1);
         });
     });
+}
 
-    // Toggle Dropdown for passenger button
+// -------------------------
+// Dropdown Display Functions
+// -------------------------
+function toggleDropdown() {
+    var dropdown = document.getElementById("passengerDropdownContent"); 
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+}
+
+function initializeDropdownToggle() {
     var passengerBtn = document.getElementById('passengerDropdown');
     if (passengerBtn) {
         passengerBtn.addEventListener('click', toggleDropdown);
     }
-});
-document.querySelector("#passengerDropdownHolder")
-.addEventListener("click",function(event) {
-    event.stopPropagation()
-});
+}
+
+function initializeDropdownHolderClick() {
+    document.querySelector("#passengerDropdownHolder").addEventListener("click",function(event) {
+        event.stopPropagation()
+    });
+}
+
 // Unified window onclick to handle outside click for closing dropdown
 window.onclick = function(event) {
     if (!event.target.matches('#passengerDropdownHolder')) {
@@ -59,7 +78,11 @@ window.onclick = function(event) {
         }
     }
 };
-document.addEventListener('DOMContentLoaded', function() {
+
+// -------------------------
+// Date Input Functions
+// -------------------------
+function initializeDateInputListeners() {
     var departDateInput = document.getElementById('depart-date');
     var returnDateInput = document.getElementById('return-date');
 
@@ -78,10 +101,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
-});
+}
+
+// -------------------------
+// Trip Type Change Functions
+// -------------------------
 function handleTripTypeChange() {
     var tripTypeSelector = document.getElementById('trip-type');
-    var multiCityContainer = document.getElementById('multi-city-container'); // This is a new div you need to add to your HTML for multi-city inputs
+    var multiCityContainer = document.getElementById('multi-city-container');
 
     if (tripTypeSelector.value === 'multicity') {
         multiCityContainer.innerHTML = `
@@ -102,38 +129,22 @@ function handleTripTypeChange() {
                 <input type="date" id="return-date-2">
             </div>`;
     } else {
-        multiCityContainer.innerHTML = ''; // Clear the additional fields
+        multiCityContainer.innerHTML = '';
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+function initializeTripTypeChangeListener() {
     var tripTypeSelector = document.getElementById('trip-type');
     tripTypeSelector.addEventListener('change', handleTripTypeChange);
-
-    // Call it on page load in case multi-city is preselected
     handleTripTypeChange();
-});
-document.addEventListener('DOMContentLoaded', function() {
-    var tripTypeSelector = document.getElementById('trip-type');
-    var returnDateInput = document.getElementById('return-date');
+}
 
-    tripTypeSelector.addEventListener('change', function() {
-        if (this.value === 'oneway') {
-            // Hide or disable the return date input
-            returnDateInput.style.display = 'none';
-        } else {
-            // Show the return date input
-            returnDateInput.style.display = 'block';
-        }
-    });
+// -------------------------
+// Multi-City Input Fields Functions
+// -------------------------
 
-    // Initial check in case the page loads with "One-way" preselected
-    if (tripTypeSelector.value === 'oneway') {
-        returnDateInput.style.display = 'none';
-    }
-});
-// Function to add Multi-City input fields dynamically
 let citySetCount = 1;
+
 function addCityInputs() {
     citySetCount++;
     const container = document.getElementById('multi-city-container');
@@ -167,8 +178,7 @@ function addCityInputs() {
     container.insertBefore(newCitySet, container.lastChild);
 
     updateAddButton(container);
-    let addButton = document.getElementById('add-city-button');
-    addButton.classList.remove("Forced-Relative")
+    
 }
 
 function updateAddButton(container) {
@@ -189,100 +199,135 @@ function deleteCitySet(citySetId) {
         citySet.parentNode.removeChild(citySet);
         citySetCount--;
     }
-    console.log(citySetCount)
-if(citySetCount ===1) {
-    let addButton = document.getElementById('add-city-button');
-    addButton.classList.add("Forced-Relative")
-}
 }
 
-// Function to handle Trip Type change
-function handleTripTypeChange() {
-    var tripTypeSelector = document.getElementById('trip-type');
-    var returnDateGroup = document.getElementById('return-date-group');
-    var multiCityContainer = document.getElementById('multi-city-container');
+// -------------------------
+// Flight Search Functions
+// -------------------------
 
-    // Handling One-way and Roundtrip options
-    if (tripTypeSelector.value === 'oneway') {
-        returnDateGroup.style.display = 'none';
-    } else {
-        returnDateGroup.style.display = 'block';
-    }
-
-    // Handling Multi-city option
-    if (tripTypeSelector.value === 'multicity') {
-        if (citySetCount === 1) {
-            addCityInputs(); // Add the first set of fields
-        }
-    } else {
-        multiCityContainer.innerHTML = '';
-        citySetCount = 1;
-    }
+function initializeFlightSearch() {
+    document.querySelector(".search-btn").addEventListener("click", searchEngine);
 }
-
-// Initialize event listeners
-document.addEventListener('DOMContentLoaded', function() {
-    var tripTypeSelector = document.getElementById('trip-type');
-    tripTypeSelector.addEventListener('change', handleTripTypeChange);
-
-    // Call handleTripTypeChange on page load to set the correct display state
-    handleTripTypeChange();
-});
-
-document.querySelector(".search-btn").addEventListener("click", Searchengine)
 function Searchengine (){
 
-const searchData = {
-    tripType: document.getElementById('trip-type').value,
-    from: document.getElementById('from').value,
-    to: document.getElementById('to').value,
-    departDate: document.getElementById('depart-date').value,
-    returnDate: document.getElementById('return-date').value,
-    passengers: {
-        adults: parseInt(document.getElementById('adults').value),
-        children: parseInt(document.getElementById('children').value),
-        infants: parseInt(document.getElementById('infants').value)
-    },
-    class: document.getElementById('class').value
-};
-console.log(searchData)
-GetAirportIDfromcity(searchData.to).then(function(ToID){
-    GetAirportIDfromcity(searchData.from).then(function(fromID){
-        console.log (ToID)
-        console.log (fromID)
-SearchflightAPI(fromID, ToID, searchData.departDate)
+    const searchData = {
+        tripType: document.getElementById('trip-type').value,
+        from: document.getElementById('from').value,
+        to: document.getElementById('to').value,
+        departDate: document.getElementById('depart-date').value,
+        returnDate: document.getElementById('return-date').value,
+        passengers: {
+            adults: parseInt(document.getElementById('adults').value),
+            children: parseInt(document.getElementById('children').value),
+            infants: parseInt(document.getElementById('infants').value)
+        },
+        class: document.getElementById('class').value
+    };
+    console.log(searchData)
+    GetAirportIDfromcity(searchData.to).then(function(ToID){
+        GetAirportIDfromcity(searchData.from).then(function(fromID){
+            console.log (ToID)
+            console.log (fromID)
+    SearchflightAPI(fromID, ToID, searchData.departDate)
+        })
     })
-})
+    }
+    
+    function GetAirportIDfromcity(city){
+    const url = 'https://booking-com15.p.rapidapi.com/api/v1/flights/searchDestination?query='+city;
+    var options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '8d3728dcaemsh32efdac6013419ap12f34bjsned7b35d9a858',
+            'X-RapidAPI-Host': 'booking-com15.p.rapidapi.com'
+        }
+    };
+    
+    return fetch(url, options)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Process the response data from your API
+        console.log(data);
+        var id= data.data[0].id
+    
+    return id
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+    }
+
+    async function SearchflightAPI (toID, fromID, departDate){
+        const url = `https://booking-com15.p.rapidapi.com/api/v1/flights/searchFlights?fromId=${fromID}&toId=${toID}&departDate=${departDate}`//&pageNo=1&adults=1&children=0%2C17&currency_code=AED`;
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '8d3728dcaemsh32efdac6013419ap12f34bjsned7b35d9a858',
+                'X-RapidAPI-Host': 'booking-com15.p.rapidapi.com'
+            }
+        };
+        
+        try {
+            const response = await fetch(url, options);
+            const data = await response.json();
+            console.log(data);
+            
+            const contentPanel = document.querySelector('.content-panel');
+    
+            const newDataElement = document.createElement('div');
+            newDataElement.textContent = JSON.stringify(data); // Assuming 'data' is JSON data
+    
+            contentPanel.innerHTML = '';
+    
+            contentPanel.appendChild(newDataElement);
+            console.log(newDataElement)
+            console.log(contentPanel)
+    // Clear any existing content in the content panel
+    contentPanel.innerHTML = '';
+    
+    // Iterate over the data and create HTML elements to display each piece of information
+    data.data.flightOffers.forEach(item => {
+        // Create a container element for each item
+        const itemContainer = document.createElement('div');
+        itemContainer.classList.add('item-container'); // You can add a class for styling if needed
+        
+        const Airfare = item.priceBreakdown.total.units 
+        const Airefareholder = document.createElement('div');
+        Airefareholder.textContent = "Price: " + Airfare
+        itemContainer.appendChild(Airefareholder)
+    
+        // Append the item container to the content panel
+        contentPanel.appendChild(itemContainer);
+    });
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+// -------------------------
+// Fetch API Data Function
+// -------------------------
+
+async function fetchApiData() {
+    try {
+        console.log('Fetching API data...');
+        var response = await fetch(url, options);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        var result = await response.json();
+        console.log('API response:', result);
+    } catch (error) {
+        console.error('Fetch error:', error);
+    }
 }
 
-function GetAirportIDfromcity(city){
-const url = 'https://booking-com15.p.rapidapi.com/api/v1/flights/searchDestination?query='+city;
-var options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': '8d3728dcaemsh32efdac6013419ap12f34bjsned7b35d9a858',
-        'X-RapidAPI-Host': 'booking-com15.p.rapidapi.com'
-    }
-};
-
-return fetch(url, options)
-.then(response => {
-    if (!response.ok) {
-        throw new Error('Network response was not ok');
-    }
-    return response.json();
-})
-.then(data => {
-    // Process the response data from your API
-    console.log(data);
-    var id= data.data[0].id
-
-return id
-})
-.catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
-});
-}
+fetchApiData();
 
 async function SearchflightAPI (toID, fromID, departDate){
     const url = `https://booking-com15.p.rapidapi.com/api/v1/flights/searchFlights?fromId=${fromID}&toId=${toID}&departDate=${departDate}`//&pageNo=1&adults=1&children=0%2C17&currency_code=AED`;
@@ -315,37 +360,16 @@ contentPanel.innerHTML = '';
 // Iterate over the data and create HTML elements to display each piece of information
 data.data.flightOffers.forEach(item => {
     // Create a container element for each item
-  
-    const card = document.createElement('section');
-    card.classList.add('cardsection');
-    const airfaireContainer = document.createElement('div')
-    airfaireContainer.classList.add('airFaireSection');
-    const airlineCodeContainer = document.createElement('div')
-    airlineCodeContainer.classList.add('airlineCodeContainer')
-    const imageContainer = document.createElement('div')
-    imageContainer.classList.add('Imagecontainer')
-
+    const itemContainer = document.createElement('div');
+    itemContainer.classList.add('item-container'); // You can add a class for styling if needed
+    
     const Airfare = item.priceBreakdown.total.units 
-    const AirefareElement = document.createElement('div');
-    AirefareElement.classList.add("airfairprice")
-    AirefareElement.textContent = "Price: " + Airfare
-    airfaireContainer.appendChild(AirefareElement)
+    const Airefareholder = document.createElement('div');
+    Airefareholder.textContent = "Price: " + Airfare
+    itemContainer.appendChild(Airefareholder)
 
-    const airlineCode = item.segments[0].legs[0].carriersData[0].name; // Adjust if the path is different
-    const airlineCodeElement = document.createElement('div');
-    airlineCodeElement.classList.add("airlineCode");
-    airlineCodeElement.textContent = ` ${airlineCode}`;
-    airlineCodeContainer.appendChild(airlineCodeElement);
-    card.appendChild(imageContainer);
-    card.appendChild(airlineCodeContainer);
-    card.appendChild(airfaireContainer);
-  
-
-
-
-// ----------------------------------------------------------------
     // Append the item container to the content panel
-    contentPanel.appendChild(card);
+    contentPanel.appendChild(itemContainer);
 });
     } catch (error) {
         console.error(error);
