@@ -5,9 +5,26 @@
     padding: 0;
     text-align: center;
 }
+@font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/Poppins-Regular.ttf') format('truetype'),
+         url('/assets/fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+button {
+    background: none;
+    border: none;
+}
+
 html, body {
     height: 100%; /* Ensures that the html and body take up the full viewport height */
-    margin: 0; /* Reset default margin */
     display: flex;
     flex-direction: column; /* Stacks children elements vertically */
 
@@ -33,16 +50,14 @@ body > footer {
     flex-shrink: 0; /* Prevents the footer from shrinking smaller than its content */
     width: 100%; /* Makes the footer take full width of the page */
     /* Your existing zstyles for the footer */
-    max-width: 600px;
 }
-body {
-    max-width: 1220px; /* or any other value you prefer */
-    margin: 0 auto; /* This will center your page if it's narrower than the max-width */
-}
+/* body {
+    max-width: 1220px; or any other value you prefer
+
+} */
 
 .container {
     max-width: 1200px; /* This is an example; you can set it to the width you prefer */
-
 }
 
 
@@ -58,41 +73,21 @@ header nav {
 }
 
 /* Add margin between navigation links */
-header nav a {
+header nav a,
+header nav button {
     margin-right: 10px;
     text-decoration: none; /* Remove underline from links */
     color: #333; /* Set link color */
 }
 
 
-  
-/* Footer container */
-footer {
-    display: flex; /* Use flexbox for positioning */
-    justify-content: center; 
-    align-items: center; /* Align items vertically */
-    padding: 20px; /* Add padding as needed */
-    background-color: rgb(255, 255, 255); /* Set the background color */
-    border-top: 1px solid rgb(240, 240, 240); /* Add a top border for visual separation */
-  }
 
-  footer a {
-    text-decoration: none;
-  }
-
-/* Google-style Search Bar */
-#search-form {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    margin-bottom: 20px;
-    
-}
-
-nav a {
+nav a,
+nav button {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
+    font-size: 16px;
     text-align: left;
 }
 
@@ -104,16 +99,6 @@ section {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-/* Styling for logos that are attached to the end of the main sections */
-.devDreamLogo {
-    display: inline-block;
-}
-
-.devDreamLogo img {
-    height: 28px;
-    width: 100%;
-    padding-top: 2px;
-}
 
 /* Homepage Section */
 #homepage h1 {
@@ -121,7 +106,8 @@ section {
 }
 
 #search-form input[type="text"],
-#search-form input[type="date"] {
+#search-form input[type="date"],
+#search-form input[type="number"]  {
     font-size: 16px;
     padding: 10px;
     margin: 0 5px;
@@ -138,6 +124,8 @@ section {
     border-radius: 999px; /* Highly rounded corners */
     cursor: pointer;
     outline: none;
+    position: relative;
+    top: 26px;
 }
 
 #search-form button:hover {
@@ -194,15 +182,6 @@ section {
 /* Support/Help Section */
 #support {
     background-color: #f8d7da;
-}
-
-/* Footer styles */
-footer {
-    background-color: rgb(255, 255, 255);
-    border-top: 1px solid rgb(240, 240, 240);
-    padding: 20px;
-    text-align: center;
-    flex-shrink: 0; /* Don't shrink the footer */
 }
     
 /* new login */
@@ -393,10 +372,9 @@ footer {
 
 #userAccount input[type=text],
 #userAccount input[type=password],
-#userAccount input[type=email]
+#userAccount input[type=email],
 #userAccount input[type=issue],
 #userAccount input[type=description] {
-    padding: 10px;
     margin-bottom: 16px; /* Space below inputs */
     border: 1px solid #ccc; /* Border color consistent with light design */
     border-radius: 4px; /* Slight rounding of corners on inputs */
@@ -429,7 +407,7 @@ footer {
     overflow-y: auto; /* Enable vertical scrolling if content overflows */
     display: flex;
     flex-direction: column; /* Display items stacked vertically */
-    border-radius: 46px;
+    
     flex: 1;
 }
 
@@ -437,7 +415,9 @@ footer {
 #search-form {
     display: flex;
     flex-direction: column; /* Display items stacked vertically */
-    gap: 10px; /* Spacing between elements */
+    gap: 24px; /* Spacing between elements */
+    padding: 10px;
+
 }
 
 #search-form button {
@@ -460,9 +440,21 @@ footer {
 .search-container {
     display: flex;
 }
-
-
-
+.destination{
+    
+    
+    border-radius: 9px;
+    height: 200px;
+    width: 180px;
+    position: relative;
+    right: 1176px;
+    top: 62px;
+}
+#london{
+    position: absolute;
+    top: 160px;
+    left: 354px;
+}
 
 
 
@@ -505,17 +497,6 @@ footer {
     display: flex;
     justify-content: start; /* Align children to the start of the container */
 }
-/* Update your .card class */
-.card {
-    /* Remove absolute positioning if present */
-    width: calc(33.333% - 20px); /* This will fit three cards per row, accounting for the gap */
-    background-color: #f0f0f0;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    /* Remove top, left properties if they were previously there */
-}
 
 /* You might want to adjust the width of the homepage section to fit the search form */
 #homepage {
@@ -527,6 +508,7 @@ footer {
 
 /* Container for the destination cards to align them in a column */
 #popular-destinations-section {
+    margin: 0;
     display: flex;
     flex-direction: column; /* Stacks cards vertically */
     align-items: center; /* Center cards horizontally */
@@ -535,24 +517,28 @@ footer {
     /* Remove max-width if you want the container to be full-width */
 }
 
+#popular-destinations-section h2 {
+    font-size: 2em;
+    margin: 5px;
+}
 
 /* Container for cards */
-.destinations-container {
+.destinations-container,search-results {
     display: flex;
     justify-content: space-around; /* Evenly distributes cards with space around them */
     flex-wrap: wrap; /* Allows cards to wrap to the next line */
 }
 
-.card {
-    width: 200px; /* Example width, adjust as necessary */
-    height: 200px; /* Example height, adjust as necessary */
+.card, #search-results .card  {
+    width: 996px; /* Example width, adjust as necessary */
+    height: 246px; /* Example height, adjust as necessary */
     background-color: #f0f0f0;
     border-radius: 12px;
     margin-bottom: 20px; /* Margin at the bottom of each card */
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     /* Add the following if you want the cards to have a max-width and be centered */
-    max-width: 300px;
+    
     align-self: center; /* This will center the cards if the container is wider */
 }
 /* Ensure the container of the cards uses flexbox to layout its children */
@@ -565,24 +551,260 @@ footer {
 /* Container for cards */
 .destinations-container {
     display: flex;
-    justify-content: space-around; /* Evenly distributes cards with space around them */
+    justify-content: space-around;
     flex-wrap: wrap; /* Allows cards to wrap to the next line */
 }
 
+.card-images {
+    height: 210px;
+}
+
+.card-image {
+    width: 200px;
+    height: 200px;
+    /* border-radius: 12px; */
+    margin-right: 735px;
+    margin-top: 7px;
+    scale: 108%;
+    margin-bottom: -30px;
+  }
+  .card-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: -56px;
+    position: relative;
+    top: -47px;
+  }
+
+  .hotel-name {
+    left: 257px;
+    position: relative;
+    text-align: left;
+    font-size: 20px;
+    top: -70px;
+    max-width: 545px;
+
+  }
+  .hotel-address {
+    left: 257px;
+    position: relative;
+    text-align: left;
+    top: -76px;
+  }
+  
+  .hotel-nights {
+    position: relative;
+    text-align: right;
+    top: -101px;
+}
+
+.hotel-price {
+    position: relative;
+    text-align: right;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    top: -97px;
+}
+.hotel-score{
+    top: -102px;
+    position: relative;
+    text-align: right;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.card button { /* Style both buttons similarly */
+    padding: 10px 15px;
+    /* margin-top: 10px; */
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    max-width: 160px;
+    text-decoration: none;
+    position: relative;
+    left: 816px;
+    top: -87px;
+}
+
+.card a {
+    display: inline-block;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    position: relative;
+    left: 814px;
+    max-width: 160px;
+    top: -65px;
+}
+.card a button { /* Style both buttons similarly */
+    padding: 10px 15px;
+    /* margin-top: 10px; */
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    max-width: 200px;
+    text-decoration: none;
+    position: relative;
+    left: 3px;
+    top: -12px;
+}
+
+
+#pagination-container {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+    scale: 250%;
+    position: relative;
+    top: 536px;
+    left: -700px;
+}
+
+
+
+
 /* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .card {
         /* Adjusts to 2 cards per row on smaller screens */
-        flex-basis: calc(50% - 20px);
+        /* flex-basis: calc(50% - 20px); */
+    /* }
+} */ */
+
+
+
+@media (max-width: 480px) {
+    .card{
+        width: calc(100% - 20px); /* Mostrar una tarjeta por fila en dispositivos muy pequeños */
+    }
+}
+/* Media query to adjust styles on devices with smaller widths */
+@media (max-width: 768px) {
+    body {
+        /* Here you can adjust the maximum width of the body or font size, for example */
+        max-width: 768px; /* Example of adjusting maximum width */
+        font-size: 14px; /* Example of adjusting font size */
+    }
+    .card{
+        width: 628px;
+        height: 246px;
+        background-color: #f0f0f0;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        align-self: center;
+        margin-left: -192px;
+    }
+    .destination {
+        border-radius: 9px;
+        height: 200px;
+        width: 180px;
+        position: relative;
+        right: 1030px;
+        top: 62px;
+    }
+    #popular-destinations-section {
+        margin: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        flex: 1;
+        max-width: 3px;
+        position: relative;
+        left: 440px;
+        /* scale: 90%; */
+    }
+    .card button {
+        padding: 10px 15px;
+        /* margin-top: 10px; */
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        max-width: 160px;
+        text-decoration: none;
+        position: relative;
+        left: 738px;
+        top: -87px;
+    }
+    
+    .card a {
+        display: inline-block;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: none;
+        position: relative;
+        left: 746px;
+        max-width: 160px;
+        top: -65px;
+    }
+    #pagination-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        scale: 280%;
+        position: relative;
+        top: 538px;
+        left: 305px;
+    }
+        
+    #popular-destinations-section h2 {
+        font-size: 2em;
+        margin: 5px;
+        left: 0px;
+        position: relative;
+    }
+    body > header {
+        top: 0px;
+        left: 1px;
+        height: 95px;
+        background-color: #b8ef38;
+        border-bottom: 1px solid #f0f0f0;
+        box-sizing: border-box;
+        padding: 10px 20px;
+        width: 1252px;
+        display: flex;
+    }
+    .card, #search-results .card {
+        width: 914px;
+        height: 246px;
+        background-color: #f0f0f0;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        align-self: center;
+        margin-left: -192px;
+        position: relative;
+        left: 111px;
+    }
+    
+    
+}
+
+/* Another media query for devices with even smaller widths if necessary */
+@media (max-width: 480px) {
+    body {
+        /* Here you can apply additional adjustments for even smaller devices */
+        max-width: 400px; 
+        font-size: 12px; 
     }
 }
 
-@media (max-width: 480px) {
-    .card {
-        /* Adjusts to 1 card per row on the smallest screens */
-        flex-basis: 100%;
-    }
-}
+
 /* Styling on need help submit button */
 
 .helpSubmit {
@@ -591,10 +813,55 @@ footer {
 
 /* Footer Styling */
 
-footer {
+  footer > * {
     background-color: #b8ef38;
+  }
+
+  .footerContainer {
+    width: 100%;
+    padding: 55px 25px 15px;
+  }
+
+.socialMedia {
+    display: flex;
+    justify-content: center;
 }
 
-p {
-    float: right;
+.socialMedia a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.socialMedia a i {
+    font-size: 2em;
+    color: #b8ef38;
+    opacity: 0.9;
+}
+
+.socialMedia a:hover {
+    background-color: black;
+    transition: 1s;
+}
+
+.footerNav {
+    margin: 25px 0;
+
+}
+
+.footerNav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.footerNav ul li {
+    margin: 10px;
+    font-size: 1em;
+    opacity: 0.5;
+}
+
+.footerNav ul li a {
+    text-decoration: none;
 }
