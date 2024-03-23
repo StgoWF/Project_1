@@ -4,28 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account - TailorMyTrip</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/signup.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <!-- TaylorMyTrip Logo and Icon -->
+    <div class="banner">
         <div class="logo-and-icon">
             <button type="click" id="hawaiiPopUp">
                 <img src="./assets/images/icons/earth-americas.svg" alt="Logo Icon" class="icon logo-icon">
             </button>
             <span class="text logo-text">TaylorMyTrip</span>
         </div>
-        <!-- Navigation Bar -->
         <nav>
-            <a href="./index.html">Home</a>
+            <a href="/">Home</a>
             <a href="/destinations">Destinations</a>
             <a href="/support">Support</a>
             <a href="/my-plans">My Plans</a>
             <a href="signup.html" target="_blank">Create Account</a>
-            <button type="click" id="loginButton"><span class="loginPopUp">Log In</span></button>
+            <a href="#" id="loginButton">Log In</a>
         </nav>
-    </header>
+    </div>
+
     <div class="content">
         <section id="userAccount">
             <h2>Create an Account</h2>
@@ -42,16 +40,14 @@
                 <label for="confirm-password">Confirm Password:</label>
                 <input type="password" id="confirm-password" name="confirm-password" required>
 
-                <label for="terms">
+                <label for="terms" class="checkbox-container">
                     <input type="checkbox" id="terms" name="terms" required>
                     I agree to the Terms and Conditions
                 </label>
-                  
-
+                
                 <input type="submit" value="Create Account">
             </form>
         </section>
     </div>
 </body>
 </html>
-
