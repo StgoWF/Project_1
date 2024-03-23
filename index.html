@@ -11,7 +11,7 @@
 <body>
 
     <!-- Header Section -->
-    <header class="container">
+    <header>
         <!-- Modal -->
         <div class="modal">
             <div class="modal-background"></div>
@@ -19,7 +19,6 @@
                     <h3 class="title mb-6">You won a free ticket to Hawaii!</h3>
                 </div>
         </div>
-        <div class="logo-and-icon">
         <!-- Navigation Bar -->
         <nav>
             <!-- Vertical tabs -->
@@ -33,17 +32,18 @@
               </ul>
               <ul>
                 <!-- Horizontal Tabs -->
-                <li class="logo-and-icon">
-                    <button type="click" id="hawaiiPopUp">
-                        <img src="./assets/images/icons/earth-americas.svg" alt="Logo Icon" class="icon logo-icon">
-                    </button>
-                    <span class="text logo-text">TaylorMyTrip</span></li>
+                <li>
+                    <div class="logo-and-icon">
+                        <button type="click" id="hawaiiPopUp">
+                            <img src="./assets/images/icons/earth-americas.svg" alt="Logo Icon" class="icon logo-icon">
+                        </button><span class="text logo-text">TaylorMyTrip</span></li>
+                    </div>
                 <li class="hideMobile"><a href="">Home</a></li>
                 <li class="hideMobile"><a href="">Destinations</a></li>
                 <li class="hideMobile"><a href="">Support</a></li>
                 <li class="hideMobile"><a href="">My Plans</a></li>
                 <li class="hideMobile"><a href="">Create Account</a></li>
-                <li onclick=showSidebar()><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                <li class="menu_button" onclick=showSidebar()><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
               </ul>
             </div>
         </nav>
@@ -69,9 +69,9 @@
         </div>
 
          <!-- login -->
-         <div class="login-box">
+         <!-- <div class="login-box"> -->
             <!-- login input-->
-            <h2>Log In</h2>
+            <!-- <h2>Log In</h2>
             <form id="login-text"></form>
                 <label>Email</label>
                 <input type="email" placeholder="">
@@ -80,12 +80,12 @@
                 <input type="button" value="Submit">
             </form>
             <p class="para-2">Don't have an account? <a href="signup.html">Create an Account</a></p>
-            </div> 
+            </div>  -->
 
         <!-- Popular Destinations Section -->
-        <section id="popular-destinations-section">
-            <h2>Popular Destinations</h2>
-            <div class="destinations-container"> <!-- Container for cards -->
+        <section class="hideSection" id="popular-destinations-section">
+            <h2 class="hideSection">Popular Destinations</h2>
+                <div id="hideSection" class="destinations-container">
                 <div class="card">
                     <h3>London</h3>
                     <!-- <p>The historic capital of the United Kingdom</p> -->
@@ -93,7 +93,7 @@
                 </div>
                 <div class="card">
                     <h3>Paris</h3>
-                    <a href="./destinations/paris.html"><img src="./assets/images/paris.jpeg" class="destination" id="Paris"></a>
+                    <a href="./destinations/paris.html"><img src="./assets/images/paris.jpeg" class="destination"></a>
                     <!--<p>The romantic city of lights and love</p>-->
                 </div>
                 <div class="card">
