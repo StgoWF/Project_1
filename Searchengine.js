@@ -323,18 +323,32 @@ data.data.flightOffers.forEach(item => {
   
     const card = document.createElement('section');
     card.classList.add('cardsection');
-    const airfaireContainer = document.createElement('div')
+    const airfaireContainer = document.createElement('div');
     airfaireContainer.classList.add('airFaireSection');
-    const airlineCodeContainer = document.createElement('div')
-    airlineCodeContainer.classList.add('airlineCodeContainer')
-    const imageContainer = document.createElement('div')
-    imageContainer.classList.add('imageContainer')
+    const airlineCodeContainer = document.createElement('div');
+    airlineCodeContainer.classList.add('airlineCodeContainer');
+    const airlineLogoContainer = document.createElement('div');
+    airlineLogoContainer.classList.add('airlineLogoContainer');
+    const imageContainer = document.createElement('div');
+    imageContainer.classList.add('imageContainer');
+    const flightDurationContainer = document.createElement('div');
+    flightDurationContainer.classList.add('flightDurationContainer');
+    const departAirportContainer = document.createElement('div');
+    departAirportContainer.classList.add('departAirportContainer');
+    const arrivalAirportContainer = document.createElement('div');
+    arrivalAirportContainer.classList.add('arrivalAirportContainer');
+    const arrivalTimeContainer = document.createElement('div');
+    arrivalTimeContainer.classList.add('arrivalTimeContainer');
+   const departTimeContainer = document.createElement('div');
+   departTimeContainer.classList.add('departTimeContainer');
 
-    const Airfare = item.priceBreakdown.total.units 
+
+
+    const Airfare = item.priceBreakdown.total.units;
     const AirefareElement = document.createElement('div');
-    AirefareElement.classList.add("airfairprice")
-    AirefareElement.textContent = "$ " + Airfare
-    airfaireContainer.appendChild(AirefareElement)
+    AirefareElement.classList.add("airfairprice");
+    AirefareElement.textContent = "$ " + Airfare;
+    airfaireContainer.appendChild(AirefareElement);
 
     const airlineCode = item.segments[0].legs[0].carriersData[0].name; // Adjust if the path is different
     const airlineCodeElement = document.createElement('div');
@@ -342,17 +356,81 @@ data.data.flightOffers.forEach(item => {
     airlineCodeElement.textContent = ` ${airlineCode}`;
     airlineCodeContainer.appendChild(airlineCodeElement);
 
-    // const airlineLogo = item.segments[0].legs[0].carriersData[0].logo; // Adjust if the path is different
-    const airlineLogo = imageArray[currentImageIndex]
+    const cardImg = imageArray[currentImageIndex];
+    const cardImgElement = document.createElement('img');
+    cardImgElement.classList.add("cardImg");
+    cardImgElement.src = ` ${cardImg}`;
+    imageContainer.appendChild(cardImgElement);
+
+    const airlineLogo = item.segments[0].legs[0].carriersData[0].logo;
     const airlineLogoElement = document.createElement('img');
     airlineLogoElement.classList.add("airlineLogo");
-    airlineLogoElement.src = ` ${airlineLogo}`;
-    imageContainer.appendChild(airlineLogoElement);
+    airlineLogoElement.src = `${airlineLogo}`;
+    airlineLogoContainer.appendChild(airlineLogoElement);
+
+
+
+    function formatDuration(seconds) {
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        return `${hours}h ${minutes}m`;
+    }
+
+    const flightDuration = item.segments[0].totalTime;
+    const formattedDuration = formatDuration(flightDuration);
+    const flightDurationElement = document.createElement('div');
+    flightDurationElement.classList.add("flightDuration");
+    flightDurationElement.textContent = formattedDuration;
+    flightDurationContainer.appendChild(flightDurationElement);
+
+
+    const departAirport = item.segments[0].departureAirport.code;
+    const departureAirportElement = document.createElement('div');
+    departureAirportElement.classList.add("departAirport");
+    departureAirportElement.textContent =` ${departAirport}`;
+    departAirportContainer.appendChild(departureAirportElement);
+
+    const arrivalAirport = item.segments[0].arrivalAirport.code;
+    const arrivalAirportElement = document.createElement('div');
+    arrivalAirportElement.classList.add("arrivalAirport");
+    arrivalAirportElement.textContent =` ${arrivalAirport}`;
+    arrivalAirportContainer.appendChild(arrivalAirportElement);
     
+    const departTime = new Date(item.segments[0].departureTime);
+    const arrivalTime = new Date(item.segments[0].arrivalTime);
+    const options = {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+    };
+    const formattedDepartTime = departTime.toLocaleTimeString('en-US', options);
+    const formattedArrivalTime = arrivalTime.toLocaleTimeString('en-US', options);
+    const departTimeElement = document.createElement('div');
+    departTimeElement.classList.add("departTime");
+    departTimeElement.textContent = formattedDepartTime;
+    departTimeContainer.appendChild(departTimeElement);
+    const arrivalTimeElement = document.createElement('div');
+    arrivalTimeElement.classList.add("arrivalTime");
+    const isNextDay = departTime.getDate() !== arrivalTime.getDate() || 
+                    departTime.getMonth() !== arrivalTime.getMonth() ||
+                    departTime.getFullYear() !== arrivalTime.getFullYear();
+    arrivalTimeElement.textContent = formattedArrivalTime + (isNextDay ? " Next Day" : "");
+    arrivalTimeContainer.appendChild(arrivalTimeElement);
+
+    departTimeElement.classList.add("departTime");
+    departTimeElement.textContent = formattedDepartTime;
+    departTimeContainer.appendChild(departTimeElement);
+    
+
     card.appendChild(imageContainer);
     card.appendChild(airlineCodeContainer);
+    card.appendChild(airlineLogoContainer);
     card.appendChild(airfaireContainer);
-  
+    card.appendChild(flightDurationContainer);
+    card.appendChild(departAirportContainer);
+    card.appendChild(arrivalAirportContainer);
+    card.appendChild(departTimeContainer);
+    card.appendChild(arrivalTimeContainer);
 
 
 

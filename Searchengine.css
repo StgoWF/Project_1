@@ -276,10 +276,10 @@ display: flex;
   }
 
   .airlineLogo{
-    top: 228px;
-    left: 487px;
-    width: 200px;
-    height: 200px;
+    top: 30px;
+    left: 30px;
+    width: 30px;
+    height: 30px;
     border-radius: 12px;
     background-image: url(./image.png);
     background-position: center center;
