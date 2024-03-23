@@ -6,27 +6,46 @@
     <title>TailorMyTrip</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/styleRS.css">
 </head>
 <body>
-   
 
     <!-- Header Section -->
     <header>
-        <!-- TaylorMyTrip Logo and Icon -->
-        <div class="logo-and-icon">
-            <button type="click">
-                <img src="./assets/images/icons/earth-americas.svg" alt="Logo Icon" class="icon logo-icon">
-            </button>
-            <span class="text logo-text">TaylorMyTrip</span>
+        <!-- Modal -->
+        <div class="modal">
+            <div class="modal-background"></div>
+                <div class="modal-content has-background-white py-5 px-5">
+                    <h3 class="title mb-6">You won a free ticket to Hawaii!</h3>
+                </div>
         </div>
         <!-- Navigation Bar -->
         <nav>
-            <a href="/">Home</a>
-            <a href="/destinations">Destinations</a>
-            <a href="/support">Support</a>
-            <a href="/my-plans">My Plans</a>
-            <a href="signup.html">Create Account</a>
+            <!-- Vertical tabs -->
+              <ul class="sidebar">
+                <li onclick=hideSidebar()><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li><a href="">Home</a></li>
+                <li><a href="">Destinations</a></li>
+                <li><a href="">Support</a></li>
+                <li><a href="">My Plans</a></li>
+                <li><a href="">Create Account</a></li>
+              </ul>
+              <ul>
+                <!-- Horizontal Tabs -->
+                <li>
+                    <div class="logo-and-icon">
+                        <button type="click" id="hawaiiPopUp">
+                            <img src="./assets/images/icons/earth-americas.svg" alt="Logo Icon" class="icon logo-icon">
+                        </button><span class="text logo-text">TaylorMyTrip</span></li>
+                    </div>
+                <li class="hideMobile"><a href="">Home</a></li>
+                <li class="hideMobile"><a href="">Destinations</a></li>
+                <li class="hideMobile"><a href="">Support</a></li>
+                <li class="hideMobile"><a href="">My Plans</a></li>
+                <li class="hideMobile"><a href="">Create Account</a></li>
+                <li class="menu_button" onclick=showSidebar()><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+              </ul>
+            </div>
         </nav>
     </header>
 
@@ -47,14 +66,39 @@
                     <button type="submit">Search</button>
                 </form>
             </div>
-
         </div>
 
-
+         <!-- popup log in --> 
+        <div class="popup"> 
+            <div class="close-btn">&times;</div>
+            <div class="form">
+                <h2>Log In</h2>
+                <div class="form-element">
+                    <label>Email</label>
+                    <input type="text" id=email placeholder="Enter Email">
+                    <label>Password</label>
+                    <input type="password" id=password placeholder="Enter Password">
+                    <input type="button" value="Sign in">
+                </div>
+                <div class="form-element">
+                    <input type="checkbox" id="remember-me">
+                    <label type="remember-me">Remember me</label>
+                </div>
+                <div class="form-element">
+                    <input type="button" value="Sign in"> 
+                <!-- <button type="submit">Sign In</button>-->
+                </div>
+                <div class="form-element">
+                    <p class="para-2">Don't have an account? <a href="signup.html">Create an Account</a></p>
+                </div>
+            </div>
+        </div>
+        
+    
          <!-- login -->
-         <div class="login-box">
+         <!-- <div class="login-box"> -->
             <!-- login input-->
-            <h2>Log In</h2>
+            <!-- <h2>Log In</h2>
             <form id="login-text"></form>
                 <label>Email</label>
                 <input type="email" placeholder="">
@@ -63,20 +107,22 @@
                 <input type="button" value="Submit">
             </form>
             <p class="para-2">Don't have an account? <a href="signup.html">Create an Account</a></p>
-            </div> 
+            </div> -->
 
         <!-- Popular Destinations Section -->
-        <section id="popular-destinations-section">
-            <h2>Popular Destinations</h2>
-            <div class="destinations-container"> <!-- Container for cards -->
+        <section class="hideSection" id="popular-destinations-section">
+            <h2 class="hideSection">Popular Destinations</h2>
+                <div id="hideSection" class="destinations-container">
                 <div class="card">
                     <h3>London</h3>
                     <!-- <p>The historic capital of the United Kingdom</p> -->
+                    <a href="./destinations/london.html"><img src="./assets/images/download.jpeg" alt="london" class="destination" ></a>
                     <a href="./destinations/london.html"><img src="./assets/images/download.jpeg" alt="london" class="destination" ></a>
                 </div>
                 <div class="card">
                     <h3>Paris</h3>
                     <a href="./destinations/paris.html"><img src="./assets/images/paris.jpeg" class="destination" id="Paris"></a>
+                    <a href="./destinations/paris.html"><img src="./assets/images/paris.jpeg" class="destination"></a>
                     <!--<p>The romantic city of lights and love</p>-->
                 </div>
                 <div class="card">
@@ -87,51 +133,52 @@
                 <div class="card">
                     <h3>New York</h3>
                     <a href="./destinations/newyork.html"><img src="./assets/images/newyork.jpeg" class="destination"></a>
+                    <a href="./destinations/newyork.html"><img src="./assets/images/newyork.jpeg" class="destination"></a>
                    <!-- <p>The city that never sleeps with its iconic skyline</p> -->
                 </div>
                 <div class="card">
                     <h3>Rome</h3>
+                    <a href="./destinations/rome.html"><img src="./assets/images/rome.jpeg" class="destination"></a>
                     <a href="./destinations/rome.html"><img src="./assets/images/rome.jpeg" class="destination"></a>
                    <!-- <p>The eternal city with its ancient history and vibrant culture.</p>-->
                 </div>
                 <div class="card">
                     <h3>Sydney</h3>
                     <a href="./destinations/sydney.html"><img src="./assets/images/sydney.jpeg" class="destination"></a>
+                    <a href="./destinations/sydney.html"><img src="./assets/images/sydney.jpeg" class="destination"></a>
                     <!-- <p>Home to the iconic Opera House and stunning harbor views.</p> -->
                 </div>
                 <div class="card">
                     <h3>Cape Town</h3>
+                    <a href="./destinations/cape.html"><img src="./assets/images/cape town.jpeg" class="destination"></a>
                     <a href="./destinations/cape.html"><img src="./assets/images/cape town.jpeg" class="destination"></a>
                    <!-- <p>A city with a stunning coastline and majestic Table Mountain backdrop.</p>-->
                 </div>
                 <div class="card">
                     <h3>Rio de Janeiro</h3>
                     <a href="./destinations/rio.html"><img src="./assets/images/rio de janeiro.jpeg" class="destination"></a>
+                    <a href="./destinations/rio.html"><img src="./assets/images/rio de janeiro.jpeg" class="destination"></a>
                    <!--<p>Famous for its carnival, Christ the Redeemer statue, and Copacabana Beach.</p>--> 
                 </div>
-                
-            </div>
-            
-                
+            </div>   
         </section>
-
     </main> 
 
     <!-- Footer Section -->
     <footer>
         <section class="footerContainer">
             <div class="socialMedia">
-                <a href="https://www.facebook.com/"><i class= "fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com/"><i class= "fa-brands fa-instagram"></i></a>
-                <a href="https://twitter.com/"><i class= "fa-brands fa-twitter"></i></a>
-                <a href="https://youtube.com/"><i class= "fa-brands fa-youtube"></i></a>
+                <a href="https://www.facebook.com/" target="_blank"><i class= "fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class= "fa-brands fa-instagram"></i></a>
+                <a href="https://twitter.com/" target="_blank"><i class= "fa-brands fa-twitter"></i></a>
+                <a href="https://youtube.com/" target="_blank"><i class= "fa-brands fa-youtube"></i></a>
             </div>
             <div class="footerNav">
                 <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="ourTeam.html">Our Team</a></li>
-                    <li><a href="help.html">Contact Us</a></li>
-                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="about.html" target="_blank">About</a></li>
+                    <li><a href="ourTeam.html" target="_blank">Our Team</a></li>
+                    <li><a href="help.html" target="_blank">Contact Us</a></li>
+                    <li><a href="FAQ.html" target="_blank">FAQ</a></li>
                 </ul>
             </div>
             <div class="footerCopyright">
@@ -140,17 +187,11 @@
         </section>
     </footer>
 
-    <!-- Modal -->
-
-    <div class="modal">
-        <div class="modalBackground"></div>
-            <div class="modalContent has-background-grey py-5 px-5">
-                <h3 class="title mb-6">You won a free ticket to Hawaii!</h3>
-            </div>
-    </div>
-
     <!-- JavaScript file link -->
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/modal.js"></script>
+    <script src="./assets/js/login.js"></script>
+
 
 </body>
 </html>
