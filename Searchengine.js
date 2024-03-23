@@ -108,6 +108,7 @@ function handleTripTypeChange() {
     }
 }
 
+
 document.addEventListener('DOMContentLoaded', function() {
     var tripTypeSelector = document.getElementById('trip-type');
     tripTypeSelector.addEventListener('change', handleTripTypeChange);
@@ -286,6 +287,37 @@ return id
 });
 }
 
+function saveFlightOption(flightData) {
+    // Retrieve saved flights from local storage
+    let savedFlights = localStorage.getItem('savedFlights');
+    savedFlights = savedFlights ? JSON.parse(savedFlights) : [];
+
+    // Add the new flight data
+    savedFlights.push(flightData);
+
+    // Save the updated list back to local storage
+    localStorage.setItem('savedFlights', JSON.stringify(savedFlights));
+
+    console.log('Flight saved:', flightData);
+}
+
+function generateReferenceNumber() {
+    return Math.floor(Math.random() * 10000000000); // Random 10-digit number
+}
+
+function sortFlights(flightOffers) {
+    return flightOffers.sort((a, b) => {
+        const priceA = a.priceBreakdown.total.units; // Assuming this is the price
+        const durationA = a.segments[0].totalTime; // Assuming totalTime is in minutes
+
+        const priceB = b.priceBreakdown.total.units;
+        const durationB = b.segments[0].totalTime;
+
+        // Compare by a combination of price and duration
+        return (priceA * durationA) - (priceB * durationB);
+    });
+}
+
 async function SearchflightAPI (toID, fromID, departDate){
     const url = `https://booking-com15.p.rapidapi.com/api/v1/flights/searchFlights?fromId=${fromID}&toId=${toID}&departDate=${departDate}`//&pageNo=1&adults=1&children=0%2C17&currency_code=AED`;
     const options = {
@@ -300,6 +332,14 @@ async function SearchflightAPI (toID, fromID, departDate){
         const response = await fetch(url, options);
         const data = await response.json();
         console.log(data);
+
+        data.data.flightOffers.sort((a, b) => {
+            const priceComparison = a.priceBreakdown.total.units - b.priceBreakdown.total.units;
+            if (priceComparison !== 0) {
+                return priceComparison;
+            }
+            return a.segments[0].totalTime - b.segments[0].totalTime;
+        });
         
         const contentPanel = document.querySelector('.content-panel');
 
@@ -323,38 +363,60 @@ data.data.flightOffers.forEach(item => {
   
     const card = document.createElement('section');
     card.classList.add('cardsection');
-    const airfaireContainer = document.createElement('div');
-    airfaireContainer.classList.add('airFaireSection');
-    const airlineCodeContainer = document.createElement('div');
-    airlineCodeContainer.classList.add('airlineCodeContainer');
-    const airlineLogoContainer = document.createElement('div');
-    airlineLogoContainer.classList.add('airlineLogoContainer');
     const imageContainer = document.createElement('div');
     imageContainer.classList.add('imageContainer');
-    const flightDurationContainer = document.createElement('div');
-    flightDurationContainer.classList.add('flightDurationContainer');
-    const departAirportContainer = document.createElement('div');
-    departAirportContainer.classList.add('departAirportContainer');
-    const arrivalAirportContainer = document.createElement('div');
-    arrivalAirportContainer.classList.add('arrivalAirportContainer');
-    const arrivalTimeContainer = document.createElement('div');
-    arrivalTimeContainer.classList.add('arrivalTimeContainer');
-   const departTimeContainer = document.createElement('div');
-   departTimeContainer.classList.add('departTimeContainer');
-
+    const detailsContainer = document.createElement('div');
+    detailsContainer.classList.add('detailsContainer');
+    const bookingContainer = document.createElement('div');
+    bookingContainer.classList.add('bookingContainer');
 
 
     const Airfare = item.priceBreakdown.total.units;
     const AirefareElement = document.createElement('div');
     AirefareElement.classList.add("airfairprice");
     AirefareElement.textContent = "$ " + Airfare;
-    airfaireContainer.appendChild(AirefareElement);
+    bookingContainer.appendChild(AirefareElement);
+
+    // Book button creation and logic
+    const bookButton = document.createElement('button');
+    bookButton.classList.add('bookButton');
+    bookButton.textContent = 'Book Now';
+    bookButton.addEventListener('click', function() {
+        const referenceNumber = Math.floor(Math.random() * 10000000000);
+        alert(`Enjoy your journey! Your flight is booked, and here is your reference number: ${referenceNumber}`);
+        window.location.reload();
+    });
+    card.appendChild(bookButton);
+    
+    bookingContainer.appendChild(bookButton);
+
+    const saveButton = document.createElement('button');
+            saveButton.classList.add('saveButton');
+            saveButton.innerHTML = '&#9825;'; // Heart symbol
+            saveButton.addEventListener('click', function() {
+                let savedFlights = localStorage.getItem('savedFlights');
+                savedFlights = savedFlights ? JSON.parse(savedFlights) : [];
+
+                if (!savedFlights.some(flight => flight.id === item.id)) {
+                    saveFlightOption(item);
+                    this.innerHTML = '&#9829;'; // Filled heart symbol
+                    this.classList.add('saved');
+                } else {
+                    savedFlights = savedFlights.filter(flight => flight.id !== item.id);
+                    localStorage.setItem('savedFlights', JSON.stringify(savedFlights));
+                    this.innerHTML = '&#9825;'; // Empty heart symbol
+                    this.classList.remove('saved');
+                }
+            });
+            card.appendChild(saveButton);
+
+    bookingContainer.appendChild(saveButton);
 
     const airlineCode = item.segments[0].legs[0].carriersData[0].name; // Adjust if the path is different
     const airlineCodeElement = document.createElement('div');
     airlineCodeElement.classList.add("airlineCode");
     airlineCodeElement.textContent = ` ${airlineCode}`;
-    airlineCodeContainer.appendChild(airlineCodeElement);
+    detailsContainer.appendChild(airlineCodeElement);
 
     const cardImg = imageArray[currentImageIndex];
     const cardImgElement = document.createElement('img');
@@ -366,7 +428,7 @@ data.data.flightOffers.forEach(item => {
     const airlineLogoElement = document.createElement('img');
     airlineLogoElement.classList.add("airlineLogo");
     airlineLogoElement.src = `${airlineLogo}`;
-    airlineLogoContainer.appendChild(airlineLogoElement);
+    detailsContainer.appendChild(airlineLogoElement);
 
 
 
@@ -381,20 +443,20 @@ data.data.flightOffers.forEach(item => {
     const flightDurationElement = document.createElement('div');
     flightDurationElement.classList.add("flightDuration");
     flightDurationElement.textContent = formattedDuration;
-    flightDurationContainer.appendChild(flightDurationElement);
+    detailsContainer.appendChild(flightDurationElement);
 
 
     const departAirport = item.segments[0].departureAirport.code;
     const departureAirportElement = document.createElement('div');
     departureAirportElement.classList.add("departAirport");
     departureAirportElement.textContent =` ${departAirport}`;
-    departAirportContainer.appendChild(departureAirportElement);
+    detailsContainer.appendChild(departureAirportElement);
 
     const arrivalAirport = item.segments[0].arrivalAirport.code;
     const arrivalAirportElement = document.createElement('div');
     arrivalAirportElement.classList.add("arrivalAirport");
     arrivalAirportElement.textContent =` ${arrivalAirport}`;
-    arrivalAirportContainer.appendChild(arrivalAirportElement);
+    detailsContainer.appendChild(arrivalAirportElement);
     
     const departTime = new Date(item.segments[0].departureTime);
     const arrivalTime = new Date(item.segments[0].arrivalTime);
@@ -408,31 +470,24 @@ data.data.flightOffers.forEach(item => {
     const departTimeElement = document.createElement('div');
     departTimeElement.classList.add("departTime");
     departTimeElement.textContent = formattedDepartTime;
-    departTimeContainer.appendChild(departTimeElement);
+    detailsContainer.appendChild(departTimeElement);
     const arrivalTimeElement = document.createElement('div');
     arrivalTimeElement.classList.add("arrivalTime");
     const isNextDay = departTime.getDate() !== arrivalTime.getDate() || 
                     departTime.getMonth() !== arrivalTime.getMonth() ||
                     departTime.getFullYear() !== arrivalTime.getFullYear();
     arrivalTimeElement.textContent = formattedArrivalTime + (isNextDay ? " Next Day" : "");
-    arrivalTimeContainer.appendChild(arrivalTimeElement);
+    detailsContainer.appendChild(arrivalTimeElement);
 
     departTimeElement.classList.add("departTime");
     departTimeElement.textContent = formattedDepartTime;
-    departTimeContainer.appendChild(departTimeElement);
+    detailsContainer.appendChild(departTimeElement);
     
 
+    //card.appendChild(imageContainer);
     card.appendChild(imageContainer);
-    card.appendChild(airlineCodeContainer);
-    card.appendChild(airlineLogoContainer);
-    card.appendChild(airfaireContainer);
-    card.appendChild(flightDurationContainer);
-    card.appendChild(departAirportContainer);
-    card.appendChild(arrivalAirportContainer);
-    card.appendChild(departTimeContainer);
-    card.appendChild(arrivalTimeContainer);
-
-
+    card.appendChild(detailsContainer);
+    card.appendChild(bookingContainer);
 
 // ----------------------------------------------------------------
     // Append the item container to the content panel
@@ -440,6 +495,13 @@ data.data.flightOffers.forEach(item => {
     currentImageIndex++;
 });
     } catch (error) {
-        console.error(error);
+        console.error('There was an issue fetching flight data:', error);
     }
 }
+
+
+
+
+
+const url = `https://booking-com15.p.rapidapi.com/api/v1/flights/searchFlights?fromId=${fromID}&toId=${toID}&departDate=${departDate}`//&pageNo=1&adults=1&children=0%2C17&currency_code=AED`;
+const url = `https://booking-com15.p.rapidapi.com/api/v1/flights/searchFlightsMultiStops?fromId=${fromID}&toId=${toID}&departDate=${departDate}&fromId=${fromID}&toId=${toID}&departDate=${departDate}` //pageNo=1&adults=1&children=0%2C17&currency_code=AED';

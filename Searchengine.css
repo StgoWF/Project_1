@@ -219,71 +219,140 @@ body, input, select, button {
     position: relative !important;
 }
 
-.airfairprice {
-    color: #030303;
-    font-size: 20px;
-    font-family: "Poppins";
-    font-weight: 600;
-    line-height: 30px;
-    text-align: right;
-    padding-top: 110px;
-  }
-  .cardsection {
-    top: 216px;
-    left: 471px;
-    width: 905px;
-    height: 232px;
-    background-color: #f0f0f0;
-    border-radius: 12px;
-    margin-bottom: 20px;
+
+  /* General card styles */
+.cardsection {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 16px;
-
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
   }
+  .flightDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .airlineLogo {
+    width: 50px; /* Adjust size as necessary */
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
   .airlineCode {
-    color: #030303;
-    font-size: 20px;
-    font-family: "Poppins";
-    font-weight: 500;
-    line-height: 30px;
-    padding-bottom: 390px;
+    margin-bottom: 20px;
+    font-weight: bold;
   }
-
-  .airFaireSection{
-
-display: flex;
+  
+  .departInfo, .arrivalInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
   }
-
-  .airlineCodeContainer{
-    align-items: flex-end;
-    padding-bottom: 170px;
-    padding-right: 390px;
-    padding-top: 130px;
-
+  
+  .flightDuration {
+    position: absolute;
+    top: -10px; /* Adjust as necessary */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    padding: 2px 5px;
+    border-radius: 10px;
+    font-size: 0.9em;
   }
-
+  
+  .departInfo span, .arrivalInfo span {
+    font-size: 0.9em;
+    margin-right: 10px;
+  }
   .imageContainer {
-    top: 228px;
-    left: 487px;
-    width: 200px;
-    height: 200px;
-    border-radius: 12px;
-    background-image: url(./image.png);
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    flex-basis: 30%;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
-
-  .airlineLogo{
-    top: 30px;
-    left: 30px;
-    width: 30px;
-    height: 30px;
-    border-radius: 12px;
-    background-image: url(./image.png);
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
+  
+  .cardImg {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
   }
+  
+  /* Flight and booking details section */
+  .detailsContainer {
+    flex-basis: 40%;
+    padding: 20px;
+  }
+  
+  .airlineCode, .flightDuration, .departAirport, .arrivalAirport {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .airlineLogo {
+    width: 50px; /* Adjust size accordingly */
+    height: auto;
+  }
+  
+  /* Price and booking button section */
+  .bookingContainer {
+    flex-basis: 30%;
+    background-color: #ecf0f1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  
+  .airfairprice {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    margin-right: 30px;
+    margin-bottom: 0;
+  }
+  
+  .bookButton {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+  }
+  
+  /* Tags */
+  .tagsContainer {
+    display: flex;
+  }
+  
+  .tag {
+    background-color: #3498db;
+    color: #fff;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+  .saveButton {
+    font-size: 24px;
+    color: black; /* or any default color */
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.saveButton.saved {
+    color: red; /* color when saved */
+}
