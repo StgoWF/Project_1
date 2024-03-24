@@ -1,3 +1,9 @@
+* {
+    /* Removing default margin and padding */
+    margin: 0;
+    padding: 0;
+}
+
 /* Font face */
 @font-face {
     font-family: 'Poppins';
@@ -9,10 +15,24 @@
 
 /* Global styles */
 body {
-    font-family: 'Poppins', sans-serif; /* Only Poppins */
-    margin: 0;
-    padding: 0;
+    min-height: 100vh;
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* font-family: 'Poppins', sans-serif; 
     background-color: #f4f4f4;
+     */
+}
+
+body > header {
+    /* Your existing styles for the header */
+    top: 0px;
+    left: 1px;
+    background-color: #00c4bb;
+    border-bottom: 1px solid #f0f0f0;
+    box-sizing: border-box;
+    padding: 10px 20px; /* Padding for better spacing */
 }
 
 /* Header styles */
@@ -20,13 +40,7 @@ header {
     background-color: #00c4bb; /* Changed color */
     color: #fff;
     padding: 10px 20px;
-    display: flex;
     justify-content: space-between;
-    align-items: center;
-}
-
-.logo-and-icon {
-    display: flex;
     align-items: center;
 }
 
@@ -42,6 +56,99 @@ header {
     font-weight: bold;
 }
 
+button {
+    background: none;
+    border: none;
+}
+
+/* Logo styles, assuming the logo is inline with other elements and not absolutely positioned */
+.logo-and-icon {
+    display: flex; /* Enables flexbox layout */
+    align-items: center; /* Align logo text and icon vertically */
+    gap: 5px;
+}
+
+/* Nav styling */
+nav {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li {
+    height: 50px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+nav li:first-child {
+    margin-right: auto;
+    font-size: 16px;
+    padding: 0px 30px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: white;
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li {
+    width: 100%;
+}
+
+.sidebar a {
+    width: 100%;
+}
+ 
+/* Hiding menu button - should only pop up on smaller screens */
+.menu_button {
+    display: none;
+}
+
+/* Hides horizontal navbar links when less than 950px */
+@media(max-width: 950px) {
+    .menu_button {
+        display: block;
+    }
+    .hideMobile {
+        display: none;
+    }
+}
+/* sidebar takes up 100% when less than 400px */
+@media(max-width: 800px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
 nav a {
     font-family: 'Poppins', sans-serif; /* Only Poppins */
     color: #fff;
@@ -53,6 +160,12 @@ nav a:hover {
     text-decoration: underline;
 }
 
+/* H1 styling */
+h1 {
+    color: white !important;
+    text-align: center;
+    font-size: 55px;
+}
 /* Content styles */
 .content {
     max-width: 800px;
@@ -62,6 +175,8 @@ nav a:hover {
 
 h2 {
     margin-top: 0;
+    text-align: center;
+    color: white !important;
 }
 
 form {
@@ -77,9 +192,18 @@ label {
 
 input[type="text"],
 input[type="email"],
-input[type="issue"],
+input[type="issue"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
 input[type="description"] {
     width: 100%;
+    height: 100px;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -98,4 +222,68 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #00c4bb;
+}
+
+/* Footer Styling */
+body > footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    flex-shrink: 0; /* Prevents the footer from shrinking smaller than its content */
+    width: 100%; /* Makes the footer take full width of the page */
+    /* Your existing zstyles for the footer */
+}
+
+footer > * {
+    background-color: #00c4bb;
+    text-align: center;
+}
+
+.footerContainer {
+    width: 100%;
+    padding: 40px 25px 15px;
+}
+
+.socialMedia {
+    display: flex;
+    justify-content: center;
+}
+
+.socialMedia a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.socialMedia a i {
+    font-size: 2em;
+    color: #00c4bb;
+    opacity: 0.9;
+}
+
+.socialMedia a:hover {
+    background-color: black;
+    transition: 1s;
+}
+
+.footerNav {
+    margin: 25px 0;
+
+}
+
+.footerNav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.footerNav ul li {
+    margin: 10px;
+    font-size: 1em;
+    opacity: 0.5;
+}
+
+.footerNav ul li a {
+    text-decoration: none;
 }
