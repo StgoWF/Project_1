@@ -3,27 +3,154 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    text-align: center;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/Poppins-Regular.ttf') format('truetype'),
+         url('/assets/fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background: #fff;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Google-style Search Bar */
-#search-form {
+
+button {
+    background: none;
+    border: none;
+}
+
+html, body {
+    height: 100%; /* Ensures that the html and body take up the full viewport height */
     display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    margin-bottom: 20px;
+    flex-direction: column; /* Stacks children elements vertically */
+
+}
+
+body > header {
+    /* Your existing styles for the header */
+    top: 0px;
+    left: 1px;
+    height: 95px;
+    background-color: #00c4bb;
+    border-bottom: 1px solid #f0f0f0;
+    box-sizing: border-box;
+    padding: 10px 20px; /* Padding for better spacing */
+    display: flex;
+}
+
+body > main {
+    flex: 1; /* Allows the main content to grow and take available space, pushing the footer down */
+}
+
+body > footer {
+    flex-shrink: 0; /* Prevents the footer from shrinking smaller than its content */
+    width: 100%; /* Makes the footer take full width of the page */
+    /* Your existing zstyles for the footer */
+}
+/* body {
+    max-width: 1220px; or any other value you prefer
+
+} */
+
+.container {
+    max-width: 1200px; /* This is an example; you can set it to the width you prefer */
+}
+
+nav {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li {
+    height: 50px;
 }
 
 nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: white;
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li {
+    width: 100%;
+}
+
+.sidebar a {
+    width: 100%;
+}
+ 
+@media(max-width: 800px) {
+    .hideMobile {
+        display: none;
+    }
+}
+
+  
+
+/* Align the navigation container to the right */
+/* header nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-left: auto;
+} */
+
+/* Add margin between navigation links */
+/* header nav a,
+header nav button {
+    margin-right: 10px;
+    text-decoration: none; Remove underline from links */
+    /* color: #333; Set link color
+} */
+
+
+
+/* nav a,
+nav button {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
-}
+    font-size: 16px;
+    text-align: left;
+} */
 
 /* Section Styling */
 section {
@@ -33,16 +160,6 @@ section {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-/* Styling for logos that are attached to the end of the main sections */
-.devDreamLogo {
-    display: inline-block;
-}
-
-.devDreamLogo img {
-    height: 28px;
-    width: 100%;
-    padding-top: 2px;
-}
 
 /* Homepage Section */
 #homepage h1 {
@@ -50,7 +167,8 @@ section {
 }
 
 #search-form input[type="text"],
-#search-form input[type="date"] {
+#search-form input[type="date"],
+#search-form input[type="number"]  {
     font-size: 16px;
     padding: 10px;
     margin: 0 5px;
@@ -67,6 +185,8 @@ section {
     border-radius: 999px; /* Highly rounded corners */
     cursor: pointer;
     outline: none;
+    position: relative;
+    top: 26px;
 }
 
 #search-form button:hover {
@@ -109,43 +229,209 @@ section {
 
 /* Flight search input group */
 .flight-search-group {
-    display: flex;
-    align-items: center;
+    display: flex; 
     justify-content: space-between;
     padding: 10px;
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 999px;
     width: fit-content;
+
+
 }
 
 /* Support/Help Section */
 #support {
     background-color: #f8d7da;
 }
+    
 
-/* Footer */
-footer {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0.8em;
-    color: #666;
+
+
+/* Newest Login ( POPUP)*/
+.popup {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
-/* login box*/
+
+.popup {
+    position: absolute;
+    top:-150%; 
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.25);
+    width: 380px;
+    padding: 20px 30px;
+    background: #fff;
+    box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    transition:top 0ms ease-in-out 200ms,
+        opacity 200ms ease-in-out 0ms,
+        transform 20ms ease-in-out 0ms;
+}
+.popup.active {
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.25);
+    transition:top 0ms ease-in-out 0ms,
+        opacity 200ms ease-in-out 0ms,
+        transform 20ms ease-in-out 0ms;
+}
+.popup .close-btn {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 15px;
+    height: 15px;
+    background: #888;
+    color: #eee;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.popup .form h2 {
+text-align: center;
+color: #222;
+margin: 10px 0px 20px;
+font-size: 25px;
+}
+.popup .form .form-element {
+    margin: 15px 0px;
+}
+.popup .form .form-element label {
+    font-size: 14px;
+    color: #222;
+}
+.popup .form .form-element input[type="text"],
+.popup .form .form-element input[type="password"] {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+.popup .form .form-element input[type="checkbox"] {
+    margin-right: 5px;
+}
+.popup .form .form-element button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #222;
+    color: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.popup .form .form-element p a {
+    display: block;
+    text-align: righ;
+    font-size: 15px;
+    color: #1a79ca;
+    text-decoration: none;
+    font-weight: 600;
+}
+/* new login 
+.search-container{
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
+}
+
+
+.login-box {
+    width: 300px;
+    height: fit-content;
+    float: left;
+    margin: 60px auto 0;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    padding: 35px;
+    border: 3px solid #fff;
+    border-radius: 70px 0 70px 0;
+
+    
+
+}
+.login-box h2{
+    margin-bottom: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.login-box input[type=email],
+.login-box input[type=password]{
+    width: auto;
+    height: 40px;
+    border-radius: 15px 0 15px 0;
+    border: 2px solid #fff;
+    margin-bottom: 15px;
+    background: transparent;
+    color: #fff;
+    padding: 20px;
+}
+
+.login-box label{
+    text-align: left;
+    color: black;
+    padding: 40px;
+}
+.login-box p,
+.login-box a{
+    text-align: left;
+    color: #fff; /* change to white
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.login-box input[type=button]{
+    display: inline-block;/* original block
+    height: 40px;
+    width: 150px;
+    line-height: 40px;
+    text-align: center;
+    background: deeppink;
+    border-radius: 25px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 5px;
+}
+.para-2{
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff;
+}*/
+@media(max-width: 250px){
+    .login-box{
+        min-width: 200px;
+    
+    }
+}
+/* login box
 .login-box{
-    /*width: 360px;
+    width: 360px;
     height: auto;
     margin: auto;
     border-radius: 5 px;
     padding: 20px;
     background-color: pink;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     display: flex;
     flex-wrap: warp;
     width: 50%;
     padding-bottom: 15px;
 }
-/*might delete*/
+/*might delete
 .login-box label{
     width: 95%;
     color: black;
@@ -156,7 +442,7 @@ footer {
 
 }
 
-.login-box h2{
+#login-text{
     color: black;
     margin-bottom: 16px; 
     text-align: auto;
@@ -170,7 +456,7 @@ footer {
     border: 1px solid #ccc; 
     border-radius: 7px;
     display: flex;
-    flex-direction: column;
+    flex-direction: auto;
 
 }
 .login-box form {
@@ -179,7 +465,7 @@ footer {
 }
 .login-box input[type=button] {
     padding: 10px;
-    background-color: #28a745; /* Button color consistent with search button */
+    background-color: #28a745; /* Button color consistent with search button 
     color: white;
     border: none;
     background: rgba(63, 144, 76 ,0.7);
@@ -197,7 +483,16 @@ footer {
         min-width: 280px;
     
     }
+} 
+/*for message at the bottom of login and make an account 
+.para-2{
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
 }
+ .para-2 a{
+    color: blue;
+ }*/
 
 /* Account Creation Section */
 #userAccount {
@@ -214,6 +509,7 @@ footer {
 #userAccount h2 {
     color: #333; /* Heading color similar to homepage heading */
     margin-bottom: 16px; /* Space below heading */
+    text-align: center;
 }
 
 #userAccount form {
@@ -228,8 +524,9 @@ footer {
 
 #userAccount input[type=text],
 #userAccount input[type=password],
-#userAccount input[type=email] {
-    padding: 10px;
+#userAccount input[type=email],
+#userAccount input[type=issue],
+#userAccount input[type=description] {
     margin-bottom: 16px; /* Space below inputs */
     border: 1px solid #ccc; /* Border color consistent with light design */
     border-radius: 4px; /* Slight rounding of corners on inputs */
@@ -249,12 +546,477 @@ footer {
     background-color: #218838; /* Darker green on hover, like the search button */
 }
 
-/*for message at the bottom of login and make an account */
-.para-2{
-    text-align: center;
-    font-size: 15px;
-    margin-top: 10px;
+ /* Styling for the container holding the search form */
+#search-form-container {
+    
+    top: 95px;
+    left: 0;
+    bottom: 0; /* Make the box occupy the full height of the page */
+    width: 300px; /* Width of the box */
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    display: flex;
+    flex-direction: column; /* Display items stacked vertically */
+    
+    flex: 1;
 }
- .para-2 a{
-    color: blue;
- }
+
+/* Styling for the content inside the box */
+#search-form {
+    display: flex;
+    flex-direction: column; /* Display items stacked vertically */
+    gap: 24px; /* Spacing between elements */
+    padding: 10px;
+
+}
+
+#search-form button {
+    width: 100%; /* Use full width of the box */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+}
+#search-form button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+#search-form button:hover {
+    background-color: #0056b3;
+}
+
+.search-container {
+    display: flex;
+}
+.destination{
+    
+    
+    border-radius: 9px;
+    height: 200px;
+    width: 180px;
+    position: relative;
+    right: 1176px;
+    top: 62px;
+}
+#london{
+    position: absolute;
+    top: 160px;
+    left: 354px;
+}
+
+
+
+/* Logo styles, assuming the logo is inline with other elements and not absolutely positioned */
+.logo-and-icon {
+    display: flex; /* Enables flexbox layout */
+    align-items: center; /* Align logo text and icon vertically */
+    gap: 5px;
+}
+.logo-icon {
+  /* top: 29px; /* Adjust top position */
+  /* left: 24px; Adjust left position */ 
+  width: 24px;
+}
+
+/* Logo text styles */
+.logo-text {
+    top: 29px; /* Adjust top position */
+    left: 54px; /* Adjust left position */
+    font-size: 18px; /* Font size */
+    font-weight: 700; /* Font weight */
+    line-height: 21px; /* Line height */
+  }
+/* Styling for text elements */
+.text {
+    color: #030303; /* Text color */
+    font-size: 16px; /* Font size */
+    font-weight: 400; /* Font weight */
+    line-height: 19px; /* Line height */
+  }
+
+.icon {
+    fill: #030303;
+    }
+
+
+/* New Flex Container */
+.flex-container {
+    display: flex;
+    justify-content: start; /* Align children to the start of the container */
+}
+
+/* You might want to adjust the width of the homepage section to fit the search form */
+#homepage {
+    flex: 1;
+    padding-right: 20px; /* If you want some space between search form and cards */
+}
+
+
+
+/* Container for the destination cards to align them in a column */
+#popular-destinations-section {
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stacks cards vertically */
+    align-items: center; /* Center cards horizontally */
+    padding: 20px;
+    flex: 1;
+    /* Remove max-width if you want the container to be full-width */
+}
+
+#popular-destinations-section h2 {
+    font-size: 2em;
+    margin: 5px;
+}
+
+/* Container for cards */
+.destinations-container,search-results {
+    display: flex;
+    justify-content: space-around; /* Evenly distributes cards with space around them */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line */
+}
+
+.card, #search-results .card  {
+    width: 996px;
+    height: 234px;
+    background-color: #e9f2f0;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    align-self: center;
+}
+
+/* Ensure the container of the cards uses flexbox to layout its children */
+.destinations-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+}
+/* Container for cards */
+.destinations-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allows cards to wrap to the next line */
+}
+
+.card-images {
+    height: 210px;
+}
+
+.card-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    margin-right: 735px;
+    margin-top: 7px;
+    scale: 108%;
+    margin-bottom: -30px;
+  }
+  .card-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: -56px;
+    position: relative;
+    top: -47px;
+  }
+
+  .hotel-name {
+    left: 257px;
+    position: relative;
+    text-align: left;
+    font-size: 20px;
+    top: -70px;
+    max-width: 545px;
+
+  }
+  .hotel-address {
+    left: 257px;
+    position: relative;
+    text-align: left;
+    top: -76px;
+  }
+  
+  .hotel-nights {
+    position: relative;
+    text-align: right;
+    top: -101px;
+}
+
+.hotel-price {
+    position: relative;
+    text-align: right;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    top: -97px;
+}
+.hotel-score {
+    top: -102px;
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    cursor: pointer;
+    background-color: rgb(255 255 255);
+    max-width: 187px;
+    left: 779px;
+    border-radius: 7px;
+}
+
+.card button { /* Style both buttons similarly */
+    padding: 10px 15px;
+    /* margin-top: 10px; */
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    max-width: 160px;
+    text-decoration: none;
+    position: relative;
+    left: 816px;
+    top: -87px;
+}
+
+.card a {
+    display: inline-block;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    position: relative;
+    left: 793px;
+    max-width: 181px;
+    top: -80px;
+}
+.card a button { /* Style both buttons similarly */
+    padding: 10px 15px;
+    /* margin-top: 10px; */
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    max-width: 200px;
+    text-decoration: none;
+    position: relative;
+    left: 3px;
+    top: -12px;
+}
+
+
+#pagination-container {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+    scale: 250%;
+    position: relative;
+    top: 522px;
+    left: -700px;
+}
+
+
+
+
+/* Responsive adjustments for smaller screens */
+/* @media (max-width: 768px) {
+    .card {
+        /* Adjusts to 2 cards per row on smaller screens */
+        /* flex-basis: calc(50% - 20px); */
+    /* }
+} */ 
+
+
+
+@media (max-width: 480px) {
+    .card{
+        width: calc(100% - 20px); /* Mostrar una tarjeta por fila en dispositivos muy pequeños */
+    }
+}
+/* Media query to adjust styles on devices with smaller widths */
+@media (max-width: 768px) {
+    body {
+        /* Here you can adjust the maximum width of the body or font size, for example */
+        max-width: 768px; /* Example of adjusting maximum width */
+        font-size: 14px; /* Example of adjusting font size */
+    }
+    .card{
+        width: 628px;
+        height: 246px;
+        background-color: #f0f0f0;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        align-self: center;
+        margin-left: -192px;
+    }
+    .destination {
+        border-radius: 9px;
+        height: 200px;
+        width: 180px;
+        position: relative;
+        right: 1030px;
+        top: 62px;
+    }
+    #popular-destinations-section {
+        margin: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        flex: 1;
+        max-width: 3px;
+        position: relative;
+        left: 440px;
+        /* scale: 90%; */
+    }
+    .card button {
+        padding: 10px 15px;
+        /* margin-top: 10px; */
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        max-width: 160px;
+        text-decoration: none;
+        position: relative;
+        left: 738px;
+        top: -87px;
+    }
+    
+    .card a {
+        display: inline-block;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: none;
+        position: relative;
+        left: 746px;
+        max-width: 160px;
+        top: -65px;
+    }
+    #pagination-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        scale: 280%;
+        position: relative;
+        top: 538px;
+        left: 305px;
+    }
+        
+    #popular-destinations-section h2 {
+        font-size: 2em;
+        margin: 5px;
+        left: 0px;
+        position: relative;
+    }
+    body > header {
+        top: 0px;
+        left: 1px;
+        height: 95px;
+        background-color: #b8ef38;
+        border-bottom: 1px solid #f0f0f0;
+        box-sizing: border-box;
+        padding: 10px 20px;
+        width: 1252px;
+        display: flex;
+    }
+    .card, #search-results .card {
+        width: 914px;
+        height: 246px;
+        background-color: #f0f0f0;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        align-self: center;
+        margin-left: -192px;
+        position: relative;
+        left: 111px;
+    }
+    
+    
+}
+
+/* Another media query for devices with even smaller widths if necessary */
+@media (max-width: 480px) {
+    body {
+        /* Here you can apply additional adjustments for even smaller devices */
+        max-width: 400px; 
+        font-size: 12px; 
+    }
+}
+
+
+/* Styling on need help submit button */
+
+.helpSubmit {
+    margin-top: 5px;
+}
+
+/* Footer Styling */
+
+  footer > * {
+    background-color: #b8ef38;
+  }
+
+  .footerContainer {
+    width: 100%;
+    padding: 55px 25px 15px;
+  }
+
+.socialMedia {
+    display: flex;
+    justify-content: center;
+}
+
+.socialMedia a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.socialMedia a i {
+    font-size: 2em;
+    color: #b8ef38;
+    opacity: 0.9;
+}
+
+.socialMedia a:hover {
+    background-color: black;
+    transition: 1s;
+}
+
+.footerNav {
+    margin: 25px 0;
+
+}
+
+.footerNav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.footerNav ul li {
+    margin: 10px;
+    font-size: 1em;
+    opacity: 0.5;
+}
+
+.footerNav ul li a {
+    text-decoration: none;
+}

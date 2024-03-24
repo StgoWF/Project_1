@@ -1,0 +1,171 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Body and HTML full height, flex column */
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+/* Header styles */
+header {
+    top: 0px;
+    left: 1px;
+    height: 95px;
+    background-color: #efea38;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* This will align nav to the right */
+}
+
+/* Main styles */
+main {
+    flex: 1; /* Grow to fill the space */
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+     /* Align to the start of the main axis */
+}
+
+/* Popular Destinations Section */
+#popular-destinations-section {
+    display: flex;
+    flex-direction: row; /* Stack cards vertically */
+    align-items: center;
+    align-items: flex-start; /* Center cards horizontally */
+    padding: 20px 0; /* Top and bottom padding */
+    
+}
+
+/* Cards inside Popular Destinations Section */
+.card  {
+    width: calc(100% - 40px); 
+    margin: 10px 0;
+    
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    margin: 10px 0; /* Margin for top and bottom */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center; /* Center text inside cards */
+}
+/* change image size */
+
+.picture {    
+display: flex;
+align-items: center;
+}
+
+/* Account Creation Section */
+#userAccount {
+    background-color: #ffffff; /* Match other sections' background */
+    padding: 20px; /* Consistent padding with other sections */
+    margin: 20px 0; /* Consistent margin */
+    border-radius: 5px; /* Consistent border radius */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Consistent box shadow */
+    max-width: 400px; /* Set a max-width for the form */
+    margin-left: auto; /* Center the form section */
+    margin-right: auto;
+}
+
+/* Logo styles, assuming the logo is inline with other elements and not absolutely positioned */
+.logo-and-icon {
+    display: flex; /* Enables flexbox layout */
+    align-items: center; /* Align logo text and icon vertically */
+    gap: 5px;
+}
+
+.logo-icon {
+
+    width: 24px;
+    height: 32px;
+  }
+.logo-and-icon .logo-text {
+font-family: 'TimesBold', 'Times New Roman', Times, serif; /* Add fallbacks for broader compatibility */
+    font-size: 18px;
+    font-weight: bold; /* Times-Bold is already a bold font, so ensure the weight is set accordingly */
+    line-height: 21px;
+    }
+/* Styling for the content inside the box */
+#search-form {
+    display: flex;
+    flex-direction: column; /* Display items stacked vertically */
+    gap: 10px; /* Spacing between elements */
+    
+}
+ /* Styling for the container holding the search form */
+ #search-form-container {
+    
+    top: 95px;
+    left: 0;
+    bottom: 0; /* Make the box occupy the full height of the page */
+    width: 300px; /* Width of the box */
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    display: flex;
+    flex-direction: row; /* Display items stacked vertically */
+    border-radius: 46px;
+    margin-right: 20px;
+}
+/* Ensure the container of the cards uses flexbox to layout its children */
+.destinations-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+#search-form button {
+    width: 100%; /* Use full width of the box */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+#search-form button:hover {
+    background-color: #0056b3;
+}
+#search-form input[type="text"],
+#search-form input[type="date"] {
+    font-size: 16px;
+    padding: 10px;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 999px; /* Highly rounded corners */
+    outline: none; /* Removes the default focus outline */
+}
+
+
+
+
+/* Footer styles */
+footer {
+    background-color: rgb(255, 255, 255);
+    border-top: 1px solid rgb(240, 240, 240);
+    padding: 20px;
+    text-align: center;
+    flex-shrink: 0; /* Don't shrink the footer */
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 90%; /* Increase width on small screens */
+    }
+}
+
+/* Log In */
+

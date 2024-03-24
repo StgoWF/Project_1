@@ -1,0 +1,264 @@
+/* Use flexbox on the body to create a column layout */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* This makes sure that the body is at least the height of the viewport */
+}
+
+main {
+  flex: 1; /* This will allow the main content to grow and take up available space */
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between; /* This spaces out the logo and the user actions */
+  align-items: center; /* This centers items vertically within the header */
+  padding: 0 2rem; /* This adds padding on the left and right */
+  height: 91px; /* Adjust height as needed */
+  background-color: #b8ef38;
+  border-bottom: 1px solid #f0f0f0;
+  flex-wrap: wrap; /* This will allow items to wrap to the next line on small screens */
+
+}
+
+/* Logo styles, assuming the logo is inline with other elements and not absolutely positioned */
+.logo-and-icon {
+  display: flex; /* Enables flexbox layout */
+  align-items: center; /* Align logo text and icon vertically */
+  gap: 5px;
+
+}
+
+.logo-icon {
+  /* top: 29px; /* Adjust top position */
+  /* left: 24px; Adjust left position */ 
+  width: 24px;
+  height: 32px;
+}
+
+.user-icon {
+  /* If the user icon needs to be a specific size, specify it here */
+  width: 24px;
+  height: 32px;
+  margin-left: auto; /* This pushes the user icon to the right */
+}
+/* User Actions: Log in and Sign in, along with user icon */
+.user-actions {
+  display: flex; /* Enables flexbox layout for child elements */
+  align-items: center; /* Align child elements vertically */
+  gap: 10px; /* Space between Log in, Sign in, and user icon */
+  margin-left:auto ;
+}
+
+
+
+/* Log in and Sign in text styles */
+.login-text, .signin-text {
+  /* Add your text styling here, such as font size, color, etc. */
+  /* If you want them to look like links, you could add: */
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+
+/* Options container */
+#options {
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content, if #options is the full height of the viewport */
+  flex-direction: row; /* Stack buttons vertically on smaller screens */
+  gap: 20px; /* Spacing between the buttons */
+  height: 100%; /* Full height for vertical centering */
+  scale: 150%;
+}
+
+/* Footer container */
+.footer {
+  display: flex; /* Use flexbox for positioning */
+  justify-content: space-between; /* Space out the footer text and social icons */
+  align-items: center; /* Align items vertically */
+  padding: 20px; /* Add padding as needed */
+  background-color: rgb(255, 255, 255); /* Set the background color */
+  border-top: 1px solid rgb(240, 240, 240); /* Add a top border for visual separation */
+}
+
+/* Styling for logo and icons */
+.icon {
+  fill: #030303; /* Adjust icon color */
+}
+
+
+
+/* Social icons container */
+.footer .facebook-icon-container,
+.footer .twitter-icon-container,
+.footer .instagram-icon-container {
+  /* As these are direct children of the .footer container now, 
+     we don't need to position them absolutely */
+  display: flex; /* Use flex to position the icons */
+}
+
+/* Social icons grouping */
+.footer .facebook-icon-container,
+.footer .twitter-icon-container,
+.footer .instagram-icon-container {
+  margin-left: auto; /* This will push the social icons to the right */
+}
+
+/* Styles for the social icons within the containers */
+.footer .facebook-icon-container img,
+.footer .twitter-icon-container img,
+.footer .instagram-icon-container img {
+  width: 24px; /* Set the width */
+  height: 24px; /* Set the height */
+  /* If you want some space between the icons add margin here */
+  margin-right: 10px; /* Example margin */
+}
+
+/* Container for the social icons */
+.social-icons {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Push the container to the right */
+  gap: 10px; /* Adjust the gap between icons as needed, smaller value brings them closer */
+}
+
+/* Styling for text elements */
+.text {
+  color: #030303; /* Text color */
+  font-size: 16px; /* Font size */
+  font-weight: 400; /* Font weight */
+  line-height: 19px; /* Line height */
+}
+
+/* Logo text styles */
+.logo-text {
+  top: 29px; /* Adjust top position */
+  left: 54px; /* Adjust left position */
+  font-size: 18px; /* Font size */
+  font-weight: 700; /* Font weight */
+  line-height: 21px; /* Line height */
+}
+
+.choose-your-option {
+  margin-bottom: 97px;
+  scale: 161%;
+}
+
+
+/* Main header text "Choose Your Option" styles */
+.choose-your-option .text {
+  color: #030303; /* Text color */
+  font-size: 24px; /* Font size */
+  font-weight: 700; /* Font weight */
+  line-height: 28px; /* Line height */
+
+  top: 252px;
+  left: 715px;
+  transform: translateX(-50%); /* Center the text horizontally */
+}
+
+/* Footer text styles */
+.footer-text {
+  display: flex; /* Align footer text items in a row */
+  gap: 30px; /* Space between items */
+  /* Add any additional styles you might need for the text */
+}
+
+/* User action text styles */
+.user-actions .text {
+  
+  top: 29px; /* Adjust top position */
+  right: 100px; /* Adjust right position */
+  font-size: 16px; /* Font size */
+}
+
+/* Styling for buttons */
+.button {
+  cursor: pointer;
+  /* position: absolute; Remove this line */
+  width: 107px;
+  height: 104px;
+  padding: 0px 8px;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 12px;
+  background-color: #030303;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 19px;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+/* Hotel button styles */
+.hotel-button {
+  top: 308px; /* Adjust top position */
+  left: 588px; /* Adjust left position */
+}
+
+/* Flight button styles */
+.flight-button {
+  top: 308px; /* Adjust top position */
+  left: 743px; /* Adjust left position */
+}
+
+/* Adjust SVG icon styles */
+.button .icon {
+  fill: #ffffff; /* Fill color */
+  width: 36px; /* Icon width */
+  height: 40px; /* Icon height */
+}
+
+/* Media Queries */
+
+/* Responsive adjustments for the header and #options */
+@media (max-width: 768px) { /* Adjustments for tablet and down to mobile */
+  header {
+    flex-direction: column; /* Stack the header items vertically */
+    align-items: center; /* Center-align the items */
+    gap: 10px; /* Add space between the stacked items */
+  }
+
+  .logo-and-icon, .user-actions {
+    justify-content: center; /* Center these elements when they stack */
+    width: 100%; /* Full width to center content */
+  }
+
+  /* Ensure buttons are always centered and have appropriate size */
+  .button {
+    width: 90%; /* Adjust width to be responsive */
+    max-width: 300px; /* Maximum width to avoid overly large buttons */
+    /* Other button styles remain the same */
+  }
+
+  #options {
+    flex-direction: column; /* Stack buttons vertically */
+    height: auto; /* Let the content define the height */
+  }
+
+  /* Add other responsive styling as needed */
+}
+
+@media (max-width: 480px) { /* Adjustments for mobile */
+  /* You can copy the same styles from above or make further adjustments specific to mobile */
+  
+  header {
+    padding: 1rem; /* Decrease padding on smaller screens */
+  }
+  
+  /* Adjust text sizes or other elements as needed for mobile */
+  .text {
+    font-size: 14px; /* Example of reducing text size for mobile */
+  }
+}

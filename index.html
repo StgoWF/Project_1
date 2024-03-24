@@ -4,108 +4,188 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TailorMyTrip</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/styleRS.css">
 </head>
 <body>
-    <!-- Section for user account creation -->
 
-    <!-- <section id="userAccount">
-        <h2>Create an Account</h2>
-        <form action="/create_account" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+    <!-- Header Section -->
+    <header>
+        <!-- Modal -->
+        <div class="modal">
+            <div class="modal-background"></div>
+                <div class="modal-content has-background-white py-5 px-5">
+                    <h3 class="title mb-6">You won a free ticket to Hawaii!</h3>
+                </div>
+        </div>
+        <!-- Navigation Bar -->
+        <nav>
+            <!-- Vertical tabs -->
+              <ul class="sidebar">
+                <li onclick=hideSidebar()><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="">Destinations</a></li>
+                <li><a href="help.html">Support</a></li>
+                <li><a href="">My Plans</a></li>
+                <li><a href="signup.html">Create Account</a></li>
+              </ul>
+              <ul>
+                <!-- Horizontal Tabs -->
+                <li>
+                    <div class="logo-and-icon">
+                        <button type="click" id="hawaiiPopUp">
+                            <img src="./assets/images/icons/earth-americas.svg" alt="Logo Icon" class="icon logo-icon">
+                        </button><span class="text logo-text">TaylorMyTrip</span></li>
+                    </div>
+                <li class="hideMobile"><a href="index.html">Home</a></li>
+                <li class="hideMobile"><a href="">Destinations</a></li>
+                <li class="hideMobile"><a href="help.html">Support</a></li>
+                <li class="hideMobile"><a href="">My Plans</a></li>
+                <li class="hideMobile"><a href="signup.html">Create Account</a></li>
+                <li class="menu_button" onclick=showSidebar()><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+              </ul>
+            </div>
+        </nav>
+    </header>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+    <!-- Main Content Section -->
+    <main class="flex-container"> <!-- Flex container to lay out main content -->
 
-            <input type="submit" value="Create Account">
-        </form>
-    </section> -->
+        <!-- Search Section -->
+        <div class="search-container"> <!-- Search section container -->
+            <!-- Search Form Container -->
+            <div id="search-form-container">
+                <!-- Search Form -->
+                <label for="flight-search">Search for a flight</label>
+                <form id="search-form">
+                    <input type="text" placeholder="Destination" name="destination" required>
+                    <input type="text" placeholder="Price Range" name="priceRange" required>
+                    <input type="date" name="start-date" required>
+                    <input type="date" name="end-date" required>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="/">Home</a>
-        <a href="/destinations">Destinations</a>
-        <a href="/myplans">My Plans</a>
-        <a href="/support">Support</a>
-        <a href="indexCA.html">Create Account</a>
-    </nav>
+         <!-- popup log in --> 
+        <div class="popup"> 
+            <div class="close-btn">&times;</div>
+            <div class="form">
+                <h2>Log In</h2>
+                <div class="form-element">
+                    <div class="email">
+                        <label>Email:</label>
+                        <input type="text" id=email placeholder="Enter Email"><br>
+                    </div>
+                    <label>Password:</label>
+                    <input type="password" id=password placeholder="Enter Password"><br>
+                </div>
+                <div class="form-element">
+                    <input type="checkbox" id="remember-me">
+                    <label type="remember-me">Remember me</label>
+                </div>
+                <div class="form-element">
+                    <input type="button" value="Sign in"> 
+                <!-- <button type="submit">Sign In</button>-->
+                </div>
+                <div class="form-element">
+                    <p class="para-2">Don't have an account?<br> <a href="signup.html">Create an Account</a></p>
+                </div>
+            </div>
+        </div>
+        
+    
+         <!-- login -->
+         <!-- <div class="login-box"> -->
+            <!-- login input-->
+            <!-- <h2>Log In</h2>
+            <form id="login-text"></form>
+                <label>Email</label>
+                <input type="email" placeholder="">
+                <label>Password</label>
+                <input type="password" placeholder="">
+                <input type="button" value="Submit">
+            </form>
+            <p class="para-2">Don't have an account? <a href="signup.html">Create an Account</a></p>
+            </div> -->
 
-    <!-- Homepage Section -->
-    <section id="homepage">
-        <h1>Welcome to TailorMyTrip ✈️</h1>
-        <form id="search-form">
-            <input type="text" placeholder="Destination" name="destination">
-            <input type="text" placeholder="Price Range" name="priceRange">
-            <input type="date" name="start-date">
-            <input type="date" name="end-date">
-            <button type="submit">Search</button>
-        </form>
-    </section>
-    <!-- Make an account -->
-    <!--<section id="userAccount">
-        <h2>Create an Account</h2>
-        <form action="/create_account" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+        <!-- Popular Destinations Section -->
+        <section class="hideSection" id="popular-destinations-section">
+            <h2 class="hideSection">Popular Destinations</h2>
+                <div id="hideSection" class="destinations-container">
+                <div class="card">
+                    <h3>London</h3>
+                    <!-- <p>The historic capital of the United Kingdom</p> -->
+                    <a href="./destinations/london.html"><img src="./assets/images/download.jpeg" alt="london" class="destination" ></a>
+                </div>
+                <div class="card">
+                    <h3>Paris</h3>
+                    <a href="./destinations/paris.html"><img src="./assets/images/paris.jpeg" class="destination" id="Paris"></a>
+                    <!--<p>The romantic city of lights and love</p>-->
+                </div>
+                <div class="card">
+                    <h3>Tokyo</h3>
+                    <a href="./destinations/tokyo.html"><img src="./assets/images/tokyo.jpeg" class="destination"></a>
+                   <!-- <p>The bustling metropolis with a blend of the traditional and the ultra-modern</p> -->
+                </div>
+                <div class="card">
+                    <h3>New York</h3>
+                    <a href="./destinations/newyork.html"><img src="./assets/images/newyork.jpeg" class="destination"></a>
+                   <!-- <p>The city that never sleeps with its iconic skyline</p> -->
+                </div>
+                <div class="card">
+                    <h3>Rome</h3>
+                    <a href="./destinations/rome.html"><img src="./assets/images/rome.jpeg" class="destination"></a>
+                   <!-- <p>The eternal city with its ancient history and vibrant culture.</p>-->
+                </div>
+                <div class="card">
+                    <h3>Sydney</h3>
+                    <a href="./destinations/sydney.html"><img src="./assets/images/sydney.jpeg" class="destination"></a>
+                    <!-- <p>Home to the iconic Opera House and stunning harbor views.</p> -->
+                </div>
+                <div class="card">
+                    <h3>Cape Town</h3>
+                    <a href="./destinations/cape.html"><img src="./assets/images/cape town.jpeg" class="destination"></a>
+                   <!-- <p>A city with a stunning coastline and majestic Table Mountain backdrop.</p>-->
+                </div>
+                <div class="card">
+                    <h3>Rio de Janeiro</h3>
+                    <a href="./destinations/rio.html"><img src="./assets/images/rio de janeiro.jpeg" class="destination"></a>
+                   <!--<p>Famous for its carnival, Christ the Redeemer statue, and Copacabana Beach.</p>--> 
+                </div>
+            </div>   
+        </section>
+    </main> 
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-
-            <input type="submit" value="Create Account">
-        </form>
-    </section> -->
-    <!-- login box-->
-    <div class="login-box">
-        <h2>Login</h2> 
-        <form>
-            <label>Email</label>
-            <input type="email" placeholder="">
-            <label>Password</label>
-            <input type="password" placeholder="">
-            <input type="button" value="Submit">
-        </form>
-        <p class="para-2">Don't have an account? <a href="indexCA.html">Sign Up Here</a></p>
-    </div> 
-
-    <!-- Destination Suggestions Section -->
-    <section id="destination-suggestions">
-        <h2>Destination Suggestions <div class="devDreamLogo"> <img src="./assets/images/TailorMyTrips Logo.png" alt="Blue circle with clouds"> </div></h2>
-        <!-- Dynamic list of destinations will go here -->
-    </section>
-
-    <!-- Detailed Destination Section -->
-    <section id="detailed-destination">
-        <h2>Detailed Destination Information <div class="devDreamLogo"> <img src="./assets/images/TailorMyTrips Logo.png" alt="Blue circle with clouds"> </div></h2>
-        <!-- Detailed information including accommodation, activities, flights, and map -->
-    </section>
-
-    <!-- Customization & Booking Section -->
-    <section id="customization-booking">
-        <h2>Customize and Book Your Trip <div class="devDreamLogo"> <img src="./assets/images/TailorMyTrips Logo.png" alt="Blue circle with clouds"> </div></h2>
-        <!-- Booking forms and price summary -->
-    </section>
-
-    <!-- My Plans Section -->
-    <section id="my-plans">
-        <h2>My Plans <div class="devDreamLogo"> <img src="./assets/images/TailorMyTrips Logo.png" alt="Blue circle with clouds"> </div></h2>
-        <!-- List of saved trips -->
-    </section>
-
-    <!-- Support/Help Section -->
-    <section id="support">
-        <h2>Need Help? ⚠️</h2>
-        <!-- FAQ and contact form -->
-    </section>
-
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer>
-        <p>© 2024 TailorMyTrip. All rights reserved.</p>
+        <section class="footerContainer">
+            <div class="socialMedia">
+                <a href="https://www.facebook.com/" target="_blank"><i class= "fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class= "fa-brands fa-instagram"></i></a>
+                <a href="https://twitter.com/" target="_blank"><i class= "fa-brands fa-twitter"></i></a>
+                <a href="https://youtube.com/" target="_blank"><i class= "fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footerNav">
+                <ul>
+                    <li><a href="about.html" target="_blank">About</a></li>
+                    <li><a href="ourTeam.html" target="_blank">Our Team</a></li>
+                    <li><a href="help.html" target="_blank">Contact Us</a></li>
+                    <li><a href="FAQ.html" target="_blank">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footerCopyright">
+                <p>© 2024 TailorMyTrip. All rights reserved.</p>
+            </div>
+        </section>
     </footer>
 
-    <!-- Add your JavaScript file link here -->
+    <!-- JavaScript file link -->
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/modal.js"></script>
+    <script src="./assets/js/login.js"></script>
+
+
 </body>
 </html>
