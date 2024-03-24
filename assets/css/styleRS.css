@@ -113,7 +113,23 @@ nav li:first-child {
         width: 100%;
     }
 }
+/* Login pop up styling */
+.popup {
+    height: 22%;
+    width: 13%;
+    background-color: grey;
+    margin: 5px 5px;
+    display: flex;
+    text-align: center;
+}
 
+.email{
+    margin-left: 28px;
+}
+
+.close-btn {
+    float: inline-end;
+}
 /* Styling for flight search section/filter */
 
 /* New Flex Container */
