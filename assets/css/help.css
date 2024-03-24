@@ -15,7 +15,9 @@
 
 /* Global styles */
 body {
-    min-height: 100vh;
+    min-height: 900px;
+    display: flex;
+    flex-direction: column;
     background-image: url("../images/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -257,6 +259,7 @@ footer > * {
 .footerContainer {
     width: 100%;
     padding: 40px 25px 15px;
+    margin-top: auto;
 }
 
 .socialMedia {
