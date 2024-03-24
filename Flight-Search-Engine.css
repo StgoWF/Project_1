@@ -123,7 +123,7 @@ body, input, select, button {
 /* Content panel styling */
 .content-panel {
     flex-grow: 1;
-    padding: 20px;
+    padding: 10px;
 }
 
 /* Additional responsive and interactive styles */
@@ -257,17 +257,6 @@ body, input, select, button {
     position: relative;
   }
   
-  .flightDuration {
-    position: absolute;
-    top: -10px; /* Adjust as necessary */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #ffffff;
-    padding: 2px 5px;
-    border-radius: 10px;
-    font-size: 0.9em;
-  }
-  
   .departInfo span, .arrivalInfo span {
     font-size: 0.9em;
     margin-right: 10px;
@@ -280,10 +269,12 @@ body, input, select, button {
   }
   
   .cardImg {
-    width: 100%;
+    width: auto;
     height: auto;
     display: block;
     object-fit: cover;
+    margin-bottom: 10px;
+    max-width: 100%;
   }
   
   /* Flight and booking details section */
@@ -292,20 +283,15 @@ body, input, select, button {
     padding: 20px;
   }
   
-  .airlineCode, .flightDuration, .departAirport, .arrivalAirport {
+  .airlineCode, .flightDuration {
     margin-bottom: 10px;
     font-weight: bold;
   }
   
-  .airlineLogo {
-    width: 50px; /* Adjust size accordingly */
-    height: auto;
-  }
   
   /* Price and booking button section */
   .bookingContainer {
     flex-basis: 30%;
-    background-color: #ecf0f1;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -345,7 +331,30 @@ body, input, select, button {
     border-radius: 5px;
     font-size: 12px;
   }
-  .saveButton {
+
+.saveButton.saved {
+    color: red; /* color when saved */
+}
+.airlineInfoContainer {
+    display: flex;
+    align-items: center; /* Vertically center items in the container */
+    margin-bottom: 20px; /* Adjust margin as necessary */
+}
+
+.airlineLogo {
+    width: 50px; /* Adjust size accordingly */
+    height: auto;
+    margin-right: 10px; /* Add some space between logo and code */
+}
+
+.cardsection {
+    position: relative; /* This makes sure the saveButton positions itself relative to the card */
+    /* ... existing styles ... */
+}
+
+.saveButton {
+    position: absolute;
+    top: 5px; /* Adjust as needed */
     font-size: 24px;
     color: black; /* or any default color */
     border: none;
@@ -356,3 +365,35 @@ body, input, select, button {
 .saveButton.saved {
     color: red; /* color when saved */
 }
+
+.travelInfoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 10px;
+}
+
+.departAirport, .arrivalAirport {
+    font-weight: bold;
+}
+
+.flightDuration, .layOvers {
+    margin-left: 75px;
+    padding: 2px 5px;
+    border-radius: 5px;
+    position: absolute;
+    margin-bottom: 25px;
+    font-size: 12px;
+}
+
+.time {
+    font-size: 0.8em; /* smaller font size */
+    color: #666; /* a lighter color for the time */
+}
+
+@media screen and (max-width: 300px) {
+    .hidden {
+        display: none;
+    }
+}
+
