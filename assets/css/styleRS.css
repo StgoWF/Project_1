@@ -117,7 +117,7 @@ nav li:first-child {
 .popup {
     height: 22%;
     width: 13%;
-    background-color: grey;
+    background-color: lightgray;
     margin: 5px 5px;
     display: flex;
     text-align: center;
