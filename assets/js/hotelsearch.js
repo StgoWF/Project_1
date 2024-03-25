@@ -212,34 +212,7 @@ async function searchHotels(destId) {
       allResults = hotels.result || [];
       displaySearchResults();
       initPaginationAndDisplay(); // Prepare pagination and display the first page
-      // Clear previous search results
-      // searchResultsSection.innerHTML = '';
-  
-    //   if (hotels && hotels.result) {
-    //     const nights = calculateNights(checkInDate, checkOutDate);
-    //       hotels.result.forEach(hotel => {
-    //         const nightText = nights === 1 ? 'night' : 'nights'; // Handles singular or plural nights
-    //         const hotelElement = document.createElement('div');
-    //         hotelElement.className = 'card'; 
-    //         hotelElement.innerHTML = `
-    //           <div class="card-images">   
-    //             <img class="card-image" src="${hotel.max_photo_url || 'default-image.jpg'}" alt="${hotel.hotel_name}">
-    //           <div class="card-info">
-    //             <h3 class="hotel-name">${hotel.hotel_name || 'Name not available'}</h3>
-    //             <p class="hotel-score">${hotel.review_score_word || 'Score not available'} ${hotel.review_score || ''}</p>
-    //             <p class="hotel-address">${hotel.distance_to_cc_formatted || 'Address not available'} from city center</p>
-    //             <p class="hotel-nights">${nights} ${nightText}</p>
-    //             <p class="hotel-price">${hotel.price_breakdown.all_inclusive_price || 'Price not available'} ${hotel.price_breakdown.currency || ''}</p>
-    //             <button onclick="saveToMyPlans('${hotel.hotel_id}');">Save to My Plans</button>
-    //             <a href="${hotel.url}" target="_blank"><button>Book on Booking.com</button></a>
-    //         `; 
 
-            
-    //         searchResultsSection.appendChild(hotelElement);
-    //     });
-    // } else {
-    //     searchResultsSection.innerHTML = '<p>No hotels found</p>';
-    // }
 
   
     } catch (error) {
@@ -257,5 +230,44 @@ async function searchHotels(destId) {
     updatePaginationButtons(); // Create pagination buttons
   }
   
+// Function to save hotel information along with dates to local storage
+function saveToMyPlans(hotelId) {
+  console.log("Saving hotel to My Plans...", hotelId);
 
-  
+  // Find the hotel information in the allResults array
+  const hotel = allResults.find(h => h.hotel_id.toString() === hotelId);
+
+  if (!hotel) {
+      console.error("Hotel not found");
+      return;
+  }
+
+  // Retrieve the destination city from the input field
+  const destinationCity = document.getElementById('destination').value;
+
+  // Retrieve check-in and check-out dates from input fields
+  const checkInDate = document.getElementById('start-date').value;
+  const checkOutDate = document.getElementById('end-date').value;
+
+  // Retrieve existing plans from local storage or initialize an empty array if none exist
+  let myPlans = JSON.parse(localStorage.getItem('myPlans')) || [];
+
+  // Prepare the hotel information object including the new details
+  const hotelInfo = {
+      city: destinationCity,
+      name: hotel.hotel_name,
+      checkInDate,
+      checkOutDate,
+      price: hotel.price_breakdown.all_inclusive_price || 'Price not available',
+      currency: hotel.price_breakdown.currency,
+      link: hotel.url
+  };
+
+  // Add the new hotel information to the array
+  myPlans.push(hotelInfo);
+
+  // Save the updated plans back to local storage
+  localStorage.setItem('myPlans', JSON.stringify(myPlans));
+
+  console.log("Hotel and dates saved to My Plans:", hotelInfo);
+}

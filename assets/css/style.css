@@ -7,13 +7,6 @@
 }
 
 
-@font-face {
-    font-family: 'Poppins';
-    src: url('/assets/fonts/Poppins-Regular.ttf') format('truetype'),
-         url('/assets/fonts/Poppins-Bold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -831,6 +824,7 @@ font-size: 25px;
     max-width: 181px;
     top: -80px;
 }
+
 .card a button { /* Style both buttons similarly */
     padding: 10px 15px;
     /* margin-top: 10px; */
@@ -901,7 +895,7 @@ font-size: 25px;
         right: 1030px;
         top: 62px;
     }
-    #popular-destinations-section {
+    .destinations-container {
         margin: 0px;
         display: flex;
         flex-direction: column;
@@ -913,24 +907,12 @@ font-size: 25px;
         left: 440px;
         /* scale: 90%; */
     }
-    #popular-destinations-section .card p {
+ 
+     .card button {
+        left: 546px;
 
-        left: 218px;
-    }
-    .card button {
-        padding: 10px 15px;
-        /* margin-top: 10px; */
-        border: none;
-        border-radius: 4px;
-        background-color: #007bff;
-        color: white;
-        cursor: pointer;
-        max-width: 160px;
-        text-decoration: none;
-        position: relative;
-        left: 738px;
-        top: -87px;
-    }
+
+    } 
     
     .card a {
         display: inline-block;
@@ -940,10 +922,11 @@ font-size: 25px;
         border: none;
         background: none;
         position: relative;
-        left: 746px;
+        left: 545px;
         max-width: 160px;
         top: -65px;
     }
+    
     #pagination-container {
         display: flex;
         align-items: center;
@@ -953,6 +936,8 @@ font-size: 25px;
         top: 538px;
         left: 305px;
     }
+
+
         
     #popular-destinations-section h2 {
         font-size: 2em;
@@ -978,7 +963,7 @@ font-size: 25px;
     .card, #search-results .card {
         width: 914px;
         height: 246px;
-        background-color: #f0f0f0;
+        background-color: #e9f2f0;
         border-radius: 12px;
         margin-bottom: 20px;
         padding: 10px;
@@ -987,6 +972,11 @@ font-size: 25px;
         margin-left: -192px;
         position: relative;
         left: 111px;
+    }
+
+    .hotel-score {
+        left: 521px;
+
     }
     
     
