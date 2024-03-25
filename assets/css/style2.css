@@ -1,80 +1,38 @@
-/* General Reset */
 * {
-    box-sizing: border-box;
+    /* Removing default margin and padding */
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
-/* Body and HTML full height, flex column */
-html, body {
-    height: 100%;
+body {
+    height: 100vh;
+    min-height: 900px;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+main {
+    background-image: url("../images/Hotel2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 
-
-/* Header styles */
-header {
+body > header {
+    /* Your existing styles for the header */
     top: 0px;
     left: 1px;
-    height: 95px;
-    background-color: #efea38;
+    background-color: papayawhip;
     border-bottom: 1px solid #f0f0f0;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between; /* This will align nav to the right */
+    box-sizing: border-box;
+    padding: 10px 20px; /* Padding for better spacing */
 }
 
-/* Main styles */
-main {
-    flex: 1; /* Grow to fill the space */
-    display: flex;
-    flex-direction: column; /* Stack sections vertically */
-     /* Align to the start of the main axis */
-}
-
-/* Popular Destinations Section */
-#popular-destinations-section {
-    display: flex;
-    flex-direction: row; /* Stack cards vertically */
-    align-items: center;
-    align-items: flex-start; /* Center cards horizontally */
-    padding: 20px 0; /* Top and bottom padding */
-    
-}
-
-/* Cards inside Popular Destinations Section */
-.card  {
-    width: calc(100% - 40px); 
-    margin: 10px 0;
-    
-    background-color: #f0f0f0;
-    border-radius: 12px;
-    margin: 10px 0; /* Margin for top and bottom */
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    text-align: center; /* Center text inside cards */
-}
-/* change image size */
-
-.picture {    
-display: flex;
-align-items: center;
-}
-
-/* Account Creation Section */
-#userAccount {
-    background-color: #ffffff; /* Match other sections' background */
-    padding: 20px; /* Consistent padding with other sections */
-    margin: 20px 0; /* Consistent margin */
-    border-radius: 5px; /* Consistent border radius */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Consistent box shadow */
-    max-width: 400px; /* Set a max-width for the form */
-    margin-left: auto; /* Center the form section */
-    margin-right: auto;
+button {
+    background: none;
+    border: none;
 }
 
 /* Logo styles, assuming the logo is inline with other elements and not absolutely positioned */
@@ -84,88 +42,233 @@ align-items: center;
     gap: 5px;
 }
 
-.logo-icon {
-
-    width: 24px;
-    height: 32px;
-  }
-.logo-and-icon .logo-text {
-font-family: 'TimesBold', 'Times New Roman', Times, serif; /* Add fallbacks for broader compatibility */
-    font-size: 18px;
-    font-weight: bold; /* Times-Bold is already a bold font, so ensure the weight is set accordingly */
-    line-height: 21px;
-    }
-/* Styling for the content inside the box */
-#search-form {
-    display: flex;
-    flex-direction: column; /* Display items stacked vertically */
-    gap: 10px; /* Spacing between elements */
-    
+span.text.logo-text {
+    font-size: 25px;
 }
- /* Styling for the container holding the search form */
- #search-form-container {
-    
+
+/* Nav styling */
+nav {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li {
+    height: 50px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+nav li:first-child {
+    margin-right: auto;
+    font-size: 16px;
+    padding: 0px 30px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: white;
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li {
+    width: 100%;
+}
+
+.sidebar a {
+    width: 100%;
+}
+ 
+/* Hiding menu button - should only pop up on smaller screens */
+.menu_button {
+    display: none;
+}
+
+/* Hides horizontal navbar links when less than 950px */
+@media(max-width: 1020px) {
+    .menu_button {
+        display: block;
+    }
+    .hideMobile {
+        display: none;
+    }
+}
+/* sidebar takes up 100% when less than 400px */
+@media(max-width: 800px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
+/* Styling for flight search section/filter */
+
+/* New Flex Container */
+.flex-container {
+    display: flex;
+    justify-content: start; /* Align children to the start of the container */
+}
+
+/* Styling for the container holding the search form */
+#search-form-container {
+    height: 100vh;
     top: 95px;
     left: 0;
     bottom: 0; /* Make the box occupy the full height of the page */
     width: 300px; /* Width of the box */
-    background-color: #f0f0f0;
+    background-color:white;
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto; /* Enable vertical scrolling if content overflows */
     display: flex;
-    flex-direction: row; /* Display items stacked vertically */
-    border-radius: 46px;
-    margin-right: 20px;
+    flex-direction: column; /* Display items stacked vertically */
+    flex: 1;
 }
-/* Ensure the container of the cards uses flexbox to layout its children */
-.destinations-container {
+
+/* Styling for the content inside the box */
+#search-form {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 20px;
+    flex-direction: column; /* Display items stacked vertically */
+    gap: 24px; /* Spacing between elements */
+    padding: 10px;
 }
 
 #search-form button {
-    width: 100%; /* Use full width of the box */
+    width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-}
-#search-form button:hover {
     background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
 }
-#search-form input[type="text"],
-#search-form input[type="date"] {
-    font-size: 16px;
+
+.search-container {
+    display: flex;
+}
+
+/* Container for cards */
+.destinations-container, #search-results {
+    display: flex;
+    justify-content: space-around; /* Evenly distributes cards with space around them */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line */
+}
+
+img.destination {
+    height: 168px;
+    width: 300px;
+}
+.card, #search-results .card  {
+    /* width: 996px;
+    height: 234px; */
+    background-color: #e9f2f0;
+    border-radius: 12px;
+    margin-bottom: 20px;
     padding: 10px;
-    margin: 0 5px;
-    border: 1px solid #ddd;
-    border-radius: 999px; /* Highly rounded corners */
-    outline: none; /* Removes the default focus outline */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    align-self: center;
 }
 
+/* Hide popular section on mobile */
 
-
-
-/* Footer styles */
-footer {
-    background-color: rgb(255, 255, 255);
-    border-top: 1px solid rgb(240, 240, 240);
-    padding: 20px;
-    text-align: center;
-    flex-shrink: 0; /* Don't shrink the footer */
-}
-
-@media (max-width: 600px) {
-    .card {
-        width: 90%; /* Increase width on small screens */
+@media (max-width: 875px) {
+    #hideSection {
+        display: none;
+    }
+    .search-container {
+        width: 100%;
+        height: 100vh;
     }
 }
 
-/* Log In */
+/* Footer Styling */
+body > footer {
+    flex-shrink: 0; /* Prevents the footer from shrinking smaller than its content */
+    width: 100%; /* Makes the footer take full width of the page */
+    /* Your existing zstyles for the footer */
+}
 
+footer > * {
+    background-color: papayawhip;
+    text-align: center;
+}
+
+.footerContainer {
+    width: 100%;
+    padding: 40px 25px 15px;
+    margin-top: auto;
+    /* position: fixed;
+    bottom: 0;
+    left: 0; */
+}
+
+.socialMedia {
+    display: flex;
+    justify-content: center;
+}
+
+.socialMedia a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.socialMedia a i {
+    font-size: 2em;
+    color: #00c4bb;
+    opacity: 0.9;
+}
+
+.socialMedia a:hover {
+    background-color: black;
+    transition: 1s;
+}
+
+.footerNav {
+    margin: 25px 0;
+
+}
+
+.footerNav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.footerNav ul li {
+    margin: 10px;
+    font-size: 1em;
+    opacity: 0.5;
+}
+
+.footerNav ul li a {
+    text-decoration: none;
+}

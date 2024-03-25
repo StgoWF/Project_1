@@ -4,59 +4,26 @@
     padding: 0;
 }
 
-/* Font face */
-@font-face {
-    font-family: 'Poppins';
-    src: url('/assets/fonts/Poppins-Regular.ttf') format('truetype'),
-         url('/assets/fonts/Poppins-Bold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* Global styles */
 body {
     height: 100vh;
     min-height: 900px;
+    background-image: url("../images/sl_070720_32260_4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
-    background-image: url("../images/background.jpg");
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    /* font-family: 'Poppins', sans-serif; 
-    background-color: #f4f4f4;
-     */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body > header {
     /* Your existing styles for the header */
     top: 0px;
     left: 1px;
-    background-color: #00c4bb;
+    background-color: papayawhip;
     border-bottom: 1px solid #f0f0f0;
     box-sizing: border-box;
     padding: 10px 20px; /* Padding for better spacing */
-}
-
-/* Header styles */
-header {
-    background-color: #00c4bb; /* Changed color */
-    color: #fff;
-    padding: 10px 20px;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo-icon {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-}
-
-.logo-text {
-    font-family: 'Poppins', sans-serif; /* Only Poppins */
-    font-size: 1.5rem;
-    font-weight: bold;
 }
 
 button {
@@ -69,6 +36,10 @@ button {
     display: flex; /* Enables flexbox layout */
     align-items: center; /* Align logo text and icon vertically */
     gap: 5px;
+}
+
+span.text.logo-text {
+    font-size: 25px;
 }
 
 /* Nav styling */
@@ -114,7 +85,7 @@ nav li:first-child {
     height: 100vh;
     width: 250px;
     z-index: 999;
-    background-color: grey;
+    background-color: white;
     backdrop-filter: blur(10px);
     box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
     display: none;
@@ -137,7 +108,7 @@ nav li:first-child {
 }
 
 /* Hides horizontal navbar links when less than 950px */
-@media(max-width: 1120px) {
+@media(max-width: 1020px) {
     .menu_button {
         display: block;
     }
@@ -148,146 +119,31 @@ nav li:first-child {
 /* sidebar takes up 100% when less than 400px */
 @media(max-width: 800px) {
     .sidebar {
-        width: 75%;
+        width: 100%;
     }
 }
 
-nav a {
-    font-family: 'Poppins', sans-serif; /* Only Poppins */
-    color: #fff;
-    text-decoration: none;
-    margin-right: 20px;
-}
+/* Section Styling */
 
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* H1 styling */
-h1 {
-    color: white !important;
+.wipMessage {
     text-align: center;
-    font-size: 55px;
-}
-
-@media (max-width: 385px) {
-    h1,
-    .text.logo-text {
-        display: none;
-    }
-    h2 {
-        font-size: 20px;
-    }
-}
-
-/* Form Styling */
-.content {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 0 20px;
-}
-
-h2 {
-    margin-top: 0;
-    text-align: center;
-    color: white !important;
-}
-
-form {
-    background-color: #fff;
-    padding: 20px;
+    justify-content: center;
+    height: 100vh;
+    margin-top: 65%;
+    margin-left: 50%;
+    background-color: white;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-label {
-    font-weight: bold;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="issue"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-textarea {
-    width: 100%;
-}
-
-button[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-button[type="submit"]:hover {
-    background-color: #00c4bb;
-}
-
-.popup {
-    width: 400px;
-    background: lightgray;
-    border-radius: 6px;
-    position: absolute;
-    left: 42%;
-    text-align: center;
-    padding: 0 30px 30px;
-    color: black;
-    visibility: hidden;
-}
-
-.activate_Popup {
-    visibility: visible;
-    top: 50%;
-}
-
-.popup img {
-    width: 100px;
-    margin-top: 15px;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
-}
-
-.popup h2 {
-    font-size: 40px;
-    font-weight: 500;
-    margin: 30px 0 10px;
-    color: black !important;
-}
-
-.popup button {
-    width: 100%;
-    margin-top: 50px;
-    padding: 10px 0;
-    background: #00c4bb;
-    cursor: pointer;
-    color: #333;
-    border: 0;
-    outline: none;
-    font-size: 18px;
-    border-radius: 4px;
 }
 
 /* Footer Styling */
 body > footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
     flex-shrink: 0; /* Prevents the footer from shrinking smaller than its content */
     width: 100%; /* Makes the footer take full width of the page */
     /* Your existing zstyles for the footer */
 }
 
 footer > * {
-    background-color: #00c4bb;
+    background-color: papayawhip;
     text-align: center;
 }
 

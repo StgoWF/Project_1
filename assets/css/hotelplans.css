@@ -14,6 +14,15 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+main {
+    height: 100vh;
+    min-height: 900px;
+    background-image: url("../images/background2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
 
 button {
     background: none;
@@ -27,15 +36,23 @@ body > header {
     border-bottom: 1px solid #f0f0f0;
     box-sizing: border-box;
     padding: 10px 20px;
-    display: flex;
-    width: 1400px;
 }
+
+/* Nav styling */
 nav {
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    gap: 25px;
-    margin-left: auto;
+}
+
+nav li {
+    height: 50px;
 }
 
 nav a {
@@ -45,6 +62,61 @@ nav a {
     display: flex;
     align-items: center;
     color: black;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+nav li:first-child {
+    margin-right: auto;
+    font-size: 16px;
+    padding: 0px 30px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: white;
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li {
+    width: 100%;
+}
+
+.sidebar a {
+    width: 100%;
+}
+ 
+/* Hiding menu button - should only pop up on smaller screens */
+.menu_button {
+    display: none;
+}
+
+/* Hides horizontal navbar links when less than 950px */
+@media(max-width: 1020px) {
+    .menu_button {
+        display: block;
+    }
+    .hideMobile {
+        display: none;
+    }
+}
+/* sidebar takes up 100% when less than 400px */
+@media(max-width: 800px) {
+    .sidebar {
+        width: 100%;
+    }
 }
 
 .flex-container {
@@ -67,7 +139,7 @@ nav a {
 }
 
 .card, #search-results .card {
-    width: 996px;
+    width: 500px;
     height: 234px;
     background-color: #e9f2f0;
     border-radius: 12px;
@@ -77,24 +149,18 @@ nav a {
     align-self: center;
 }
 
-body > footer {
-    flex-shrink: 0;
-    width: 1400px;
-}
-
-
-
 .helpSubmit {
     margin-top: 5px;
 }
 
 /* Footer Styling */
 
-  footer > * {
-    background-color: #00c4bb;
-  }
+footer > * {
+    background-color: papayawhip;
+    text-align: center;
+}
 
-  .footerContainer {
+.footerContainer {
     width: 100%;
     padding: 55px 25px 15px;
   }
