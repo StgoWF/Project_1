@@ -60,13 +60,42 @@ function singInUser(){
         alert("incorrect password!!!");
         return;
     }
+    // will make the log in butn go away after logging in 
+    document.getElementById("loginSection").style.display = "none";
+    document.getElementById("logoutSection").style.display = "block";
+
+    console.log("User logged in:", loggedInUser);
 }
 document.addEventListener("DOMContentLoaded", function() {
-    // Check if there is a user that is logged in
+    //Check if there is a user that is logged in
     var loggedInUser = JSON.parse(localStorage.getItem("loggedinnuser"));
+    
     if (loggedInUser) {
         //if the user is logged in, remove the log in and register user
         document.getElementById("logintarget").style.display = "none";
         document.getElementById("userContentTarget").innerHTML = 'Welcome, ' + loggedInUser.fullname + '!';
     } 
 });
+
+function logoutButn(){
+    var logoutSection = document.getElementById("logoutSection");
+    var logoutButton = document.getElementById("logoutButton");
+    if (loggedInUser) {
+    loginSection.style.display = "none";
+    logoutSection.style.display = "block";
+    }
+
+ // Remove the logged-in user from local storage
+    logoutButton.addEventListener("click", function() {
+    localStorage.removeItem("loggedinnuser");
+
+        // Hide the logout button and show the login form
+    loginSection.style.display = "block";
+    logoutSection.style.display = "none";
+
+    console.log("User logged out.");
+    })
+}
+
+
+logintarget
