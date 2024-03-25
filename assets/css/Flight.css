@@ -25,6 +25,7 @@ body, input, select, button {
 
 .search-panel h2 {
     margin-bottom: 20px;
+    font-weight: bold;
 }
 
 /* Input group styling */
@@ -334,8 +335,8 @@ body, input, select, button {
     font-size: 12px;
   }
 
-.saveButton.saved {
-    color: red; /* color when saved */
+  .saveButton.saved {
+    color: red; /* Changes the color to red when saved */
 }
 .airlineInfoContainer {
     display: flex;
