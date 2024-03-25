@@ -196,14 +196,12 @@ nav li:first-child {
 
 /* Container for the destination cards to align them in a column */
 #popular-destinations-section {
-    margin: 0;
     display: flex;
     flex-direction: column; /* Stacks cards vertically */
     align-items: center; /* Center cards horizontally */
     padding: 20px;
     flex: 1;
     height: 100vh;
-    max-width: 1400px;
     /* Remove max-width if you want the container to be full-width */
 }
 
@@ -212,11 +210,6 @@ nav li:first-child {
     display: flex;
     justify-content: space-around; /* Evenly distributes cards with space around them */
     flex-wrap: wrap; /* Allows cards to wrap to the next line */
-}
-
-.card {
-    min-height: 218px;
-    min-width: 218px;
 }
 
 img.destination {
