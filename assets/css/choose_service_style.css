@@ -13,10 +13,14 @@ body {
 main {
   flex: 1; /* This will allow the main content to grow and take up available space */
   display: flex; /* Enable flexbox */
+  min-height: 100vh;
   flex-direction: column; /* Stack children vertically */
   justify-content: center; /* Center content vertically */
   align-items: center; /* Center content horizontally */
-  background-color: mintcream;
+  background-image: url("../images/homepageBG.jpg") !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Header styles */
