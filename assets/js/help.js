@@ -1,6 +1,9 @@
-const form = document.getElementById("form")
+const popup = document.getElementById("popup")
 
-form,addEventListener("submit", function(event){
-    event.preventDefault();
-    
-})
+function activatePopup() {
+    popup.classList.add("activate_Popup")
+}
+
+function closePopup(){
+    popup.classList.remove("activate_Popup")
+}

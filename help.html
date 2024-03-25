@@ -44,20 +44,26 @@
     <div class="content">
         <section id="userAccount">
             <h2>Submit a help ticket</h2>
-            <form action="/Submit_Ticket" method="post">
+            <form onsubmit="successMessage(event)">
                 <label for="fullname">Full Name:</label>
-                <input type="text" id="fullname" name="fullname" required>
+                <input type="text" id="fullname" name="fullname" placeholder="e.g. First Name Last Name" required>
                 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="e.g. test@test.com" required>
 
                 <label for="issue">Issue:</label>
-                <input type="issue" id="issue" name="issue" required>
+                <input type="issue" id="issue" name="issue" placeholder="Please enter a brief title for your issue" required>
 
                 <label for="description">Description of Issue:</label><br>
-                <textarea type="description" rows="5" id="description" name="description" required></textarea><br>
+                <textarea type="description" rows="5" id="description" name="description" placeholder="Type here" required></textarea><br>
                 
-                <button class="helpSubmit" type="submit" value="Submit">Submit</button>
+                <button type="submit" class="btn" onclick="activatePopup()">Submit</button>
+                <div class="popup" id="popup">
+                    <img src="./assets/images/TailorMyTrips Logo.png">
+                    <h2>Thank You!</h2>
+                    <p>Your submission has been received.</p>
+                    <button type="button" onclick="closePopup()">close</button>
+                </div>
             </form>
         </section>
     </div>
@@ -85,8 +91,6 @@
         </section>
     </footer>
     <!-- JavaScript file link -->
-    <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/modal.js"></script>
-    <script src="./assets/js/login.js"></script>
+    <script src="./assets/js/help.js"></script>
 </body>
 </html>
