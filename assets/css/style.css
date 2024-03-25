@@ -5,6 +5,8 @@
     padding: 0;
     text-align: center;
 }
+
+
 @font-face {
     font-family: 'Poppins';
     src: url('/assets/fonts/Poppins-Regular.ttf') format('truetype'),
@@ -40,6 +42,7 @@ body > header {
     box-sizing: border-box;
     padding: 10px 20px; /* Padding for better spacing */
     display: flex;
+    width: 1400px;
 }
 
 body > main {
@@ -48,8 +51,7 @@ body > main {
 
 body > footer {
     flex-shrink: 0; /* Prevents the footer from shrinking smaller than its content */
-    width: 100%; /* Makes the footer take full width of the page */
-    /* Your existing zstyles for the footer */
+    width: 1400px;  
 }
 /* body {
     max-width: 1220px; or any other value you prefer
@@ -607,6 +609,12 @@ font-size: 25px;
     right: 1176px;
     top: 62px;
 }
+
+.destination:hover {
+    background-color: #f0f0f0;
+    scale: 110%;
+}
+
 #london{
     position: absolute;
     top: 160px;
@@ -676,6 +684,27 @@ font-size: 25px;
 #popular-destinations-section h2 {
     font-size: 2em;
     margin: 5px;
+}
+.destinations-container h2{
+    position: relative;
+    top: -20px;
+
+}
+
+.destinations-container .card p {
+    top: -141px;
+    position: relative;
+    scale: 154%;
+    max-width: 400px;
+    left: 345px;
+    max-width: 400px;
+    left: 345px;
+}
+.destinations-container .card  h3 {
+    scale: 200%;
+    max-width: 133px;
+    left: 408px;
+    position: relative;
 }
 
 /* Container for cards */
@@ -884,6 +913,10 @@ font-size: 25px;
         left: 440px;
         /* scale: 90%; */
     }
+    #popular-destinations-section .card p {
+
+        left: 218px;
+    }
     .card button {
         padding: 10px 15px;
         /* margin-top: 10px; */
@@ -931,12 +964,16 @@ font-size: 25px;
         top: 0px;
         left: 1px;
         height: 95px;
-        background-color: #b8ef38;
+        background-color: #00c4bb;
         border-bottom: 1px solid #f0f0f0;
         box-sizing: border-box;
         padding: 10px 20px;
         width: 1252px;
         display: flex;
+    }
+
+    body > footer {
+      width: 1252px;
     }
     .card, #search-results .card {
         width: 914px;
@@ -974,7 +1011,7 @@ font-size: 25px;
 /* Footer Styling */
 
   footer > * {
-    background-color: #b8ef38;
+    background-color: #00c4bb;
   }
 
   .footerContainer {
