@@ -410,6 +410,19 @@ function updateContentPanel() {
 // Call the updateContentPanel function
 updateContentPanel();
 
+function saveFlightOption(flightData) {
+    // Retrieve saved flights from local storage
+    let savedFlights = localStorage.getItem('savedFlights');
+    savedFlights = savedFlights ? JSON.parse(savedFlights) : [];
+
+    // Add the new flight data
+    savedFlights.push(flightData);
+
+    // Save the updated list back to local storage
+    localStorage.setItem('savedFlights', JSON.stringify(savedFlights));
+
+    console.log('Flight saved:', flightData);
+}
 async function SearchflightAPI(toID, fromID, departDate) {
     const url = `https://booking-com15.p.rapidapi.com/api/v1/flights/searchFlights?fromId=${fromID}&toId=${toID}&departDate=${departDate}`//&pageNo=1&adults=1&children=0%2C17&currency_code=AED`;
     const options = {
@@ -507,7 +520,7 @@ async function SearchflightAPI(toID, fromID, departDate) {
     });
     card.appendChild(saveButton);
 
-    bookingContainer.appendChild(saveButton);
+bookingContainer.appendChild(saveButton);
 
     const airlineLogo = item.segments[0].legs[0].carriersData[0].logo;
     const airlineLogoElement = document.createElement('img');
@@ -593,7 +606,12 @@ async function SearchflightAPI(toID, fromID, departDate) {
         contentPanel.appendChild(card);
         currentImageIndex++;
     });
-    } catch (error) {
-        console.error('There was an issue fetching flight data:', error);
-    }
+    // Now safely remove the background image
+    if (contentPanel) {
+        contentPanel.style.backgroundImage = 'none';
+        document.body.style.backgroundImage = 'none';
+        };
+} catch (error) {
+    console.error('There was an issue fetching flight data:', error);
+}
 }
