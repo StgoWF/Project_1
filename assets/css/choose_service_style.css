@@ -21,6 +21,8 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin: 0 auto;
+  width: 100%;
 }
 
 /* Header styles */
@@ -75,8 +77,6 @@ header {
   text-decoration: underline;
 }
 
-
-
 /* Options container */
 #options {
   display: flex;
@@ -88,47 +88,9 @@ header {
   scale: 150%;
 }
 
-/* Footer container */
-.footer {
-  display: flex; /* Use flexbox for positioning */
-  justify-content: space-between; /* Space out the footer text and social icons */
-  align-items: center; /* Align items vertically */
-  padding: 20px; /* Add padding as needed */
-  background-color: papayawhip; /* Set the background color */
-  border-top: 1px solid rgb(240, 240, 240); /* Add a top border for visual separation */
-}
-
 /* Styling for logo and icons */
 .icon {
   fill: #030303; /* Adjust icon color */
-}
-
-
-
-/* Social icons container */
-.footer .facebook-icon-container,
-.footer .twitter-icon-container,
-.footer .instagram-icon-container {
-  /* As these are direct children of the .footer container now, 
-     we don't need to position them absolutely */
-  display: flex; /* Use flex to position the icons */
-}
-
-/* Social icons grouping */
-.footer .facebook-icon-container,
-.footer .twitter-icon-container,
-.footer .instagram-icon-container {
-  margin-left: auto; /* This will push the social icons to the right */
-}
-
-/* Styles for the social icons within the containers */
-.footer .facebook-icon-container img,
-.footer .twitter-icon-container img,
-.footer .instagram-icon-container img {
-  width: 24px; /* Set the width */
-  height: 24px; /* Set the height */
-  /* If you want some space between the icons add margin here */
-  margin-right: 10px; /* Example margin */
 }
 
 /* Container for the social icons */
@@ -161,7 +123,6 @@ header {
   scale: 161%;
 }
 
-
 /* Main header text "Choose Your Option" styles */
 .choose-your-option .text {
   color: #030303; /* Text color */
@@ -172,13 +133,6 @@ header {
   top: 252px;
   left: 715px;
   transform: translateX(-50%); /* Center the text horizontally */
-}
-
-/* Footer text styles */
-.footer-text {
-  display: flex; /* Align footer text items in a row */
-  gap: 30px; /* Space between items */
-  /* Add any additional styles you might need for the text */
 }
 
 /* User action text styles */
@@ -271,4 +225,68 @@ header {
   .text {
     font-size: 14px; /* Example of reducing text size for mobile */
   }
+}
+
+/* Footer Styling */
+body > footer {
+  flex-shrink: 0; /* Prevents the footer from shrinking smaller than its content */
+  width: 100%; /* Makes the footer take full width of the page */
+}
+
+footer > * {
+  background-color: papayawhip;
+  text-align: center;
+}
+
+.footerContainer {
+  width: 100%;
+  padding: 40px 25px 15px;
+  margin-top: auto;
+  /* position: fixed;
+  bottom: 0;
+  left: 0; */
+}
+
+.socialMedia {
+  display: flex;
+  justify-content: center;
+}
+
+.socialMedia a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.socialMedia a i {
+  font-size: 2em;
+  color: #00c4bb;
+  opacity: 0.9;
+}
+
+.socialMedia a:hover {
+  background-color: black;
+  transition: 1s;
+}
+
+.footerNav {
+  margin: 25px 0;
+
+}
+
+.footerNav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+.footerNav ul li {
+  margin: 10px;
+  font-size: 1em;
+  opacity: 0.5;
+}
+
+.footerNav ul li a {
+  text-decoration: none;
 }
