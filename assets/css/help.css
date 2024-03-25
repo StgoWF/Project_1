@@ -15,11 +15,11 @@
 
 /* Global styles */
 body {
-    min-height: 900px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     background-image: url("../images/background.jpg");
-    background-size: cover;
+    background-size:cover;
     background-repeat: no-repeat;
     background-position: center;
     /* font-family: 'Poppins', sans-serif; 
