@@ -180,7 +180,7 @@ h1 {
     }
 }
 
-/* Content styles */
+/* Form Styling */
 .content {
     max-width: 800px;
     margin: 20px auto;
@@ -214,16 +214,6 @@ input[type="issue"] {
     border-radius: 5px;
     box-sizing: border-box;
 }
-
-/* input[type="description"] {
-    width: 100%;
-    height: 100px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-} */
 
 textarea {
     width: 100%;
