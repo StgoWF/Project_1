@@ -593,7 +593,12 @@ async function SearchflightAPI(toID, fromID, departDate) {
         contentPanel.appendChild(card);
         currentImageIndex++;
     });
-    } catch (error) {
-        console.error('There was an issue fetching flight data:', error);
-    }
+    // Now safely remove the background image
+    if (contentPanel) {
+        contentPanel.style.backgroundImage = 'none';
+        document.body.style.backgroundImage = 'none';
+        };
+} catch (error) {
+    console.error('There was an issue fetching flight data:', error);
+}
 }
