@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+button {
+    background: none;
+    border: none;
+}
+body > header {
+    top: 0px;
+    left: 1px;
+    height: 95px;
+    background-color: #00c4bb;
+    border-bottom: 1px solid #f0f0f0;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    display: flex;
+    width: 1400px;
+}
+nav {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-left: auto;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+.flex-container {
+    display: flex;
+    /* justify-content: start; */
+}
+
+#popular-destinations-section {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    flex: 1;
+}
+
+#popular-destinations-section h2 {
+    font-size: 2em;
+    margin: 5px;
+}
+
+.card, #search-results .card {
+    width: 996px;
+    height: 234px;
+    background-color: #e9f2f0;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    align-self: center;
+}
+
+body > footer {
+    flex-shrink: 0;
+    width: 1400px;
+}
+
+
+
+.helpSubmit {
+    margin-top: 5px;
+}
+
+/* Footer Styling */
+
+  footer > * {
+    background-color: #00c4bb;
+  }
+
+  .footerContainer {
+    width: 100%;
+    padding: 55px 25px 15px;
+  }
+
+.socialMedia {
+    display: flex;
+    justify-content: center;
+}
+
+.socialMedia a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.socialMedia a i {
+    font-size: 2em;
+    color: #b8ef38;
+    opacity: 0.9;
+}
+
+.socialMedia a:hover {
+    background-color: black;
+    transition: 1s;
+}
+
+.footerNav {
+    margin: 25px 0;
+
+}
+
+.footerNav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.footerNav ul li {
+    margin: 10px;
+    font-size: 1em;
+    opacity: 0.5;
+}
+
+.footerNav ul li a {
+    text-decoration: none;
+}
