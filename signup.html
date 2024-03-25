@@ -23,8 +23,69 @@
             <a href="#" id="loginButton">Log In</a>
         </nav>
     </div>
+    <body>
 
-    <div class="content">
+        <div class="content">
+            <section id="userAccount">
+                <h2>Create an Account</h2>
+                <form id="userForm">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+        
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+        
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+        
+                    <label for="terms" class="checkbox-container">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        I agree to the Terms and Conditions
+                    </label>
+                    
+                    <button type="submit">Create Account</button>
+                </form>
+            </section>
+        </div>
+        
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('userForm');
+        
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+        
+                var fullname = document.getElementById('fullname').value;
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+                var confirmPassword = document.getElementById('confirm-password').value;
+        
+                if (password !== confirmPassword) {
+                    alert("Passwords don't match.");
+                    return;
+                }
+        
+                var user = {
+                    fullname: fullname,
+                    email: email,
+                    password: password
+                };
+        
+                var users = JSON.parse(localStorage.getItem('users')) || [];
+                users.push(user);
+                localStorage.setItem('users', JSON.stringify(users));
+        
+                alert('Account created successfully!');
+        
+                // Reset form fields
+                form.reset();
+            });
+        });
+        </script>
+    <!-- <div class="content">
         <section id="userAccount">
             <h2>Create an Account</h2>
             <form action="/create_account" method="post">
@@ -48,6 +109,6 @@
                 <input type="submit" value="Create Account">
             </form>
         </section>
-    </div>
+    </div> -->
 </body>
 </html>
