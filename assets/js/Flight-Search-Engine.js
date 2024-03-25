@@ -338,40 +338,16 @@ return id
     console.error('There was a problem with the fetch operation:', error);
 });
 }
+function saveFlightDetails(toID, fromID, departDate, returnDate) {
+    const flightDetails = {
+        FromID: fromID,
+        ToID: toID,
+        DepartDate: departDate,
+        ArrivalDate: returnDate
+    };
 
-function saveToLocalStorage(id, planType, data) {
-    let storageKey, allResults, itemToSave;
-
-    switch (planType) {
-        case 'flight':
-            console.log("Saving flight to My Flight Plans...", id);
-            allResults = allFlights; // Replace with your array of flight results
-            storageKey = 'myFlightPlans';
-            itemToSave = allResults.find(f => f.flight_id.toString() === id);
-
-            if (!itemToSave) {
-                console.error("Flight not found");
-                return;
-            }
-
-            // Use the passed flightData directly
-            break;
-
-        default:
-            console.error("Unknown plan type");
-            return;
-    }
-
-    // Retrieve existing plans from local storage or initialize an empty array if none exist
-    let plans = JSON.parse(localStorage.getItem(storageKey)) || [];
-    
-    // Add the new item to the array
-    plans.push(itemToSave || data); // Use 'data' directly for flight
-
-    // Save the updated plans back to local storage
-    localStorage.setItem(storageKey, JSON.stringify(plans));
-
-    console.log(`${planType.charAt(0).toUpperCase() + planType.slice(1)} saved:`, itemToSave || data);
+    localStorage.setItem('flightDetails', JSON.stringify(flightDetails));
+    console.log('Flight details saved:', flightDetails);
 }
 
 function generateReferenceNumber() {
@@ -390,25 +366,11 @@ function sortFlights(flightOffers) {
         return (priceA * durationA) - (priceB * durationB);
     });
 }
-
-function updateContentPanel() {
-    // Fetch your data here
-    fetchData().then(() => {
-        // Once data is fetched, change the background image
-        const contentPanel = document.querySelector('.content-panel');
-        if (contentPanel) {
-            contentPanel.style.backgroundImage = 'none';
-        }
-
-        // Now you can proceed to populate the content panel with your fetched data
-        // ...
-    }).catch(error => {
-        console.error('Error while fetching data:', error);
-    });
+function saveCompleteFlightDetails(flightData) {
+    // Assume flightData is the complete data structure for a flight
+    localStorage.setItem('completeFlightDetails', JSON.stringify(flightData));
+    console.log('Complete flight details saved:', flightData);
 }
-
-// Call the updateContentPanel function
-updateContentPanel();
 
 function saveFlightOption(flightData) {
     // Retrieve saved flights from local storage

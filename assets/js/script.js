@@ -51,3 +51,18 @@ async function fetchApiData() {
 fetchApiData();
 
 
+document.getElementById('loadHotelPlans').addEventListener('click', function() {
+    fetch('hotelplans.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('content').innerHTML = data;
+      });
+  });
+  
+  document.getElementById('loadFlightPlans').addEventListener('click', function() {
+    fetch('flightplans.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('content').innerHTML = data;
+      });
+  });

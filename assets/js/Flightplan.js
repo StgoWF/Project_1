@@ -1,44 +1,45 @@
-document.addEventListener('DOMContentLoaded', function() {
-    displaySavedFlightPlans();
-});
+function displaySavedFlightDetails() {
+    let savedData = localStorage.getItem('completeFlightDetails');
+    let savedFlightDetails;
 
-function displaySavedFlightPlans() {
-    // Retrieve saved flights from local storage
-    let savedFlights = localStorage.getItem('savedFlights');
-    savedFlights = savedFlights ? JSON.parse(savedFlights) : [];
+    if (savedData) {
+        try {
+            savedFlightDetails = JSON.parse(savedData);
+        } catch (error) {
+            console.error('Error parsing saved flight details:', error);
+            return;
+        }
 
-    const savedFlightsPanel = document.getElementById('savedFlightsPanel');
-    if (!savedFlightsPanel) {
-        console.error('Element with ID "savedFlightsPanel" not found.');
-        return;
+        if (savedFlightDetails && Array.isArray(savedFlightDetails)) {
+            let container = document.getElementById('savedFlightDetailsContainer');
+            if (!container) {
+                container = document.createElement('div');
+                container.id = 'savedFlightDetailsContainer';
+                document.body.appendChild(container);
+            }
+
+            container.innerHTML = '';
+
+            savedFlightDetails.forEach((flight, index) => {
+                let flightElement = document.createElement('div');
+                flightElement.className = 'flight-detail';
+
+                let segment = flight.segments[0];
+                let travellerCount = flight.travellerPrices.length;
+
+                flightElement.innerHTML = `
+                    <h3>Flight Plan ${index + 1}</h3>
+                    <p>From City: ${segment.departureAirport.cityName}</p>
+                    <p>To City: ${segment.arrivalAirport.cityName}</p>
+                    <p>Departure Date: ${new Date(segment.departureTime).toLocaleDateString()}</p>
+                    <p>Arrival Date: ${new Date(segment.arrivalTime).toLocaleDateString()}</p>
+                    <p>Number of Passengers: ${travellerCount}</p>
+                `;
+
+                container.appendChild(flightElement);
+            });
+        }
+    } else {
+        console.log('No saved flight details found.');
     }
-
-    savedFlightsPanel.innerHTML = ''; // Clear existing content
-
-    if (savedFlights.length === 0) {
-        savedFlightsPanel.innerHTML = '<p>No saved flight plans.</p>';
-        return;
-    }
-
-    savedFlights.forEach(flight => {
-        // Ensure flight properties exist before trying to access them
-        const fromCity = flight.fromCity || 'Unknown city';
-        const toCity = flight.toID || 'Unknown city';
-        const departDate = flight.departureDate || 'N/A';
-        const returnDate = flight.arrivalDate || 'N/A';
-        const adults = flight.passengers && flight.passengers.adults ? flight.passengers.adults : 'N/A';
-        const children = flight.passengers && flight.passengers.children ? flight.passengers.children : 'N/A';
-        const infants = flight.passengers && flight.passengers.infants ? flight.passengers.infants : 'N/A';
-
-        const flightElement = document.createElement('div');
-        flightElement.className = 'saved-flight';
-        flightElement.innerHTML = `
-            <h3>${fromCity} to ${toCity}</h3>
-            <p>Depart: ${departDate}</p>
-            <p>Return: ${returnDate}</p>
-            <p>Passengers: Adults ${adults}, Children ${children}, Infants ${infants}</p>
-        `;
-
-        savedFlightsPanel.appendChild(flightElement);
-    });
 }
