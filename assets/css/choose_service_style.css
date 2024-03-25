@@ -16,6 +16,7 @@ main {
   flex-direction: column; /* Stack children vertically */
   justify-content: center; /* Center content vertically */
   align-items: center; /* Center content horizontally */
+  background-color: mintcream;
 }
 
 /* Header styles */
@@ -24,8 +25,8 @@ header {
   justify-content: space-between; /* This spaces out the logo and the user actions */
   align-items: center; /* This centers items vertically within the header */
   padding: 0 2rem; /* This adds padding on the left and right */
-  height: 91px; /* Adjust height as needed */
-  background-color: #b8ef38;
+  height: 60px; /* Adjust height as needed */
+  background-color: papayawhip;
   border-bottom: 1px solid #f0f0f0;
   flex-wrap: wrap; /* This will allow items to wrap to the next line on small screens */
 
@@ -89,7 +90,7 @@ header {
   justify-content: space-between; /* Space out the footer text and social icons */
   align-items: center; /* Align items vertically */
   padding: 20px; /* Add padding as needed */
-  background-color: rgb(255, 255, 255); /* Set the background color */
+  background-color: papayawhip; /* Set the background color */
   border-top: 1px solid rgb(240, 240, 240); /* Add a top border for visual separation */
 }
 

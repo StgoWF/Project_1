@@ -19,7 +19,7 @@ body > header {
     /* Your existing styles for the header */
     top: 0px;
     left: 1px;
-    background-color: #00c4bb;
+    background-color: papayawhip;
     border-bottom: 1px solid #f0f0f0;
     box-sizing: border-box;
     padding: 10px 20px; /* Padding for better spacing */
@@ -175,12 +175,12 @@ nav li:first-child {
 }
 
 #search-form button {
-    background-color: #007bff;
+    background-color: papayawhip;
     color: #fff;
     cursor: pointer;
 }
 #search-form button:hover {
-    background-color: #0056b3;
+    background-color: papayawhip;
 }
 
 .search-container {
@@ -247,7 +247,7 @@ body > footer {
 }
 
 footer > * {
-    background-color: #00c4bb;
+    background-color: papayawhip;
     text-align: center;
 }
 
