@@ -4,9 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaylorMyTrip</title>
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <script src="./assets/js/login.js"></script>
     <link rel="stylesheet" href="./assets/css/choose_service_style.css"> <!-- Make sure you link your actual CSS file -->
 </head>
 <body>
+    <div class="modalOutline" id="popUpTarget" style="display: none;">
+        <!-- Modal content -->
+        <div class="modalContent">
+            <span class="close" onclick="logInPopUpFun()">&times;</span>
+            <div id=""> 
+                <div class="form">
+                    <h2>Log In</h2>
+                    <div class="form-element">
+                        <div class="email">
+                            <label>Email:</label>
+                            <input type="text" id=emailUser placeholder="Enter Email"><br>
+                        </div>
+                        <label>Password:</label>
+                        <input type="password" id=passwordUser placeholder="Enter Password"><br>
+                    </div>
+                    <div class="form-element">
+                        <input type="checkbox" id="remember-me">
+                        <label type="remember-me">Remember me</label>
+                    </div>
+                    <div class="form-element">
+                        <input type="button"  onclick="singInUser()" value="Sign in"> 
+
+                    </div>
+                    <div class="form-element">
+                        <p class="para-2">Don't have an account?<br> <a href="signup.html">Create an Account</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <header>
         <!-- TaylorMyTrip Logo and Icon -->
         <div class="logo-and-icon">
@@ -15,12 +47,16 @@
         </div>
     
         <!-- User Actions: Log in and Sign in -->
-        <div class="user-actions">
-            <!-- Login link -->
-            <a href="login.html" class="text login-text">Log in</a> <!-- Link to your login page -->
-        
-            <!-- Signin link -->
-            <a href="signup.html" class="text signin-text">Sign up</a> <!-- Link to your sign in page -->
+        <div class="user-actions" >
+            <!-- if loggedinuser in localstorage exist, hide the log in and sign up button, and 
+            instead replace it with a text like Welcome, loggedinuser.name!  -->
+            <p id="userContentTarget"></p>
+            <div id="logintarget">
+                <!-- Login link -->
+                <a class="text login-text" onclick="logInPopUpFun()">Log in</a> <!-- Link to your login page -->
+                <!-- Signin link -->
+                <a href="signup.html" class="text signin-text">Sign up</a> <!-- Link to your sign in page -->
+            </div>
         
             <!-- User icon -->
             <img src="./assets/images/icons/circle-user.svg" alt="User Icon" class="icon user-icon">
