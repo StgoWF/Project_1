@@ -19,7 +19,8 @@ button {
 }
 
 html, body {
-    height: 100%; /* Ensures that the html and body take up the full viewport height */
+    height: 100vh; 
+    width: 100vw;
     display: flex;
     flex-direction: column; /* Stacks children elements vertically */
 
@@ -35,7 +36,7 @@ body > header {
     box-sizing: border-box;
     padding: 10px 20px; /* Padding for better spacing */
     display: flex;
-    width: 1400px;
+    
 }
 
 body > main {
@@ -44,7 +45,7 @@ body > main {
 
 body > footer {
     flex-shrink: 0; /* Prevents the footer from shrinking smaller than its content */
-    width: 1400px;  
+    width: 100vw;  
 }
 /* body {
     max-width: 1220px; or any other value you prefer
@@ -158,7 +159,7 @@ section {
     background: #ffffff;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
 }
 
 /* Homepage Section */
@@ -671,12 +672,16 @@ font-size: 25px;
     align-items: center; /* Center cards horizontally */
     padding: 20px;
     flex: 1;
-    /* Remove max-width if you want the container to be full-width */
+    position: relative;
+    left: 100px;
+    
 }
 
 #popular-destinations-section h2 {
     font-size: 2em;
     margin: 5px;
+    position: relative;
+    left: -100px;
 }
 .destinations-container h2{
     position: relative;
@@ -687,17 +692,18 @@ font-size: 25px;
 .destinations-container .card p {
     top: -141px;
     position: relative;
-    scale: 154%;
-    max-width: 400px;
+    scale: 177%;
     left: 345px;
-    max-width: 400px;
-    left: 345px;
+    width: 440px;
+    left: 401px;
+    text-align: start;
 }
 .destinations-container .card  h3 {
     scale: 200%;
     max-width: 133px;
-    left: 408px;
+    left: 430px; 
     position: relative;
+    top: 22px;
 }
 
 /* Container for cards */
@@ -708,7 +714,7 @@ font-size: 25px;
 }
 
 .card, #search-results .card  {
-    width: 996px;
+    width: 60vw;
     height: 234px;
     background-color: #e9f2f0;
     border-radius: 12px;
@@ -728,7 +734,6 @@ font-size: 25px;
 /* Container for cards */
 .destinations-container {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap; /* Allows cards to wrap to the next line */
 }
 
@@ -870,10 +875,9 @@ font-size: 25px;
     }
 }
 /* Media query to adjust styles on devices with smaller widths */
-@media (max-width: 768px) {
+@media (max-width: 1461px) {
     body {
         /* Here you can adjust the maximum width of the body or font size, for example */
-        max-width: 768px; /* Example of adjusting maximum width */
         font-size: 14px; /* Example of adjusting font size */
     }
     .card{
@@ -892,7 +896,7 @@ font-size: 25px;
         height: 200px;
         width: 180px;
         position: relative;
-        right: 1030px;
+        right: 878px;
         top: 62px;
     }
     .destinations-container {
@@ -902,10 +906,11 @@ font-size: 25px;
         align-items: center;
         padding: 20px;
         flex: 1;
-        max-width: 3px;
         position: relative;
         left: 440px;
-        /* scale: 90%; */
+        width: 914px;
+        position: relative;
+        left: 83px;
     }
  
      .card button {
@@ -953,13 +958,10 @@ font-size: 25px;
         border-bottom: 1px solid #f0f0f0;
         box-sizing: border-box;
         padding: 10px 20px;
-        width: 1252px;
         display: flex;
     }
 
-    body > footer {
-      width: 1252px;
-    }
+
     .card, #search-results .card {
         width: 914px;
         height: 246px;
@@ -969,16 +971,24 @@ font-size: 25px;
         padding: 10px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         align-self: center;
-        margin-left: -192px;
+        /* margin-left: -192px; */
         position: relative;
-        left: 111px;
+        left: 13px;
     }
 
     .hotel-score {
         left: 521px;
 
     }
-    
+    .destinations-container .card p {
+        top: -141px;
+        position: relative;
+        scale: 177%;
+        left: 345px;
+        width: 386px;
+        left: 378px;
+        text-align: start;
+    }
     
 }
 
