@@ -187,6 +187,11 @@ header {
 
 /* Media Queries */
 
+@media (max-width: 875px) {
+  #hideSection {
+      display: none;
+  }
+}
 /* Responsive adjustments for the header and #options */
 @media (max-width: 768px) { /* Adjustments for tablet and down to mobile */
   header {
