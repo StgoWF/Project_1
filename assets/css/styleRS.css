@@ -5,6 +5,8 @@
 }
 
 body {
+    height: 100vh;
+    min-height: 900px;
     background-image: url("../images/background2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -19,7 +21,7 @@ body > header {
     /* Your existing styles for the header */
     top: 0px;
     left: 1px;
-    background-color: #00c4bb;
+    background-color: papayawhip;
     border-bottom: 1px solid #f0f0f0;
     box-sizing: border-box;
     padding: 10px 20px; /* Padding for better spacing */
@@ -35,6 +37,10 @@ button {
     display: flex; /* Enables flexbox layout */
     align-items: center; /* Align logo text and icon vertically */
     gap: 5px;
+}
+
+span.text.logo-text {
+    font-size: 25px;
 }
 
 /* Nav styling */
@@ -103,7 +109,7 @@ nav li:first-child {
 }
 
 /* Hides horizontal navbar links when less than 950px */
-@media(max-width: 950px) {
+@media(max-width: 1020px) {
     .menu_button {
         display: block;
     }
@@ -175,12 +181,12 @@ nav li:first-child {
 }
 
 #search-form button {
-    background-color: #007bff;
+    background-color: papayawhip;
     color: #fff;
     cursor: pointer;
 }
 #search-form button:hover {
-    background-color: #0056b3;
+    background-color: papayawhip;
 }
 
 .search-container {
@@ -230,7 +236,7 @@ img.destination {
 /* Hide popular section on mobile */
 
 @media (max-width: 875px) {
-    .hideSection, #hideSection {
+    #hideSection {
         display: none;
     }
     .search-container {
@@ -247,7 +253,7 @@ body > footer {
 }
 
 footer > * {
-    background-color: #00c4bb;
+    background-color: papayawhip;
     text-align: center;
 }
 
