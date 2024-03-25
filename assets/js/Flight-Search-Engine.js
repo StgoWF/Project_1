@@ -339,18 +339,39 @@ return id
 });
 }
 
-function saveFlightOption(flightData) {
-    // Retrieve saved flights from local storage
-    let savedFlights = localStorage.getItem('savedFlights');
-    savedFlights = savedFlights ? JSON.parse(savedFlights) : [];
+function saveToLocalStorage(id, planType, data) {
+    let storageKey, allResults, itemToSave;
 
-    // Add the new flight data
-    savedFlights.push(flightData);
+    switch (planType) {
+        case 'flight':
+            console.log("Saving flight to My Flight Plans...", id);
+            allResults = allFlights; // Replace with your array of flight results
+            storageKey = 'myFlightPlans';
+            itemToSave = allResults.find(f => f.flight_id.toString() === id);
 
-    // Save the updated list back to local storage
-    localStorage.setItem('savedFlights', JSON.stringify(savedFlights));
+            if (!itemToSave) {
+                console.error("Flight not found");
+                return;
+            }
 
-    console.log('Flight saved:', flightData);
+            // Use the passed flightData directly
+            break;
+
+        default:
+            console.error("Unknown plan type");
+            return;
+    }
+
+    // Retrieve existing plans from local storage or initialize an empty array if none exist
+    let plans = JSON.parse(localStorage.getItem(storageKey)) || [];
+    
+    // Add the new item to the array
+    plans.push(itemToSave || data); // Use 'data' directly for flight
+
+    // Save the updated plans back to local storage
+    localStorage.setItem(storageKey, JSON.stringify(plans));
+
+    console.log(`${planType.charAt(0).toUpperCase() + planType.slice(1)} saved:`, itemToSave || data);
 }
 
 function generateReferenceNumber() {
