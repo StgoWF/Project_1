@@ -6,7 +6,6 @@
 
 body {
     height: 100vh;
-    min-height: 900px;
     background-image: url("../images/background2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -122,23 +121,7 @@ nav li:first-child {
         width: 100%;
     }
 }
-/* Login pop up styling */
-.popup {
-    height: 22%;
-    width: 13%;
-    background-color: lightgray;
-    margin: 5px 5px;
-    display: flex;
-    text-align: center;
-}
 
-.email{
-    margin-left: 28px;
-}
-
-.close-btn {
-    float: inline-end;
-}
 /* Styling for flight search section/filter */
 
 /* New Flex Container */
@@ -234,13 +217,24 @@ img.destination {
 
 /* Hide popular section on mobile */
 
-@media (max-width: 875px) {
+@media (max-width: 1000px) {
     #hideSection {
         display: none;
     }
     .search-container {
         width: 100%;
         height: 100vh;
+    }
+    img.destination {
+        height: 84px;
+        width: 150px;
+    }
+}
+
+@media (max-width: 380px) {
+    img.destination {
+        height: 42px;
+        width: 75px;
     }
 }
 
