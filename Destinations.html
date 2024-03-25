@@ -25,7 +25,8 @@
               <ul class="sidebar">
                 <li onclick=hideSidebar()><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
                 <li><a href="choose-service.html">Home</a></li>
-                <li><a href="">Destinations</a></li>
+                <li><a href="Flight.html">Flights</a></li>
+                <li><a href="hotel.html">Hotels</a></li>
                 <li><a href="help.html">Support</a></li>
                 <li><a href="">My Plans</a></li>
                 <li><a href="signup.html">Create Account</a></li>
@@ -39,7 +40,8 @@
                         </button><span class="text logo-text">TaylorMyTrip</span></li>
                     </div>
                 <li class="hideMobile"><a href="choose-service.html">Home</a></li>
-                <li class="hideMobile"><a href="">Destinations</a></li>
+                <li><a href="Flight.html">Flights</a></li>
+                <li><a href="hotel.html">Hotels</a></li>
                 <li class="hideMobile"><a href="help.html">Support</a></li>
                 <li class="hideMobile"><a href="">My Plans</a></li>
                 <li class="hideMobile"><a href="signup.html">Create Account</a></li>
@@ -50,14 +52,15 @@
     </header>
 
     <!-- Main Content Section -->
-    <main class="flex-container"> <!-- Flex container to lay out main content -->
+    <!-- <main class="flex-container">  -->
+        <!-- Flex container to lay out main content -->
 
         <!-- Search Section -->
-        <div class="search-container"> <!-- Search section container -->
+        <!-- <div class="search-container">  -->
             <!-- Search Form Container -->
-            <div id="search-form-container">
+            <!-- <div id="search-form-container"> -->
                 <!-- Search Form -->
-                <label for="flight-search">Search for a flight</label>
+                <!-- <label for="flight-search">Search for a flight</label>
                 <form id="search-form">
                     <input type="text" placeholder="Destination" name="destination" required>
                     <input type="text" placeholder="Price Range" name="priceRange" required>
@@ -66,10 +69,10 @@
                     <button type="submit">Search</button>
                 </form>
             </div>
-        </div>
+        </div> -->
 
          <!-- popup log in --> 
-        <div class="popup"> 
+        <!-- <div class="popup"> 
             <div class="close-btn">&times;</div>
             <div class="form">
                 <h2>Log In</h2>
@@ -86,14 +89,14 @@
                     <label type="remember-me">Remember me</label>
                 </div>
                 <div class="form-element">
-                    <input type="button" value="Sign in"> 
+                    <input type="button" value="Sign in">  -->
                 <!-- <button type="submit">Sign In</button>-->
-                </div>
+                <!-- </div>
                 <div class="form-element">
                     <p class="para-2">Don't have an account?<br> <a href="signup.html">Create an Account</a></p>
                 </div>
             </div>
-        </div>
+        </div> -->
         
     
          <!-- login -->
@@ -111,33 +114,43 @@
             </div> -->
 
         <!-- Popular Destinations Section -->
-        <section class="hideSection" id="popular-destinations-section">
-            <h2 class="hideSection">Popular Destinations</h2>
-                <div id="hideSection" class="destinations-container">
+        <section id="popular-destinations-section">
+            <h2>Popular Destinations</h2>
+                <div class="destinations-container">
                 <div class="card">
+                    <div class="hideSection">
                     <h3>London</h3>
                     <!-- <p>The historic capital of the United Kingdom</p> -->
                     <a href="./destinations/london.html"><img src="./assets/images/download.jpeg" alt="london" class="destination" ></a>
+                    </div>
                 </div>
                 <div class="card">
+                    <div class="hideSection">
                     <h3>Paris</h3>
                     <a href="./destinations/paris.html"><img src="./assets/images/paris.jpeg" class="destination" id="Paris"></a>
                     <!--<p>The romantic city of lights and love</p>-->
+                    </div>
                 </div>
                 <div class="card">
+                    <div class="hideSection">
                     <h3>Tokyo</h3>
                     <a href="./destinations/tokyo.html"><img src="./assets/images/tokyo.jpeg" class="destination"></a>
                    <!-- <p>The bustling metropolis with a blend of the traditional and the ultra-modern</p> -->
+                    </div>
                 </div>
                 <div class="card">
+                    <div class="hideSection">
                     <h3>New York</h3>
                     <a href="./destinations/newyork.html"><img src="./assets/images/newyork.jpeg" class="destination"></a>
                    <!-- <p>The city that never sleeps with its iconic skyline</p> -->
+                    </div>
                 </div>
                 <div class="card">
+                    <div class="hideSection">
                     <h3>Rome</h3>
                     <a href="./destinations/rome.html"><img src="./assets/images/rome.jpeg" class="destination"></a>
                    <!-- <p>The eternal city with its ancient history and vibrant culture.</p>-->
+                    </div>
                 </div>
                 <div class="card">
                     <h3>Sydney</h3>

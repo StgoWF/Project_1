@@ -11,16 +11,40 @@
 </head>
 <body>
     <header>
-        <div class="logo-and-icon">
-            <img src="./assets/images/icons/earth-americas.svg" alt="Logo Icon" class="icon logo-icon">
-            <span class="text logo-text">TaylorMyTrip</span>
+        <!-- Modal -->
+        <div class="modal">
+            <div class="modal-background"></div>
+                <div class="modal-content has-background-white py-5 px-5">
+                    <h3 class="title mb-6">You won a free ticket to Hawaii!</h3>
+                </div>
         </div>
+        <!-- Navigation Bar -->
         <nav>
-            <a href="/">Home</a>
-            <a href="/destinations">Destinations</a>
-            <a href="/support">Support</a>
-            <a href="/my-plans">My Plans</a>
-            <a href="signup.html">Create Account</a>
+            <!-- Vertical tabs -->
+              <ul class="sidebar">
+                <li onclick=hideSidebar()><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li><a href="choose-service.html">Home</a></li>
+                <li><a href="Destinations.html">Popular Destinations</a></li>
+                <li><a href="help.html">Support</a></li>
+                <li><a href="">My Plans</a></li>
+                <li><a href="signup.html">Create Account</a></li>
+              </ul>
+              <ul>
+                <!-- Horizontal Tabs -->
+                <li>
+                    <div class="logo-and-icon">
+                        <button type="click" id="hawaiiPopUp">
+                            <img src="./assets/images/icons/earth-americas.svg" alt="Logo Icon" class="icon logo-icon">
+                        </button><span class="text logo-text">TaylorMyTrip</span></li>
+                    </div>
+                <li class="hideMobile"><a href="choose-service.html">Home</a></li>
+                <li class="hideMobile"><a href="Destinations.html">Popular Destinations</a></li>
+                <li class="hideMobile"><a href="help.html">Support</a></li>
+                <li class="hideMobile"><a href="">My Plans</a></li>
+                <li class="hideMobile"><a href="signup.html">Create Account</a></li>
+                <li class="menu_button" onclick=showSidebar()><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+              </ul>
+            </div>
         </nav>
     </header>
     <div class="wrapper">
@@ -111,6 +135,7 @@
             </div>
         </section>
     </footer>
+    <script src="./assets/js/modal.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="./assets/js/Flight-Search-Engine.js"></script>
 </body>
