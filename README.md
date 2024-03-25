@@ -25,9 +25,11 @@ Explore TailorMyTrip [here](your-live-site-link).
 
 ## Technologies Used
 - JavaScript
-- Fetch API
-- Booking.com API
-- Another Flight Information API (if applicable)
+- Fetch API for asynchronous requests
+- Booking COM API by DataCrawler, sourced from RapidAPI - for real-time flight information
+- Booking com API by Tipsters CO, sourced from RapidAPI - for hotel searches and bookings
+
+
 
 ## Getting Started
 To use TailorMyTrip locally:
