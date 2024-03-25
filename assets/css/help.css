@@ -16,6 +16,7 @@
 /* Global styles */
 body {
     height: 100vh;
+    min-height: 900px;
     display: flex;
     flex-direction: column;
     background-image: url("../images/background.jpg");
@@ -136,7 +137,7 @@ nav li:first-child {
 }
 
 /* Hides horizontal navbar links when less than 950px */
-@media(max-width: 950px) {
+@media(max-width: 1120px) {
     .menu_button {
         display: block;
     }
@@ -171,7 +172,7 @@ h1 {
 
 @media (max-width: 385px) {
     h1,
-    .logo-and-icon {
+    .text.logo-text {
         display: none;
     }
     h2 {
