@@ -260,7 +260,7 @@ section {
     box-sizing: border-box;
 }
 
-.popup {
+.popuplogin {
     position: absolute;
     top:-150%; 
     left: 50%;
@@ -275,7 +275,7 @@ section {
         opacity 200ms ease-in-out 0ms,
         transform 20ms ease-in-out 0ms;
 }
-.popup.active {
+.popuplogin.active {
     top: 50%;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.25);
@@ -283,7 +283,7 @@ section {
         opacity 200ms ease-in-out 0ms,
         transform 20ms ease-in-out 0ms;
 }
-.popup .close-btn {
+.popuplogin .close-btn {
     position: absolute;
     top: 10%;
     left: 10%;
@@ -296,21 +296,21 @@ section {
     border-radius: 15px;
     cursor: pointer;
 }
-.popup .form h2 {
+.popuplogin .form h2 {
 text-align: center;
 color: #222;
 margin: 10px 0px 20px;
 font-size: 25px;
 }
-.popup .form .form-element {
+.popuplogin .form .form-element {
     margin: 15px 0px;
 }
-.popup .form .form-element label {
+.popuplogin .form .form-element label {
     font-size: 14px;
     color: #222;
 }
-.popup .form .form-element input[type="text"],
-.popup .form .form-element input[type="password"] {
+.popuplogin .form .form-element input[type="text"],
+.popuplogin .form .form-element input[type="password"] {
     margin-top: 5px;
     display: block;
     width: 100%;
@@ -319,10 +319,10 @@ font-size: 25px;
     border: 1px solid #aaa;
     border-radius: 5px;
 }
-.popup .form .form-element input[type="checkbox"] {
+.popuplogin .form .form-element input[type="checkbox"] {
     margin-right: 5px;
 }
-.popup .form .form-element button {
+.popuplogin .form .form-element button {
     width: 100%;
     height: 40px;
     border: none;
@@ -333,7 +333,7 @@ font-size: 25px;
     border-radius: 10px;
     cursor: pointer;
 }
-.popup .form .form-element p a {
+.popuplogin .form .form-element p a {
     display: block;
     text-align: righ;
     font-size: 15px;
@@ -341,6 +341,33 @@ font-size: 25px;
     text-decoration: none;
     font-weight: 600;
 }
+
+
+/* */
+.popupOutline {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+.popupContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
 /* new login 
 .search-container{
     display: flex;

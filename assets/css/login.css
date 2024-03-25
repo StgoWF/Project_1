@@ -1,0 +1,36 @@
+.modalOutline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  padding-left: 25%;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur the background */
+  z-index: 1000; /* Ensure it's above other content */
+ }
+ 
+ .modalContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%; /* Adjust as needed */
+  max-width: 500px; /* Adjust as needed */
+ }
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

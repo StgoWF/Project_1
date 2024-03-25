@@ -1,6 +1,11 @@
-document.querySelector("#show-login").addEventListener("click",function(){
-    document.querySelector(".popup").classList.add("activate");
-});
-document.querySelector(".popup .close-btn").addEventListener("click",function(){
-    document.querySelector(".popup").classList.remove("activate");
-});
+document.getElementById("popupOutline").style.display = "none";
+
+function logInPopUpFun() {
+    console.log("triggered fun popup button"); 
+    var x = document.getElementById("popupOutline");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
