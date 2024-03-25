@@ -123,7 +123,23 @@ nav li:first-child {
     }
 }
 
-  
+/* Login pop up styling */
+.popup {
+    height: 22%;
+    width: 13%;
+    background-color: lightgray;
+    margin: 5px 5px;
+    display: flex;
+    text-align: center;
+}
+
+.email{
+    margin-left: 28px;
+}
+
+.close-btn {
+    float: inline-end;
+}
 
 /* Align the navigation container to the right */
 /* header nav {

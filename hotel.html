@@ -6,23 +6,38 @@
     <title>TailorMyTrip Hotels</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style2.css">
 </head>
-<body>
+<body class="hotel">
     <!-- Header Section -->
     <header>
-        <!-- TailorMyTrip Logo and Icon -->
-        <div class="logo-and-icon">
-            <img src="./assets/images/icons/earth-americas.svg" alt="Logo Icon" class="icon logo-icon">
-            <span class="text logo-text">TailorMyTrip</span>
-        </div>
         <!-- Navigation Bar -->
         <nav>
-            <a href="choose-service.html">Home</a>
-            <a href="Flight.html">Flights</a>
-            <a href="Destinations.html">Popular Destinations</a>
-            <a href="help.html">Support</a>
-            <a href="./hotelplans.html">My Plans</a>
+            <!-- Vertical tabs -->
+              <ul class="sidebar">
+                <li onclick=hideSidebar()><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li><a href="choose-service.html">Home</a></li>
+                <li><a href="Flight.html">Flights</a></li>
+                <li><a href="Destinations.html">Popular Destinations</a></li>
+                <li><a href="help.html">Support</a></li>
+                <li><a href="hotelplans.html">My Plans</a></li>
+              </ul>
+              <ul>
+                <!-- Horizontal Tabs -->
+                <li>
+                    <div class="logo-and-icon">
+                        <button type="click" id="hawaiiPopUp">
+                            <img src="./assets/images/icons/earth-americas.svg" alt="Logo Icon" class="icon logo-icon">
+                        </button><span class="text logo-text">TaylorMyTrip</span></li>
+                    </div>
+                <li class="hideMobile"><a href="choose-service.html">Home</a></li>
+                <li class="hideMobile"><a href="Flight.html">Flights</a></li>
+                <li class="hideMobile"><a href="Destinations.html">Popular Destinations</a></li>
+                <li class="hideMobile"><a href="help.html">Support</a></li>
+                <li class="hideMobile"><a href="hotelplans.html">My Plans</a></li>
+                <li class="menu_button" onclick=showSidebar()><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+              </ul>
+            </div>
         </nav>
     </header>
 
@@ -52,32 +67,6 @@
                 
             </div>
         </div>
-
-       <!-- Popular Destinations Section -->
-       <section id="popular-destinations-section">
-           <h2 id="popular-destinations-title">Popular Destinations</h2>
-           <div class="destinations-container"> <!-- Container for cards -->
-               <div class="card">
-                   <h3>London</h3>
-                   <a href="./destinations/london.html"><img src="./assets/images/download.jpeg" alt="london" class="destination" ></a>
-                   <p>The historic capital of the United Kingdom</p>
-               </div>
-               <div class="card">
-                   <h3>Paris</h3>
-                   <a href="./destinations/paris.html"><img src="./assets/images/paris.jpeg" class="destination" id="Paris"></a>
-                   <p>The romantic city of lights and love</p>
-               </div>
-               <div class="card">
-                   <h3>Tokyo</h3>
-                   <a href="./destinations/tokyo.html"><img src="./assets/images/tokyo.jpeg" class="destination"></a>
-                   <p>The bustling metropolis with a blend of the traditional and the ultra-modern</p>
-               </div>
-               <div class="card">
-                   <h3>New York</h3>
-                   <a href="./destinations/newyork.html"><img src="./assets/images/newyork.jpeg" class="destination"></a>
-                   <p>The city that never sleeps with its iconic skyline</p>
-               </div>    
-           </div>
            <div id="search-results" style="display: flex;">
             <!-- Search results will be displayed here -->
           </div>     
