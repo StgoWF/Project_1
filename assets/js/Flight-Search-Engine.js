@@ -391,6 +391,25 @@ function sortFlights(flightOffers) {
     });
 }
 
+function updateContentPanel() {
+    // Fetch your data here
+    fetchData().then(() => {
+        // Once data is fetched, change the background image
+        const contentPanel = document.querySelector('.content-panel');
+        if (contentPanel) {
+            contentPanel.style.backgroundImage = 'none';
+        }
+
+        // Now you can proceed to populate the content panel with your fetched data
+        // ...
+    }).catch(error => {
+        console.error('Error while fetching data:', error);
+    });
+}
+
+// Call the updateContentPanel function
+updateContentPanel();
+
 async function SearchflightAPI(toID, fromID, departDate) {
     const url = `https://booking-com15.p.rapidapi.com/api/v1/flights/searchFlights?fromId=${fromID}&toId=${toID}&departDate=${departDate}`//&pageNo=1&adults=1&children=0%2C17&currency_code=AED`;
     const options = {
