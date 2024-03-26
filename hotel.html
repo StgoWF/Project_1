@@ -24,6 +24,8 @@
                 <li><a href="Destinations.html">Popular Destinations</a></li>
                 <li><a href="help.html">Support</a></li>
                 <li><a href="hotelplans.html">My Plans</a></li>
+                <li><a id='logintarget' onclick="logInPopUpFun()">Log in</a><a id="userContentTarget"></a></li>
+                <li><a id='logoutSection' onclick="logoutButn()">Log Out</a><a id="userContentTarget"></a></li>
               </ul>
               <ul>
                 <!-- Horizontal Tabs -->
@@ -38,14 +40,54 @@
                 <li class="hideMobile"><a href="Destinations.html">Popular Destinations</a></li>
                 <li class="hideMobile"><a href="help.html">Support</a></li>
                 <li class="hideMobile"><a href="hotelplans.html">My Plans</a></li>
-                <li class="hideMobile"><a id='logintarget' onclick="logInPopUpFun()">Login</a><a id="userContentTarget"></a></li>
+                <li class="hideMobile"><a id='logintarget' onclick="logInPopUpFun()">Log in</a><a id="userContentTarget"></a></li>
+                <li class="hideMobile"><a id='logoutSection' onclick="logoutButn()">Log Out</a><a id="userContentTarget"></a></li>
                 <li class="menu_button" onclick=showSidebar()><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
               </ul>
             </div>
         </nav>
     </header>
     <div class="modalOutline" id="popUpTarget" style="display: none;">
-        <!-- Modal content -->
+        <!-- Log in Modal content -->
+        <div class="modalContent">
+            <span class="close" onclick="logInPopUpFun()">&times;</span>
+            <div id=""> 
+                <div class="form">
+                    <h2>Log In</h2>
+                    <div class="form-element">
+                        <div class="email">
+                            <label>Email:</label>
+                            <input type="text" id="emailUser" placeholder="Enter Email"><br>
+                        </div>
+                        <label>Password:</label>
+                        <input type="password" id="passwordUser" placeholder="Enter Password"><br>
+                    </div>
+                    <div class="form-element">
+                        <input type="checkbox" id="remember-me">
+                        <label type="remember-me">Remember me</label>
+                    </div>
+                    <div class="form-element">
+                        <input type="button" onclick="singInUser()" value="Sign in"> 
+                    </div>
+                    <div class="form-element">
+                        <p class="para-2">Don't have an account?<br> <a href="signup.html">Create an Account</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Logout button -->
+    <div class="logoutSec">
+        <span class="close" onclick="logoutButn()">&times;</span>
+        <div id="logoutSection" style="display: none;">
+            <button id="logoutButton">Log Out</button>
+        </div>
+    </div>
+    
+     <!--
+    <div class="modalOutline" id="popUpTarget" style="display: none;">
+        <!-- Log in Modal content 
         <div class="modalContent">
             <span class="close" onclick="logInPopUpFun()">&times;</span>
             <div id=""> 
@@ -74,6 +116,12 @@
             </div>
         </div>
     </div>
+    <!-- Logout button 
+    <div class="logoutSec">
+        <span class="close" onclick="logoutButn()">&times;</span>
+        <div id="logoutSection" style="display: none;">
+        <button id="logoutButton">Log Out</button>
+    </div>  -->
     <!-- Main Content Section -->
     <main class="flex-container">
 
