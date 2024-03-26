@@ -480,6 +480,7 @@ async function SearchflightAPI(toID, fromID, departDate) {
             this.classList.remove('saved');
         }
     });
+    
     card.appendChild(saveButton);
 
 bookingContainer.appendChild(saveButton);
