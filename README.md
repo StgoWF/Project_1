@@ -10,12 +10,12 @@ TailorMyTrip is a comprehensive travel planning application that offers users th
 - **My Plans Section**: Enables users to save flight and hotel selections to local storage for later viewing and booking.
 
 ## Screenshots
-![Flight Search](link-to-flight-search-screenshot.png)
-![Hotel Search](link-to-hotel-search-screenshot.png)
-![Home Page](link-to-home-page-screenshot.png)
+![Flight Search](./assets/images/flights-screenshot.png)
+![Hotel Search](./assets/images/hotel-screenshot.png)
+![Home Page](./assets/images/index-screenshot.png)
 
 ## Live Demo
-Explore TailorMyTrip [here](your-live-site-link).
+Explore TailorMyTrip [here](https://stgowf.github.io/TailorMyTrip/).
 
 ## Usage
 1. Start by choosing between booking a flight or a hotel from the home page.
