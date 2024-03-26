@@ -118,6 +118,7 @@ function displaySearchResults() {
   searchResultsSection.style.display = 'flex';
   searchResultsSection.style.flexDirection = 'column';
   searchResultsSection.style.alignItems = 'center';
+  document.body.style.backgroundImage = 'none';
 }
 
 
