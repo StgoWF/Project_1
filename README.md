@@ -44,10 +44,6 @@ Contributions to TailorMyTrip are welcome! Whether it's feature requests, bug fi
 4. Push your branch and open a new pull request.
 Your contributions will be reviewed and, if beneficial, will be merged into the project.
 
-## Acknowledgments
-A special thanks to the APIs used in this project for providing the data needed to make informed travel plans:
-- Booking.com API
-- [Name of Flight Information API]
 
 Enjoy planning your next trip with TailorMyTrip!
 
