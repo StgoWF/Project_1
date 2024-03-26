@@ -6,8 +6,6 @@
     text-align: center;
 }
 
-
-
 body {
     font-family: 'Poppins', sans-serif;
 }
@@ -47,10 +45,6 @@ body > footer {
     flex-shrink: 0; /* Prevents the footer from shrinking smaller than its content */
     width: 100vw;  
 }
-/* body {
-    max-width: 1220px; or any other value you prefer
-
-} */
 
 .container {
     max-width: 1200px; /* This is an example; you can set it to the width you prefer */
@@ -63,7 +57,6 @@ nav {
     gap: 25px;
     margin-left: auto;
 }
-
 
 nav ul {
     width: 100%;
@@ -117,10 +110,24 @@ nav li:first-child {
 .sidebar a {
     width: 100%;
 }
- 
-@media(max-width: 800px) {
+
+/* Hide menu button - should only display on smaller screens */
+.menu_button {
+    display: none;
+}
+/* Hides horizontal navbar links when less than 950px */
+@media(max-width: 1020px) {
+    .menu_button {
+        display: block;
+    }
     .hideMobile {
         display: none;
+    }
+}
+/* sidebar takes up 100% when less than 400px */
+@media(max-width: 800px) {
+    .sidebar {
+        width: 100%;
     }
 }
 
@@ -142,37 +149,9 @@ nav li:first-child {
     float: inline-end;
 }
 
-/* Align the navigation container to the right */
-/* header nav {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    margin-left: auto;
-} */
-
-/* Add margin between navigation links */
-/* header nav a,
-header nav button {
-    margin-right: 10px;
-    text-decoration: none; Remove underline from links */
-    /* color: #333; Set link color
-} */
-
-
-
-/* nav a,
-nav button {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    text-align: left;
-} */
-
 /* Section Styling */
 section {
     margin: 20px 0;
-    background: #ffffff;
     padding: 20px;
     border-radius: 5px;
     /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
@@ -253,17 +232,12 @@ section {
     border: 1px solid #ddd;
     border-radius: 999px;
     width: fit-content;
-
-
 }
 
 /* Support/Help Section */
 #support {
     background-color: #f8d7da;
 }
-    
-
-
 
 /* Newest Login ( POPUP)*/
 .popup {
@@ -353,81 +327,7 @@ font-size: 25px;
     text-decoration: none;
     font-weight: 600;
 }
-/* new login 
-.search-container{
-    display: flex;
-    align-items: flex-start;
-    height: 100%;
-}
 
-
-.login-box {
-    width: 300px;
-    height: fit-content;
-    float: left;
-    margin: 60px auto 0;
-    background: rgba(0, 0, 0, 0.6);
-    text-align: center;
-    padding: 35px;
-    border: 3px solid #fff;
-    border-radius: 70px 0 70px 0;
-
-    
-
-}
-.login-box h2{
-    margin-bottom: 30px;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-.login-box input[type=email],
-.login-box input[type=password]{
-    width: auto;
-    height: 40px;
-    border-radius: 15px 0 15px 0;
-    border: 2px solid #fff;
-    margin-bottom: 15px;
-    background: transparent;
-    color: #fff;
-    padding: 20px;
-}
-
-.login-box label{
-    text-align: left;
-    color: black;
-    padding: 40px;
-}
-.login-box p,
-.login-box a{
-    text-align: left;
-    color: #fff; /* change to white
-    text-transform: uppercase;
-    font-weight: bold;
-}
-.login-box input[type=button]{
-    display: inline-block;/* original block
-    height: 40px;
-    width: 150px;
-    line-height: 40px;
-    text-align: center;
-    background: deeppink;
-    border-radius: 25px;
-    color: #fff;
-    text-transform: uppercase;
-    margin-top: 10px;
-    cursor: pointer;
-    text-decoration: none;
-    letter-spacing: 5px;
-}
-.para-2{
-    text-decoration: none;
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 15px;
-    color: #fff;
-}*/
 @media(max-width: 250px){
     .login-box{
         min-width: 200px;
@@ -635,13 +535,16 @@ font-size: 25px;
 
 /* Logo styles, assuming the logo is inline with other elements and not absolutely positioned */
 .logo-and-icon {
-    display: flex; /* Enables flexbox layout */
+    display: flex; 
     align-items: center; /* Align logo text and icon vertically */
     gap: 5px;
+    position: relative;
+    left: -377px;
+    top: 12px;
 }
 .logo-icon {
-  /* top: 29px; /* Adjust top position */
-  /* left: 24px; Adjust left position */ 
+  top: 29px; /* Adjust top position */
+  left: 24px; /* Adjust left position */
   width: 24px;
 }
 
@@ -730,7 +633,7 @@ font-size: 25px;
 }
 
 .card, #search-results .card  {
-    width: 60vw;
+    width: 69vw;
     height: 234px;
     background-color: #e9f2f0;
     border-radius: 12px;
@@ -771,7 +674,7 @@ font-size: 25px;
     flex-direction: column;
     margin-top: -56px;
     position: relative;
-    top: -47px;
+    top: -73px;
   }
 
   .hotel-name {
@@ -780,7 +683,7 @@ font-size: 25px;
     text-align: left;
     font-size: 20px;
     top: -70px;
-    max-width: 545px;
+    width: 256px;
 
   }
   .hotel-address {
@@ -868,20 +771,14 @@ font-size: 25px;
     gap: 19px;
     scale: 250%;
     position: relative;
-    top: 522px;
     left: -700px;
+    left: -800px;
+    top: 1888px;
+    height: 58px;
 }
 
 
 
-
-/* Responsive adjustments for smaller screens */
-/* @media (max-width: 768px) {
-    .card {
-        /* Adjusts to 2 cards per row on smaller screens */
-        /* flex-basis: calc(50% - 20px); */
-    /* }
-} */ 
 
 
 
@@ -954,8 +851,8 @@ font-size: 25px;
         gap: 8px;
         scale: 280%;
         position: relative;
-        top: 538px;
-        left: -400px;
+        top: 1069px;
+        left: -535px;
     }
 
 

@@ -118,6 +118,7 @@ function displaySearchResults() {
   searchResultsSection.style.display = 'flex';
   searchResultsSection.style.flexDirection = 'column';
   searchResultsSection.style.alignItems = 'center';
+  document.body.style.backgroundImage = 'none';
 }
 
 
@@ -232,42 +233,42 @@ async function searchHotels(destId) {
   
 // Function to save hotel information along with dates to local storage
 function saveToMyPlans(hotelId) {
-  console.log("Saving hotel to My Plans...", hotelId);
+    console.log("Saving hotel to My Plans...", hotelId);
 
-  // Find the hotel information in the allResults array
-  const hotel = allResults.find(h => h.hotel_id.toString() === hotelId);
+    // Find the hotel information in the allResults array
+    const hotel = allResults.find(h => h.hotel_id.toString() === hotelId);
 
-  if (!hotel) {
-      console.error("Hotel not found");
-      return;
-  }
+    if (!hotel) {
+        console.error("Hotel not found");
+        return;
+    }
 
-  // Retrieve the destination city from the input field
-  const destinationCity = document.getElementById('destination').value;
+    // Retrieve the destination city from the input field
+    const destinationCity = document.getElementById('destination').value;
 
-  // Retrieve check-in and check-out dates from input fields
-  const checkInDate = document.getElementById('start-date').value;
-  const checkOutDate = document.getElementById('end-date').value;
+    // Retrieve check-in and check-out dates from input fields
+    const checkInDate = document.getElementById('start-date').value;
+    const checkOutDate = document.getElementById('end-date').value;
 
-  // Retrieve existing plans from local storage or initialize an empty array if none exist
-  let myPlans = JSON.parse(localStorage.getItem('myPlans')) || [];
+    // Retrieve existing plans from local storage or initialize an empty array if none exist
+    let myPlans = JSON.parse(localStorage.getItem('myPlans')) || [];
 
-  // Prepare the hotel information object including the new details
-  const hotelInfo = {
-      city: destinationCity,
-      name: hotel.hotel_name,
-      checkInDate,
-      checkOutDate,
-      price: hotel.price_breakdown.all_inclusive_price || 'Price not available',
-      currency: hotel.price_breakdown.currency,
-      link: hotel.url
-  };
+    // Prepare the hotel information object including the new details
+    const hotelInfo = {
+        city: destinationCity,
+        name: hotel.hotel_name,
+        checkInDate,
+        checkOutDate,
+        price: hotel.price_breakdown.all_inclusive_price || 'Price not available',
+        currency: hotel.price_breakdown.currency,
+        link: hotel.url
+    };
 
-  // Add the new hotel information to the array
-  myPlans.push(hotelInfo);
+    // Add the new hotel information to the array
+    myPlans.push(hotelInfo);
 
-  // Save the updated plans back to local storage
-  localStorage.setItem('myPlans', JSON.stringify(myPlans));
+    // Save the updated plans back to local storage
+    localStorage.setItem('myPlans', JSON.stringify(myPlans));
 
-  console.log("Hotel and dates saved to My Plans:", hotelInfo);
+    console.log("Hotel and dates saved to My Plans:", hotelInfo);
 }

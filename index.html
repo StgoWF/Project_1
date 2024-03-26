@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TailorMyTrip Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/styleRS.css"> -->
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <script src="./assets/js/login.js"></script>
+    <link rel="stylesheet" href="./assets/css/choose_service_style.css"> <!-- Make sure you link your actual CSS file -->
+</head>
+<body>
+    <header>
+        <!-- TaylorMyTrip Logo and Icon -->
+        <div class="logo-and-icon">
+            <img src="./assets/images/icons/earth-americas.svg" alt="Logo Icon" class="icon logo-icon">
+            <span class="text logo-text">TailorMyTrip</span>
+        </div>
+    
+         <!-- User Actions: Log in and Sign in -->
+         <div class="user-actions" >
+            <!-- if loggedinuser in localstorage exist, hide the log in and sign up button, and 
+            instead replace it with a text like Welcome, loggedinuser.name!  -->
+            <p id="userContentTarget"></p>
+            <div id="logintarget">
+                <!-- Login link -->
+                <a class="text login-text" onclick="logInPopUpFun()">Log in</a> <!-- Link to your login page -->
+                <!-- Signin link -->
+                <a href="signup.html" class="text signin-text">Sign up</a> <!-- Link to your sign in page -->
+            </div>
+            <!-- Logout button -->
+            <div class="logoutSec">
+                <span class="close" onclick="logoutButn()">&times;</span>
+                <div id="logoutSection" style="display: none;">
+                <button id="logoutButton">Log Out</button>
+            </div>
+            <!-- User icon -->
+            <img src="./assets/images/icons/circle-user.svg" alt="User Icon" class="icon user-icon">
+        </div>
+    </header>
+    <div class="modalOutline" id="popUpTarget" style="display: none;">
+        <!-- Modal content -->
+        <div class="modalContent">
+            <span class="close" onclick="logInPopUpFun()">&times;</span>
+            <div id=""> 
+                <div class="form">
+                    <h2>Log In</h2>
+                    <div class="form-element">
+                        <div class="email">
+                            <label>Email:</label>
+                            <input type="text" id=emailUser placeholder="Enter Email"><br>
+                        </div>
+                        <label>Password:</label>
+                        <input type="password" id=passwordUser placeholder="Enter Password"><br>
+                    </div>
+                    <div class="form-element">
+                        <input type="checkbox" id="remember-me">
+                        <label type="remember-me">Remember me</label>
+                    </div>
+                    <div class="form-element">
+                        <input type="button"  onclick="singInUser()" value="Sign in"> 
+
+                    </div>
+                    <div class="form-element">
+                        <p class="para-2">Don't have an account?<br> <a href="signup.html">Create an Account</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <!-- Buttons for Hotel and Flight -->
+        <div id="options">
+            <a href="hotel.html" class="button hotel-button">
+                <button class="button">
+                    <img src="./assets/images/icons/hotel.svg" alt="Hotel" class="icon">
+                    <span>Hotel</span>
+                </button>
+            </a>
+            <a href="Flight.html" class="button flight-button">
+                <button class="button">
+                    <img src="./assets/images/icons/plane-departure.svg" alt="Flight" class="icon">
+                    <span>Flight</span>
+                </button>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <section class="footerContainer">
+            <div class="socialMedia">
+                <a href="https://www.facebook.com/" target="_blank"><i class= "fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class= "fa-brands fa-instagram"></i></a>
+                <a href="https://twitter.com/" target="_blank"><i class= "fa-brands fa-twitter"></i></a>
+                <a href="https://youtube.com/" target="_blank"><i class= "fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footerNav">
+                <ul>
+                    <li><a href="wip.html" target="_blank">About</a></li>
+                    <li><a href="wip.html" target="_blank">Our Team</a></li>
+                    <li><a href="help.html" target="_blank">Contact Us</a></li>
+                    <li><a href="wip.html" target="_blank">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footerCopyright">
+                <p>© 2024 TailorMyTrip. All rights reserved.</p>
+            </div>
+        </section>
+    </footer>
+
+</body>
+</html>
