@@ -97,7 +97,6 @@ nav li:first-child {
     background-color: white;
     backdrop-filter: blur(10px);
     box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
-    display: none;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
