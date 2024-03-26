@@ -189,7 +189,7 @@ nav li:first-child {
     align-items: center; /* Center cards horizontally */
     padding: 20px;
     flex: 1;
-    height: 100vh;
+    height: 138vh;
     /* Remove max-width if you want the container to be full-width */
 }
 
