@@ -718,6 +718,23 @@ font-size: 25px;
         /* Here you can adjust the maximum width of the body or font size, for example */
         font-size: 14px; /* Example of adjusting font size */
     }
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* Make cards take full width on smaller screens */
+    }
+    .sidebar {
+        width: 100%; /* Sidebar takes full screen width */
+    }
+    .destination {
+        width: 100%; /* Adjust destination images or sections as needed */
+    }
+    /* Adjust the height of the body or specific sections as needed */
+    body, .specific-section {
+        height: auto; /* Allows content to define the height */
+    }
+}
+
     .card{
         width: 628px;
         height: 246px;
