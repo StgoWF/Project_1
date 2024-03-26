@@ -772,20 +772,13 @@ font-size: 25px;
     scale: 250%;
     position: relative;
     left: -700px;
-    top: 1145px;
+    left: -800px;
+    top: 1888px;
     height: 58px;
 }
 
 
 
-
-/* Responsive adjustments for smaller screens */
-/* @media (max-width: 768px) {
-    .card {
-        /* Adjusts to 2 cards per row on smaller screens */
-        /* flex-basis: calc(50% - 20px); */
-    /* }
-} */ 
 
 
 
@@ -858,8 +851,8 @@ font-size: 25px;
         gap: 8px;
         scale: 280%;
         position: relative;
-        top: 538px;
-        left: -400px;
+        top: 1069px;
+        left: -535px;
     }
 
 
