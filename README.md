@@ -1,71 +1,56 @@
- 
-![Alt text for the image](./assets/images/devdream_team.png)
-# **DevDream Team Project One Proposal**
+# TailorMyTrip
 
-**Team Members:** Piattie Hadi, Lovely Tautua’a, Santiago Weinstein, Isaac Santos, Magali Zavala, Aaron Gutierrez
+## Summary
 
-## **Title: TaylorMyTrip**
+TailorMyTrip reimagines travel organization by offering an all-in-one platform for booking flights and hotels. Utilizing APIs from top booking services, it presents real-time updates and competitive rates for global flights and stays. Its user-friendly design allows for quick comparisons and storage of travel plans, turning trip organization into a delight.
 
-## **User Story**
-As a travel enthusiast, I want a web page where I can easily plan and customize my trip, so that I can have a holiday tailored to my preferences and interests.
+## Key Features
 
-### **Criteria**
-1. The webpage should allow me to select my travel destination from a wide range of global locations.
-2. I should be able to input my travel dates and preferences, such as budget, travel style (luxury, budget-friendly, etc.).
-3. The webpage should offer suggestions for flights and Hotels based on my filters and preferences.
-4. The webpage should provide detailed information about each Flight, including Departure, arrival, and price.
-5. There should be a feature to save and modify my travel plan.
-6. The webpage should allow for user reviews and ratings of hotels.
+Global Flight and Hotel Finder: Search capability for worldwide flights and accommodations.
+Extensive Details Provided: Offers in-depth information on flights and hotels, including timetables, costs, reviews, and services.
+Flexible Date Options: Pick specific dates for flights' departure and return, as well as hotels' check-in and check-out.
+'My Plans' Organizer: Save and manage flight and hotel picks in a dedicated space for future reference and booking.
+Visual Previews
 
-This user story focuses on a comprehensive, user-friendly experience for trip planning and customize their favorite plan, offering personalized options and seamless integration of travel services.
+## Screenshots
 
----
+![Flight Search](./assets/images/flights-screenshot.png)
+![Hotel Search](./assets/images/hotel-screenshot.png)
+![Home Page](./assets/images/index-screenshot.png)
 
-## **Technologies**
-- HTML
-- CSS
-- Web-Server APIs:
-  - Flight Data API: Skyscanner API
-  - Hotel Booking API: Booking.com API
+## Interactive Demonstration
 
----
+[Engage with TailorMyTrip](https://stgowf.github.io/TailorMyTrip/)
 
-## **Features**
+## How to Use
 
-### **1. Homepage**:
-   - **Top Navigation Bar:** Includes links to Home, Destinations, My Plans, and Support.
-   - **Main Search Area:** A prominent search box where users can enter their travel destination.
-   - **Date Picker:** Users can input their travel dates.
-   - **Preference Filters:** Options to filter by budget, travel style, and interests.
-   - **Destination Highlights:** A section showcasing popular destinations or special deals.
+- Select either flight or hotel booking from the main page.
+- Input necessary details like destination, dates, and number of travelers or guests.
+- Peruse the options, saving any that align with your travel goals to 'My Plans'.
+- Review your 'My Plans' collection, complete with direct booking links.
 
-### **2. Destination Suggestions Page**:
-   - **List/Grid View:** Display of suggested destinations based on user input.
-   - **Filter Options:** Ability to refine search by different criteria (price, type of experience, etc.).
-   - **Destination Cards:** Each card shows a brief overview of the destination, with an option to explore more.
+## Technical Framework
 
-### **3. Detailed Destination Page**:
-   - **Overview Section:** Description of the destination, weather info, cultural norms, and travel advisories.
-   - **Accommodation Options:** A list of hotels with filter options (price, ratings, etc.).
-   - **Activity Suggestions:** Curated list of activities with details and booking options.
-   - **Flight Options:** Flight suggestions and booking feature.
-   - **Interactive Map:** Showing locations of hotels, attractions, and activities.
+- JavaScript
+- Fetch API for network communication
+- DataCrawler's Booking COM API via RapidAPI for current flight data
+- Tipsters CO's Booking com API via RapidAPI for hotel explorations and reservations
+- Local Implementation
 
-### **4. Customization & Booking Page**:
-   - **Booking Section:** Option to book flights, hotels, and activities directly.
-   - **Price Summary:** Total cost of the trip with the option to modify selection.
+## Getting Started
 
-### **5. My Plans Page**:
-   - **List of Saved Trips:** Users can view, edit, or delete their planned trips.
+1. Download this repository to your computer.
+2. Open index.html with a browser to initiate the program.
 
-### **6. Support/Help Page**:
-   - **FAQ Section:** Answers to common queries.
-   - **Live Chat/Contact Form:** For additional support or inquiries.
+## Participation and Contributions
 
----
+Your contributions to TailorMyTrip are valuable! Enhancements, bug resolutions, or code refinements are all welcome. To contribute:
 
-## **Screenshot**
+1. Fork this repository.
+2. Create a branch for your update.
+3. Commit your changes.
+4. Submit a pull request with your branch.
 
-![Alt text for the image](./assets/images/wireframe.png)
+We'll review submissions for potential integration into the project.
 
-
+Plan your next adventure effortlessly with TailorMyTrip!
