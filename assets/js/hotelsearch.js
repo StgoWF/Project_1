@@ -144,7 +144,7 @@ async function fetchLocationId(destination) {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '7727d5bafemsh172b82c5a031d9cp18630ejsnb6d5dde15717', // Replace 'YOUR_API_KEY' with your actual RapidAPI key
+      'X-RapidAPI-Key': '3469f8d188msh02d68401d560291p168f15jsn453451bf3405', 
       'X-RapidAPI-Host': 'booking-com.p.rapidapi.com'
     }
   };
@@ -195,7 +195,7 @@ async function searchHotels(destId) {
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': '7727d5bafemsh172b82c5a031d9cp18630ejsnb6d5dde15717', // Replace with your actual RapidAPI key
+        'X-RapidAPI-Key': '3469f8d188msh02d68401d560291p168f15jsn453451bf3405', // Replace with your actual RapidAPI key
         'X-RapidAPI-Host': 'booking-com.p.rapidapi.com'
       }
     };
