@@ -732,7 +732,34 @@ font-size: 25px;
     /* Adjust the height of the body or specific sections as needed */
     body, .specific-section {
         height: auto; /* Allows content to define the height */
+        
     }
+    footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 5%;
+        
+    }
+    footer .footerContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 100%;
+    }
+    header {
+        flex-direction: column;
+        padding: 10px 5%;
+    }
+
+    header nav {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    header nav ul {
+        justify-content: space-around; /* O considera cambiar la disposición a columna si tienes muchos enlaces */
+    }
+
 }
 
     .card{
