@@ -271,4 +271,34 @@ function saveToMyPlans(hotelId) {
     localStorage.setItem('myPlans', JSON.stringify(myPlans));
 
     console.log("Hotel and dates saved to My Plans:", hotelInfo);
+    showConfirmationModal();
+}
+// Function to create and show the confirmation modal
+function showConfirmationModal() {
+  const modalContainer = document.createElement('div');
+  modalContainer.className = 'modal-container';
+
+  const modalContent = document.createElement('div');
+  modalContent.className = 'modal-content';
+  
+  const closeButton = document.createElement('span');
+  closeButton.className = 'close-button';
+  closeButton.innerHTML = '&times;';
+  closeButton.onclick = function() {
+      modalContainer.style.display = 'none';
+  };
+
+  const message = document.createElement('h2');
+  message.textContent = 'Plan Saved!';
+  
+  const info = document.createElement('p');
+  info.textContent = 'Your hotel plan has been saved to My Plans.';
+
+  modalContent.appendChild(closeButton);
+  modalContent.appendChild(message);
+  modalContent.appendChild(info);
+  modalContainer.appendChild(modalContent);
+
+  document.body.appendChild(modalContainer);
+  modalContainer.style.display = "flex";
 }
