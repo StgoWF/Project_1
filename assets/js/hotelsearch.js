@@ -144,7 +144,7 @@ async function fetchLocationId(destination) {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '7727d5bafemsh172b82c5a031d9cp18630ejsnb6d5dde15717', // Replace 'YOUR_API_KEY' with your actual RapidAPI key
+      'X-RapidAPI-Key': '3469f8d188msh02d68401d560291p168f15jsn453451bf3405', 
       'X-RapidAPI-Host': 'booking-com.p.rapidapi.com'
     }
   };
@@ -195,7 +195,7 @@ async function searchHotels(destId) {
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': '7727d5bafemsh172b82c5a031d9cp18630ejsnb6d5dde15717', // Replace with your actual RapidAPI key
+        'X-RapidAPI-Key': '3469f8d188msh02d68401d560291p168f15jsn453451bf3405', // Replace with your actual RapidAPI key
         'X-RapidAPI-Host': 'booking-com.p.rapidapi.com'
       }
     };
@@ -271,4 +271,34 @@ function saveToMyPlans(hotelId) {
     localStorage.setItem('myPlans', JSON.stringify(myPlans));
 
     console.log("Hotel and dates saved to My Plans:", hotelInfo);
+    showConfirmationModal();
+}
+// Function to create and show the confirmation modal
+function showConfirmationModal() {
+  const modalContainer = document.createElement('div');
+  modalContainer.className = 'modal-container';
+
+  const modalContent = document.createElement('div');
+  modalContent.className = 'modal-content';
+  
+  const closeButton = document.createElement('span');
+  closeButton.className = 'close-button';
+  closeButton.innerHTML = '&times;';
+  closeButton.onclick = function() {
+      modalContainer.style.display = 'none';
+  };
+
+  const message = document.createElement('h2');
+  message.textContent = 'Plan Saved!';
+  
+  const info = document.createElement('p');
+  info.textContent = 'Your hotel plan has been saved to My Plans.';
+
+  modalContent.appendChild(closeButton);
+  modalContent.appendChild(message);
+  modalContent.appendChild(info);
+  modalContainer.appendChild(modalContent);
+
+  document.body.appendChild(modalContainer);
+  modalContainer.style.display = "flex";
 }
