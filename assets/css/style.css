@@ -638,6 +638,9 @@ font-size: 25px;
     display: flex; /* Enables flexbox layout */
     align-items: center; /* Align logo text and icon vertically */
     gap: 5px;
+    position: relative;
+    left: -475px;
+    top: 12px;
 }
 .logo-icon {
   /* top: 29px; /* Adjust top position */
