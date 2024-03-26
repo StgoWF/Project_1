@@ -1,7 +1,7 @@
 function displaySavedFlightDetails() {
-    let savedData = localStorage.getItem('completeFlightDetails');
+    let savedData = localStorage.getItem('savedFlights');
     let savedFlightDetails;
-
+    console.log(savedData)
     if (savedData) {
         try {
             savedFlightDetails = JSON.parse(savedData);
@@ -43,3 +43,5 @@ function displaySavedFlightDetails() {
         console.log('No saved flight details found.');
     }
 }
+
+displaySavedFlightDetails();
