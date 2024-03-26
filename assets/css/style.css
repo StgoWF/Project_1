@@ -639,7 +639,7 @@ font-size: 25px;
     align-items: center; /* Align logo text and icon vertically */
     gap: 5px;
     position: relative;
-    left: -475px;
+    left: -377px;
     top: 12px;
 }
 .logo-icon {
@@ -733,7 +733,7 @@ font-size: 25px;
 }
 
 .card, #search-results .card  {
-    width: 60vw;
+    width: 69vw;
     height: 234px;
     background-color: #e9f2f0;
     border-radius: 12px;
