@@ -40,7 +40,7 @@ Visual Previews
 ## Getting Started
 
 1. Download this repository to your computer.
-2. Open index.html with a browser to initiate the program.
+2. Open `index.html` with a browser to initiate the program.
 
 ## Participation and Contributions
 
