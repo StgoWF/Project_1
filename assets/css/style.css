@@ -45,10 +45,6 @@ body > footer {
     flex-shrink: 0; /* Prevents the footer from shrinking smaller than its content */
     width: 100vw;  
 }
-/* body {
-    max-width: 1220px; or any other value you prefer
-
-} */
 
 .container {
     max-width: 1200px; /* This is an example; you can set it to the width you prefer */
@@ -61,7 +57,6 @@ nav {
     gap: 25px;
     margin-left: auto;
 }
-
 
 nav ul {
     width: 100%;
@@ -541,7 +536,7 @@ font-size: 25px;
 
 /* Logo styles, assuming the logo is inline with other elements and not absolutely positioned */
 .logo-and-icon {
-    display: flex; /* Enables flexbox layout */
+    display: flex; 
     align-items: center; /* Align logo text and icon vertically */
     gap: 5px;
     position: relative;
@@ -549,8 +544,8 @@ font-size: 25px;
     top: 12px;
 }
 .logo-icon {
-  /* top: 29px; /* Adjust top position */
-  /* left: 24px; Adjust left position */ 
+  top: 29px; /* Adjust top position */
+  left: 24px; /* Adjust left position */
   width: 24px;
 }
 
