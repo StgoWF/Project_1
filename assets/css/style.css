@@ -401,7 +401,7 @@ font-size: 25px;
     overflow-y: auto; /* Enable vertical scrolling if content overflows */
     display: flex;
     flex-direction: column; /* Display items stacked vertically */
-    
+    height: 100%;
     flex: 1;
 }
 
@@ -431,9 +431,6 @@ font-size: 25px;
     background-color: #0056b3;
 }
 
-.search-container {
-    display: flex;
-}
 .destination{
     
     

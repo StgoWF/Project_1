@@ -4,6 +4,16 @@
     padding: 0;
 }
 
+body {
+    height: 100vh;
+    background-image: url("../images/background2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 body > header {
     /* Your existing styles for the header */
@@ -115,7 +125,7 @@ nav li:first-child {
 /* Styling for flight search section/filter */
 
 /* New Flex Container */
-.flex-container {
+/* body {
     min-height: 100vh;
     background-image: url("../images/background2.jpg");
     background-repeat: no-repeat;
@@ -124,13 +134,14 @@ nav li:first-child {
     flex-direction: column;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
-    justify-content: start; /* Align children to the start of the container */
-}
+    justify-content: start; /* Align children to the start of the container 
+}*/
+ 
 
 /* Styling for the container holding the search form */
 #search-form-container {
-    height: 100vh;
     left: 0;
+    bottom: 0;
     width: 300px; /* Width of the box */
     background-color: #f0f0f0;
     padding: 20px;

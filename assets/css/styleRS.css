@@ -125,9 +125,8 @@ nav li:first-child {
 /* Styling for flight search section/filter */
 
 /* New Flex Container */
-.flex-container {
+.wrapper {
     display: flex;
-    justify-content: start; /* Align children to the start of the container */
 }
 
 /* Styling for the container holding the search form */
@@ -168,10 +167,6 @@ nav li:first-child {
 }
 #search-form button:hover {
     background-color: papayawhip;
-}
-
-.search-container {
-    display: flex;
 }
 
 /* Popular Destinations Section */
