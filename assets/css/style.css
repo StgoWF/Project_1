@@ -674,7 +674,7 @@ font-size: 25px;
     flex-direction: column;
     margin-top: -56px;
     position: relative;
-    top: -47px;
+    top: -73px;
   }
 
   .hotel-name {
@@ -683,7 +683,7 @@ font-size: 25px;
     text-align: left;
     font-size: 20px;
     top: -70px;
-    max-width: 545px;
+    width: 256px;
 
   }
   .hotel-address {
