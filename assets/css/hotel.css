@@ -65,7 +65,6 @@ nav a {
     display: flex;
     align-items: center;
     color: black;
-    text-align: start;
 }
 
 nav a:hover {
@@ -80,7 +79,6 @@ nav li:first-child {
 
 .sidebar {
     position: fixed;
-    display: none;
     top: 0;
     right: 0;
     height: 100vh;
@@ -89,10 +87,10 @@ nav li:first-child {
     background-color: white;
     backdrop-filter: blur(10px);
     box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    display: none;
 }
 
 .sidebar li {
@@ -127,15 +125,23 @@ nav li:first-child {
 /* Styling for flight search section/filter */
 
 /* New Flex Container */
-.wrapper {
+/* body {
+    min-height: 100vh;
+    background-image: url("../images/background2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
-}
+    justify-content: start; /* Align children to the start of the container 
+}*/
+ 
 
 /* Styling for the container holding the search form */
 #search-form-container {
-    top: 95px;
     left: 0;
-    bottom: 0; /* Make the box occupy the full height of the page */
+    bottom: 0;
     width: 300px; /* Width of the box */
     background-color: #f0f0f0;
     padding: 20px;
@@ -171,67 +177,8 @@ nav li:first-child {
     background-color: papayawhip;
 }
 
-/* Popular Destinations Section */
-
-#popular-destinations-section h2 {
-    font-size: 2em;
-    margin: 5px;
-}
-
-/* Container for the destination cards to align them in a column */
-#popular-destinations-section {
+.search-container {
     display: flex;
-    flex-direction: column; /* Stacks cards vertically */
-    align-items: center; /* Center cards horizontally */
-    padding: 20px;
-    flex: 1;
-
-    /* Remove max-width if you want the container to be full-width */
-}
-
-/* Container for cards */
-.destinations-container, #search-results {
-    display: flex;
-    justify-content: space-around; /* Evenly distributes cards with space around them */
-    flex-wrap: wrap; /* Allows cards to wrap to the next line */
-}
-
-img.destination {
-    height: 168px;
-    width: 300px;
-}
-.card, #search-results .card  {
-    /* width: 996px;
-    height: 234px; */
-    background-color: #e9f2f0;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    align-self: center;
-}
-
-/* Hide popular section on mobile */
-
-@media (max-width: 1000px) {
-    #hideSection {
-        display: none;
-    }
-    .search-container {
-        width: 100%;
-        height: 100vh;
-    }
-    img.destination {
-        height: 84px;
-        width: 150px;
-    }
-}
-
-@media (max-width: 380px) {
-    img.destination {
-        height: 42px;
-        width: 75px;
-    }
 }
 
 /* Footer Styling */
